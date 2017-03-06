@@ -6,39 +6,43 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     // as a part of the stateProvider, you need to provide a new state by doing $stateProvider.state
     $stateProvider.state('home',{
         url:'/',
-        templateUrl: 'home.html', 
+        templateUrl: 'views/home.html', 
         controller: 'homeController'
 
     })
-    $stateProvider.state('hello',{
+    $stateProvider.state('videosToTranslate',{
     
         // provide options for state in between the {}
         // url is specifying the route for the state
 
-        url:'/hello',
+        url:'/videosToTranslate',
         // template:'<strong>This is the first message</strong>'
-        templateUrl:'hello.html',
-        controller: 'helloController'
+        templateUrl:'views/videosToTranslate.html',
+        controller: 'videosToTranslateController'
     })
     // console.log('hello')
-    $stateProvider.state('about',{
-        url:'/about',
-        templateUrl:'about.html',
-        controller: 'aboutController'
+    $stateProvider.state('translateVideo',{
+        url:'/translateVideo',
+        templateUrl:'views/translateVideo.html',
+        controller: 'translateVideoController'
     })
-
+    $stateProvider.state('uploadRawVideo',{
+        url:'/uploadRawVideo',
+        templateUrl:'views/uploadRawVideo.html',
+        controller: 'uploadRawVideoController'
+    })
+    $stateProvider.state('finishedVideos',{
+        url:'/finishedVideos',
+        templateUrl:'views/finishedVideos.html',
+        controller: 'finishedVideosController'
+    })
+    $stateProvider.state('videoProduct',{
+        url:'/videoProduct',
+        templateUrl:'views/videoProduct.html',
+        controller: 'videoProductController'
+    })        
     $urlRouterProvider.otherwise('/');
 }]);
 
-app.controller('homeController',['$scope', function($scope){
-    $scope.home = "HOME";
-}]);
 
-app.controller('helloController',['$scope', function($scope){
-    $scope.hello = "HI"
-}]);
 
-app.controller('aboutController',['$scope', function($scope){
-    $scope.about = "ABOUT";
-    $scope.videoURL = '<iframe src="https://www.youtube.com/embed/PeonBmeFR8o?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>'
-}]);
