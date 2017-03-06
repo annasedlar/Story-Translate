@@ -1,37 +1,39 @@
 <div>
-	<h4>Test with entering this youtube embedded url below</h4>
-	<h5>https://www.youtube.com/embed/PeonBmeFR8o?ecver=2 </h5>
-
-
-
-
-
-
-
-	
+<!-- <h4>Test with entering this youtube embedded url below</h4>
+<h5>https://www.youtube.com/embed/PeonBmeFR8o?ecver=2 </h5>
 	<form ng-submit="submitUrl()">
 		<input ng-model='videoUrlInput' placeholder="video url" type='text'/>
 	</form>
 	{{videoUrlInput}}
+ -->
+	<div>
+		<video src="../movie.mp4" controls autoplay loop id="theVid">
+			<track src="en_track.vtt" srclang="en" label="English" kind="subtitles" default>
+		</video>
+	</div>
+    <div class="col-sm-6">
+    	<form>
+    		<button class="btn btn-info" ng-click="startTimeFunc()">Set Start Time</button><br/>
+    		Start Time: {{startTime}}<br/>
+    		<button class="btn btn-info" ng-click="endTimeFunc()">Set End Time</button><br/>
+    		End Time: {{endTime}}<br />
+    		Enter Translations: <input type="text" name="translation" style="width: 500px; height:50px" autofocus>
+    	</form>
+    </div>
+</div>   
+
+
+
+
+<!-- 
+
 
 	<div id='target-video'>{{videoUrl}}</div>
-
-
-
-
-
-
-
-
-
-
-
-
 	<hr/>
 	<div>pause and click this button</div>
 	<form ng-submit="pausedFunction()">
 		<input type='submit'/>
 	</form>
-	<div id='paused'>{{paused}}</div>
+	<div id='paused'>{{paused}}</div> -->
 </div>
 
