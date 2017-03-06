@@ -1,8 +1,17 @@
 <div>
-	This is the about page
-	about = {{about}}
-<!-- 	<div style="position:relative;height:0;padding-bottom:56.25%">
-	{{videoURL}}
-	</div> -->
+<h4>Test with entering this youtube embedded url below</h4>
+<h5>https://www.youtube.com/embed/PeonBmeFR8o?ecver=2 </h5>
+	<form ng-submit="submitUrl()">
+		<input ng-model='videoUrlInput' placeholder="video url" type='text'/>
+	</form>
+	{{videoUrlInput}}
+
 	<div id='target-video'>{{videoUrl}}</div>
+	<hr/>
+	<div>pause and click this button</div>
+	<form ng-submit="pausedFunction()">
+		<input type='submit'/>
+	</form>
+	<div id='paused'>{{paused}}</div>
 </div>
+

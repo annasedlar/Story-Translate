@@ -1,7 +1,12 @@
 
 app.controller('translateVideoController',['$scope', function($scope){
-    $scope.about = "ABOUT";
-    $scope.videoURL = $('#target-video').html('<iframe src="https://www.youtube.com/embed/PeonBmeFR8o?ecver=2" width="640" height="360" frameborder="0" style="position:absolute;width:100%;height:100%;left:0" allowfullscreen></iframe>')
+	$scope.paused='0'
+    $scope.submitUrl = function() {
+		$scope.videoUrl = $('#target-video').html('<iframe src=' + $scope.videoUrlInput + ' width="640" height="360" frameborder="0" style="position:block;width:50vw;height:50vh;left:0" allowfullscreen></iframe>')
+    };
+    $scope.pausedFunction = function(){
+    	var pausedTime = document.getElementsByTagName("video")[0].currentTime
+    	$scope.paused = $('#paused').html('You paused at' + pausedTime)
+    }
 }]);
-
 
