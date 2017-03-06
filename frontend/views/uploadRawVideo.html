@@ -1,19 +1,9 @@
-<div class=container>
-<form class="box" method = "post" action = "/formSubmit" enctype="multipart/form-data">
-	<h1>{{test}}</h1>
-	<!-- <div class="col-md-4 md-col-offset-2" padding-top="50px">
-		<input type="file" name="imageToUpload"/> 
-		<input type="submit" class="btn btn-primary"/>
 
-	</div> -->
-	<div class="box__input">
-	    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-	    <label for="file"><strong>Choose a file</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-    <button class="box__button" type="submit">Upload</button>
-  </div>
-  	<!-- These messages(states) are only shown when needed. Hide in css. -->
-	  <div class="box__uploading">Uploading&hellip;</div>
-	  <div class="box__success">Done!</div>
-	  <div class="box__error">Error! <span></span>.</div>
+
+<form ng-submit="submit()">
+	<div>
+		<label for=''>video</label>
+		<input type='file' id='file'>
+	</div>
+	<button>Post</button>
 </form>
-</div>
