@@ -1,13 +1,25 @@
 app.controller('translateVideoController',['$scope', function($scope){
   $scope.entireTranscript = [];
-  $scope.counter = 1; 
+  $scope.counter = 1;
+  $scope.clickedTranscriptIndex=-1 
   $scope.submitEachSection = function(){
+    var index = $scope.clickedTranscriptIndex
+        if(index == -1){
         $scope.entireTranscript.push({
           startTime: $scope.startTime,
           endTime: $scope.endTime,
           transcript: $scope.transcript,
           counter: $scope.counter
         })    
+      }else{
+        $scope.entireTranscript[index] = {
+          startTime: $scope.startTime,
+          endTime: $scope.endTime,
+          transcript: $scope.transcript,
+          counter: $scope.counter
+        }
+      }
+      $scope.clickedTranscriptIndex = -1
   }
   $scope.startTimeFunc = function(){
     var theVid = document.getElementById("theVid")
@@ -54,8 +66,9 @@ app.controller('translateVideoController',['$scope', function($scope){
     });
   }
   $scope.makeMeClickable = function(index){
-    
     console.log($scope.entireTranscript[index])
+    $scope.transcript = $scope.entireTranscript[index].transcript
+    $scope.clickedTranscriptIndex = index
   }
 }]);
 
