@@ -1,6 +1,5 @@
 app.controller('translateVideoController',['$scope', function($scope){
   $scope.entireTranscript = [];
-  $scope.counter = 1;
   $scope.clickedTranscriptIndex=-1 
   $scope.submitEachSection = function(){
     var index = $scope.clickedTranscriptIndex
@@ -9,14 +8,12 @@ app.controller('translateVideoController',['$scope', function($scope){
           startTime: $scope.startTime,
           endTime: $scope.endTime,
           transcript: $scope.transcript,
-          counter: $scope.counter
         })    
       }else{
         $scope.entireTranscript[index] = {
           startTime: $scope.startTime,
           endTime: $scope.endTime,
           transcript: $scope.transcript,
-          counter: $scope.counter
         }
       }
       $scope.clickedTranscriptIndex = -1
@@ -30,31 +27,30 @@ app.controller('translateVideoController',['$scope', function($scope){
       $scope.endTime = theVid.currentTime
   }
 
-  $scope.addField = function(){
-    var theVid = document.getElementById("theVid")
-    $scope.startTime = theVid.currentTime
-    $scope.endTime = theVid.currentTime
-    console.log($scope.startTime)
-    console.log($scope.endTime)
-    $scope.counter += 1;
-    console.log($scope.entireTranscript)
-    var newField ='<div class="new-sections">' +
-        '<div class="col-sm-12">'+
-          '<button class="btn btn-info" ng-click="startTimeFunc(counter)">'+
-                        'Set Start Time'+
-          '</button>'+
-          '<button class="btn btn-info" ng-click="endTimeFunc(counter)">'+
-              'Set End Time'+
-          '</button> '+
-        '</div>  '+ 
-        '<div class="col-xs-6">Start Time:'+$scope.startTime+' </div><div class="col-xs-6">End Time: '+$scope.endTime+'</div>'+
-          'Enter Translations: '+
-            '<TEXTAREA NAME="Address" ng-model="transcript"/>'+
-            '<button class="btn btn-primary">Add to Transcript</button>'+
-          '</div>'+
-        '</div>'
-      $('#translation-form').append(newField)
-  }
+  // $scope.addField = function(){
+  //   var theVid = document.getElementById("theVid")
+  //   $scope.startTime = theVid.currentTime
+  //   $scope.endTime = theVid.currentTime
+  //   console.log($scope.startTime)
+  //   console.log($scope.endTime)
+  //   console.log($scope.entireTranscript)
+  //   var newField ='<div class="new-sections">' +
+  //       '<div class="col-sm-12">'+
+  //         '<button class="btn btn-info" ng-click="startTimeFunc(counter)">'+
+  //                       'Set Start Time'+
+  //         '</button>'+
+  //         '<button class="btn btn-info" ng-click="endTimeFunc(counter)">'+
+  //             'Set End Time'+
+  //         '</button> '+
+  //       '</div>  '+ 
+  //       '<div class="col-xs-6">Start Time:'+$scope.startTime+' </div><div class="col-xs-6">End Time: '+$scope.endTime+'</div>'+
+  //         'Enter Translations: '+
+  //           '<TEXTAREA NAME="Address" ng-model="transcript"/>'+
+  //           '<button class="btn btn-primary">Add to Transcript</button>'+
+  //         '</div>'+
+  //       '</div>'
+  //     $('#translation-form').append(newField)
+  // }
 
   $scope.submitForm = function(){
 
