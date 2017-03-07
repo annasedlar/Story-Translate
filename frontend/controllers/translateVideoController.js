@@ -22,8 +22,11 @@ app.controller('translateVideoController',['$scope', function($scope){
     var theVid = document.getElementById("theVid")
     $scope.startTime = theVid.currentTime
     $scope.endTime = theVid.currentTime
+    console.log($scope.startTime)
+    console.log($scope.endTime)
     $scope.counter += 1;
-    var newField = '<div class="new-sections">' +
+    console.log($scope.entireTranscript)
+    var newField ='<div class="new-sections">' +
         '<div class="col-sm-12">'+
           '<button class="btn btn-info" ng-click="startTimeFunc(counter)">'+
                         'Set Start Time'+
@@ -32,18 +35,18 @@ app.controller('translateVideoController',['$scope', function($scope){
               'Set End Time'+
           '</button> '+
         '</div>  '+ 
-        '<div class="col-xs-6">Start Time: '+ $scope.startTime+'</div><div class="col-xs-6">End Time: '+$scope.endTime+'</div>'+
+        '<div class="col-xs-6">Start Time:'+$scope.startTime+' </div><div class="col-xs-6">End Time: '+$scope.endTime+'</div>'+
           'Enter Translations: '+
             '<TEXTAREA NAME="Address" ng-model="transcript"/>'+
             '<button class="btn btn-primary">Add to Transcript</button>'+
           '</div>'+
         '</div>'
-    $("#addFields").click(function(){
       $('#translation-form').append(newField)
-    })
   }
 
   $scope.submitForm = function(){
+
+    // somehow use ngRoute
     $(document).ready(function() {
       $("#submit-button").click(function() {
        $("#translation-form").submit();
