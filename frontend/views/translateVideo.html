@@ -14,7 +14,7 @@
 	    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 		    <div class="new-sections">
 			  <div class="col-xs-6">Start Time: {{startTime}}</div><div class="col-xs-6">End Time: {{endTime}}</div>
-			  	Enter Translations: 
+			  	Enter Translations: {{entireTranscript}}
 		        <TEXTAREA NAME="Address" ng-model="transcript"/>
 		        <button class="btn btn-primary">Add to Transcript</button>
 		      </div>
@@ -30,7 +30,7 @@
     <h1>Translation Form:</h1>
     <h3>We need a way to edit each section and save sessions</h3>
     <button class="btn btn-primary">Save Session</button>
-    <div ng-repeat='eachTranscript in entireTranscript'>
+    <div ng-repeat='eachTranscript in entireTranscript' ng-click="makeMeClickable($index)">
         Start: {{eachTranscript.startTime}} &nbsp;&nbsp; End: {{eachTranscript.endTime}}
         <br/>Transcript: {{eachTranscript.transcript}}
         <br /> Counter: {{eachTranscript.counter}}

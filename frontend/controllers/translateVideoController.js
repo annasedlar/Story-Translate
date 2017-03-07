@@ -52,6 +52,10 @@ app.controller('translateVideoController',['$scope', function($scope){
        $("#translation-form").submit();
       });
     });
-}
+  }
+  $scope.makeMeClickable = function(index){
+    
+    console.log($scope.entireTranscript[index])
+  }
 }]);
 
