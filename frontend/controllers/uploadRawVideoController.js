@@ -17,7 +17,7 @@ app.controller('uploadRawVideoController',function($scope, $http){
 				'Content-Type' : undefined
 			}
 		}).then(function(res){
-
+			
 		})
 	}
 });
