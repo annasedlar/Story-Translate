@@ -15,8 +15,26 @@ var upload = multer({ dest: 'public/videos' });
 var type = upload.single('videoToUpload');
 var fs = require('fs'); 
 
-router.post('/products', upload.any(), function(req,res,next){
-	
+router.post('/videos', upload.any(), function(req,res,next){
+	// console.log(req)
+	var name = req.files[0].originalname;
+	var tempPath = req.files[0].path
+	var targetPath = 'public/videos/' + name
+	var size = req.files[0].size
+	var insertQuery = "INSERT INTO videos (name, path, size) VALUES (?,?,?)";
+	connection.query(insertQuery, [name,targetPath,size], (DBerror, results, fields)=>{
+		if(DBerror) throw DBerror; 
+		// res.json("uploaded succesfully"); 
+		fs.readFile(tempPath, (readError, readContents)=>{
+			if(readError) throw readError; 
+			fs.writeFile(targetPath,readContents, (writeError)=>{
+				if(writeError) throw writeError; 
+				fs.unlink(tempPath, (err)=>{
+					if(err) throw err
+				})
+			})
+		})
+	})
 })
 // router.post('/videos', type, (req, res, next)=>{
 // 	console.log(req)
@@ -25,7 +43,7 @@ router.post('/products', upload.any(), function(req,res,next){
 // 	// if(req.files){
 // 	// 	req.files.forEach(function(file){
 // 	// 		console.log(file)
-// 	// 		fs.rename(file.path, 'public/videos/' + file.originalname, function(err){
+			// fs.rename(file.path, 'public/videos/' + file.originalname, function(err){
 // 	// 			if (err) throw err
 
 // 	// 		})
