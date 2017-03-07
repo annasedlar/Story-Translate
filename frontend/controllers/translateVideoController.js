@@ -1,64 +1,54 @@
-
 app.controller('translateVideoController',['$scope', function($scope){
-  $scope.paused='0'
-  $scope.length = '0'
-  $scope.startTime = '0'
-  $scope.endTime = '0'
-  $scope.transcript =''
-  $scope.entireTranscript = []
-  //   $scope.submitUrl = function() {
-    // $scope.videoUrl = $('#target-video').html('<iframe src=' + $scope.videoUrlInput + ' width="640" height="360" frameborder="0" style="position:block;width:50vw;height:50vh;left:0" allowfullscreen></iframe>')
-  //   };
-  //   $scope.pausedFunction = function(){
-  //    var pausedTime = document.getElementsByTagName("video")[0].currentTime
-  //    $scope.paused = $('#paused').html('You paused at' + pausedTime)
-  //   }
-      $scope.submitEachSection = function(){
-        var startTime = $scope.startTime;
-        var endTime = $scope.endTime; 
-        var transcript = $scope.transcript; 
+  $scope.entireTranscript = [];
+  $scope.counter = 1; 
+  $scope.submitEachSection = function(){
         $scope.entireTranscript.push({
-          startTime: startTime,
-          endTime: endTime,
-          transcript: transcript
-        })
-        console.log($scope.entireTranscript)
-      }
+          startTime: $scope.startTime,
+          endTime: $scope.endTime,
+          transcript: $scope.transcript,
+          counter: $scope.counter
+        })    
+  }
+  $scope.startTimeFunc = function(){
+    var theVid = document.getElementById("theVid")
+    $scope.startTime = theVid.currentTime
+  } 
+  $scope.endTimeFunc = function(){
+    var theVid = document.getElementById("theVid")
+      $scope.endTime = theVid.currentTime
+  }
 
-      $scope.startTimeFunc = function(translateNumber){
-        console.log(translateNumber)
-        var theVid = document.getElementById("theVid")
-        console.dir(theVid);
-        $scope.startTime = theVid.currentTime
-        console.log($scope.startTime)
-        // $scope.paused = pausedTime
-        // $scope.length = vLength
-      }
+  $scope.addField = function(){
+    var theVid = document.getElementById("theVid")
+    $scope.startTime = theVid.currentTime
+    $scope.endTime = theVid.currentTime
+    $scope.counter += 1;
+    var newField = '<div class="new-sections">' +
+        '<div class="col-sm-12">'+
+          '<button class="btn btn-info" ng-click="startTimeFunc(counter)">'+
+                        'Set Start Time'+
+          '</button>'+
+          '<button class="btn btn-info" ng-click="endTimeFunc(counter)">'+
+              'Set End Time'+
+          '</button> '+
+        '</div>  '+ 
+        '<div class="col-xs-6">Start Time: '+ $scope.startTime+'</div><div class="col-xs-6">End Time: '+$scope.endTime+'</div>'+
+          'Enter Translations: '+
+            '<TEXTAREA NAME="Address" ng-model="transcript"/>'+
+            '<button class="btn btn-primary">Add to Transcript</button>'+
+          '</div>'+
+        '</div>'
+    $("#addFields").click(function(){
+      $('#translation-form').append(newField)
+    })
+  }
 
-      $scope.endTimeFunc = function(translateNumber){
-        console.log(translateNumber)
-        var theVid = document.getElementById("theVid")
-        console.dir(theVid);
-        $scope.endTime = theVid.currentTime
-        console.log($scope.endTime)
-        // $scope.paused = pausedTime
-        // $scope.length = vLength
-      }
-
-      $scope.addField = function(){
-          var newField = '<div><button class="btn btn-info" ng-click="startTimeFunc(1)">Set Start Time</button><br/>Start Time: {{startTime}}<br/><button class="btn btn-info" ng-click="endTimeFunc(1)">Set End Time</button><br/>End Time: {{endTime}}<br />Enter Translations: <TEXTAREA NAME="Address" ROWS=10 COLS=90></TEXTAREA><input type="submit" style="display:none"/></div>' 
-          var x = 1; 
-          $("#addFields").click(function(){
-            $('#translation-form').append(newField)
-          })
-      }
-
-      $scope.submitForm = function(){
-        $(document).ready(function() {
-          $("#submit-button").click(function() {
-           $("#translation-form").submit();
-          });
-        });
-      }
+  $scope.submitForm = function(){
+    $(document).ready(function() {
+      $("#submit-button").click(function() {
+       $("#translation-form").submit();
+      });
+    });
+}
 }]);
 

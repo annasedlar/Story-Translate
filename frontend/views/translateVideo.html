@@ -1,48 +1,40 @@
-<div>
-<!-- <h4>Test with entering this youtube embedded url below</h4>
-<h5>https://www.youtube.com/embed/PeonBmeFR8o?ecver=2 </h5>
-	<form ng-submit="submitUrl()">
-		<input ng-model='videoUrlInput' placeholder="video url" type='text'/>
-	</form>
-	{{videoUrlInput}}
- -->
-	<div>
-		<video src="../../backend/public/videos/video20s.mov" controls autoplay loop id="theVid">
-			<track src="en_track.vtt" srclang="en" label="English" kind="subtitles" default>
-		</video>
+<div class="col-sm-6">
+	<video src="../views/video20s.mp4" type='video/mp4' controls autoplay loop id="theVid" width='100%'>
+    </video>
+    <div class="col-sm-12">
+		<button class="btn btn-info" ng-click="startTimeFunc()">
+	        Set Start Time
+	    </button>
+	    <button class="btn btn-info" ng-click="endTimeFunc()">
+	        Set End Time
+	    </button> 
+	</div> 
+	<div class="col-sm-6">     
+	<div class="col-sm-12" style="overflow-y:scroll; margin-top:30px">
+	    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
+		    <div class="new-sections">
+			  <div class="col-xs-6">Start Time: {{startTime}}</div><div class="col-xs-6">End Time: {{endTime}}</div>
+			  	Enter Translations: 
+		        <TEXTAREA NAME="Address" ng-model="transcript"/>
+		        <button class="btn btn-primary">Add to Transcript</button>
+		      </div>
+		    </div>
+	   </form>
 	</div>
-    <div class="col-sm-6">
-    	<form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
-    		<button class="btn btn-info" ng-click="startTimeFunc(1)">Set Start Time</button><br/>
-    		Start Time: {{startTime}}<br/>
-    		<button class="btn btn-info" ng-click="endTimeFunc(1)">Set End Time</button><br/>
-    		End Time: {{endTime}}<br />
-    		Enter Translations: {{transcript}}<TEXTAREA NAME="transcript" ROWS=10 COLS=70></TEXTAREA>
-    		<button type="submit" id="submit-button" value="submit" ng-submit="submitEachSection()">Submit Completed Translation Form</button>
-    	</form>
-    	<div class="col-sm-3 col-sm-offset-11"><button ng-click="addField()" class="btn btn-success" id="addFields">+ Translation Field</button></div>
-
-    	<!-- <button type="submit" id="submit-button" value="submit" ng-submit="submitEachSection()">Submit Completed Translation Form</button> -->
-    </div>
-
-    <div class="col-sm-6">
-    <h1>Angular will populate this side with translations IRT</h1>
-    <h3>{{entireTranscript}}</h3>
-    </div>
-</div>   
-
-
-
-
-<!-- 
-
-
-	<div id='target-video'>{{videoUrl}}</div>
-	<hr/>
-	<div>pause and click this button</div>
-	<form ng-submit="pausedFunction()">
-		<input type='submit'/>
-	</form>
-	<div id='paused'>{{paused}}</div> -->
+	<div class="col-sm-3 col-sm-offset-6" style="margin-top:300px">
+	   	<button class="btn btn-success" id="addFields" ng-click="addField()">+ Translation Field</button>
+	</div>
 </div>
+
+<div class="col-sm-6">
+    <h1>Translation Form:</h1>
+    <h3>We need a way to edit each section and save sessions</h3>
+    <button class="btn btn-primary">Save Session</button>
+    <div ng-repeat='eachTranscript in entireTranscript'>
+        Start: {{eachTranscript.startTime}} &nbsp;&nbsp; End: {{eachTranscript.endTime}}
+        <br/>Transcript: {{eachTranscript.transcript}}
+        <br /> Counter: {{eachTranscript.counter}}
+    </div>
+    <button class="btn btn-primary">Submit Full Transcript</button>
+</div>   
 
