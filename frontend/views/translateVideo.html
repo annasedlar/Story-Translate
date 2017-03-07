@@ -12,16 +12,24 @@
 		</video>
 	</div>
     <div class="col-sm-6">
-    	<form name="translation-form" id="translation-form" method="post" action="/">
+    	<form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
     		<button class="btn btn-info" ng-click="startTimeFunc(1)">Set Start Time</button><br/>
     		Start Time: {{startTime}}<br/>
     		<button class="btn btn-info" ng-click="endTimeFunc(1)">Set End Time</button><br/>
     		End Time: {{endTime}}<br />
-    		Enter Translations: <TEXTAREA NAME="Address" ROWS=10 COLS=90></TEXTAREA>
-    		<input type="submit" style="display:none"/>
+    		Enter Translations: <TEXTAREA NAME="Address" ROWS=10 COLS=70></TEXTAREA>
+    		<form ng-submit='saveTranscript()'>
+    			<input type="text" style="display:none" ng-model="transcript"/>
+    		</form>
     	</form>
-    	<div class="col-sm-3 col-sm-offset-11"><button ng-click="addField()" class="btn btn-success" id="addFields">+ Translation Field</button></div>
-    	<button type="submit" id="submit-button" value="submit">Submit Completed Translation Form</button>
+    	<!-- <div class="col-sm-3 col-sm-offset-11"><button ng-click="addField()" class="btn btn-success" id="addFields">+ Translation Field</button></div> -->
+
+    	<!-- <button type="submit" id="submit-button" value="submit">Submit Completed Translation Form</button> -->
+    </div>
+
+    <div class="col-sm-6">
+    <h1>Angular will populate this side with translations IRT</h1>
+    <h3>{{entireTranscript}}</h3>
     </div>
 </div>   
 
