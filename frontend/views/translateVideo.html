@@ -12,13 +12,16 @@
 		</video>
 	</div>
     <div class="col-sm-6">
-    	<form>
-    		<button class="btn btn-info" ng-click="startTimeFunc()">Set Start Time</button><br/>
+    	<form name="translation-form" id="translation-form" method="post" action="/">
+    		<button class="btn btn-info" ng-click="startTimeFunc(1)">Set Start Time</button><br/>
     		Start Time: {{startTime}}<br/>
-    		<button class="btn btn-info" ng-click="endTimeFunc()">Set End Time</button><br/>
+    		<button class="btn btn-info" ng-click="endTimeFunc(1)">Set End Time</button><br/>
     		End Time: {{endTime}}<br />
-    		Enter Translations: <input type="text" name="translation" style="width: 500px; height:50px" autofocus>
+    		Enter Translations: <TEXTAREA NAME="Address" ROWS=10 COLS=90></TEXTAREA>
+    		<input type="submit" style="display:none"/>
     	</form>
+    	<div class="col-sm-3 col-sm-offset-11"><button ng-click="addField()" class="btn btn-success" id="addFields">+ Translation Field</button></div>
+    	<button type="submit" id="submit-button" value="submit">Submit Completed Translation Form</button>
     </div>
 </div>   
 

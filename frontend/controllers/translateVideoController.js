@@ -11,23 +11,42 @@ app.controller('translateVideoController',['$scope', function($scope){
   //    var pausedTime = document.getElementsByTagName("video")[0].currentTime
   //    $scope.paused = $('#paused').html('You paused at' + pausedTime)
   //   }
-      $scope.startTimeFunc = function(){
+      $scope.startTimeFunc = function(translateNumber){
+        console.log(translateNumber)
         var theVid = document.getElementById("theVid")
         console.dir(theVid);
         $scope.startTime =theVid.currentTime
-        console.log(startTime)
+        console.log($scope.startTime)
         // $scope.paused = pausedTime
         // $scope.length = vLength
-
       }
-      $scope.endTimeFunc = function(){
+
+      $scope.endTimeFunc = function(translateNumber){
+        console.log(translateNumber)
         var theVid = document.getElementById("theVid")
         console.dir(theVid);
         $scope.endTime = theVid.currentTime
-        console.log(endTime)
+        console.log($scope.endTime)
         // $scope.paused = pausedTime
         // $scope.length = vLength
+      }
 
+      $scope.addField = function(){
+        $(document).ready(function(){
+          var newField = '<div><button class="btn btn-info" ng-click="startTimeFunc(1)">Set Start Time</button><br/>Start Time: {{startTime}}<br/><button class="btn btn-info" ng-click="endTimeFunc(1)">Set End Time</button><br/>End Time: {{endTime}}<br />Enter Translations: <TEXTAREA NAME="Address" ROWS=10 COLS=90></TEXTAREA><input type="submit" style="display:none"/></div>' 
+          var x = 1; 
+          $("#addFields").click(function(){
+            $('#translation-form').append(newField)
+          })
+        })
+      }
+
+      $scope.submitForm = function(){
+        $(document).ready(function() {
+          $("#submit-button").click(function() {
+           $("#translation-form").submit();
+          });
+        });
       }
 }]);
 
