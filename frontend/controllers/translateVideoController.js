@@ -1,4 +1,4 @@
-app.controller('translateVideoController',['$scope', function($scope){
+app.controller('translateVideoController',['$scope', '$http', function($scope, $http){
   $scope.entireTranscript = [];
   $scope.clickedTranscriptIndex=-1 
   $scope.editOrAddButton = 'Add to Transcript'
@@ -7,12 +7,15 @@ app.controller('translateVideoController',['$scope', function($scope){
     $scope.editOrAddButton = 'Add to Transcript'
     $scope.addButtonClass = 'btn btn-primary'
     var index = $scope.clickedTranscriptIndex
+    var date = new Date();
+    console.log(date)
         if(index == -1){
           
         $scope.entireTranscript.push({
           startTime: $scope.startTime,
           endTime: $scope.endTime,
           transcript: $scope.transcript,
+          postedTime: date.toString().slice(0,21)
         })    
       }else{
         
@@ -26,11 +29,11 @@ app.controller('translateVideoController',['$scope', function($scope){
   }
   $scope.startTimeFunc = function(){
     var theVid = document.getElementById("theVid")
-    $scope.startTime = theVid.currentTime
+    $scope.startTime = theVid.currentTime.toFixed(2)
   } 
   $scope.endTimeFunc = function(){
     var theVid = document.getElementById("theVid")
-      $scope.endTime = theVid.currentTime
+      $scope.endTime = theVid.currentTime.toFixed(2)
   }
 
   // $scope.addField = function(){
@@ -60,13 +63,20 @@ app.controller('translateVideoController',['$scope', function($scope){
 
   $scope.submitForm = function(){
 
-    // somehow use ngRoute
-    $(document).ready(function() {
-      $("#submit-button").click(function() {
-       $("#translation-form").submit();
-      });
-    });
+    $http({
+      method:'POST',
+      url: 'http://localhost:3000/transcript/',
+      data: $scope.entireTranscript
+    }).then(
+      function successFunction(data){
+        console.log(data)
+      },
+      function failedFunction(data){
+        console.log("fail")
+      }
+    )
   }
+
   $scope.makeMeClickable = function(index){
     console.log($scope.entireTranscript[index])
     $scope.editOrAddButton = 'Edit Transcript'
