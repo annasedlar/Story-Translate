@@ -1,15 +1,21 @@
 app.controller('translateVideoController',['$scope', function($scope){
   $scope.entireTranscript = [];
   $scope.clickedTranscriptIndex=-1 
+  $scope.editOrAddButton = 'Add to Transcript'
+  $scope.addButtonClass = 'btn btn-primary'
   $scope.submitEachSection = function(){
+    $scope.editOrAddButton = 'Add to Transcript'
+    $scope.addButtonClass = 'btn btn-primary'
     var index = $scope.clickedTranscriptIndex
         if(index == -1){
+          
         $scope.entireTranscript.push({
           startTime: $scope.startTime,
           endTime: $scope.endTime,
           transcript: $scope.transcript,
         })    
       }else{
+        
         $scope.entireTranscript[index] = {
           startTime: $scope.startTime,
           endTime: $scope.endTime,
@@ -63,7 +69,11 @@ app.controller('translateVideoController',['$scope', function($scope){
   }
   $scope.makeMeClickable = function(index){
     console.log($scope.entireTranscript[index])
+    $scope.editOrAddButton = 'Edit Transcript'
+    $scope.addButtonClass = 'btn btn-warning'
     $scope.transcript = $scope.entireTranscript[index].transcript
+    $scope.startTime = $scope.entireTranscript[index].startTime
+    $scope.endTime = $scope.entireTranscript[index].endTime
     $scope.clickedTranscriptIndex = index
   }
 }]);

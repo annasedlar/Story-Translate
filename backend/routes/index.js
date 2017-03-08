@@ -36,6 +36,8 @@ router.post('/videos', upload.any(), function(req,res,next){
 		})
 	})
 })
+
+var insertQuery = "UPDATE INTO videos (name, path, size) VALUES (?,?,?) where";
 // router.post('/videos', type, (req, res, next)=>{
 // 	console.log(req)
 // 	// res.json(req.files);
@@ -82,7 +84,7 @@ router.post('/videos', upload.any(), function(req,res,next){
 
 
 
-// // router.get('/videos', function(req, res, next) {
+// router.get('/videos', function(req, res, next) {
 // // 	var getVideosQuery = 'SELECT * FROM videos' 
 // // 	connection.query(getVideosQuery, (error, results, fields) =>{
 // // 		res.json(results)

@@ -14,7 +14,7 @@
 		    <div class="new-sections">
 			  <div class="col-xs-12">Start Time: {{startTime}}</div><div class="col-xs-6">End Time: {{endTime}}</div>
 		        <TEXTAREA NAME="transcript" COLS=70 ROWS=5 ng-model="transcript"/>
-		        <button class="btn btn-primary">Add to Transcript</button>
+		        <button ng-class="addButtonClass">{{editOrAddButton}}</button>
 		      </div>
 		    </div>
 	   </form>
