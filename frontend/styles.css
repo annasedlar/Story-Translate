@@ -1,5 +1,7 @@
 img{
 	border: 1px solid black;
+	max-width: 200px;
+	max-height: 200px;
 }
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
