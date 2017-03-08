@@ -35,6 +35,9 @@ app.controller('translateVideoController',['$scope', '$http', function($scope, $
     var theVid = document.getElementById("theVid")
       $scope.endTime = theVid.currentTime.toFixed(2)
   }
+  // $scope.videoToTranslateUrl = 'http://localhost:3000/'
+  
+
 
   // $scope.addField = function(){
   //   var theVid = document.getElementById("theVid")

@@ -1,4 +1,4 @@
-app.controller('uploadRawVideoController',function($scope, $http){
+app.controller('uploadRawVideoController',function($scope, $location, $http){
 	$scope.product = {};
 
 	$scope.submit = function(){
@@ -16,8 +16,15 @@ app.controller('uploadRawVideoController',function($scope, $http){
 			headers:{
 				'Content-Type' : undefined
 			}
-		}).then(function(res){
-			
-		})
+		}).then(
+      function successFunction(data){
+        // console.log(data)
+        $location.path('/videosToTranslate')
+      },
+      function failedFunction(data){
+        console.log("fail")
+        $scope.failedUpload = 'Try Again, upload has failed'
+      }
+    )
 	}
 });
