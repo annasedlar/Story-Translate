@@ -1,6 +1,5 @@
 <div class="col-sm-6">
-	<video src={{videoToTranslateUrl}} type='video/mp4' controls autoplay loop id="theVid" width='100%'>
-    </video>
+	<video ng-src="{{pleasWork}}" type="video/mp4" controls autoplay loop id="theVid" width="100%"/>
     <div class="col-sm-12">
 		<button class="btn btn-info" ng-click="startTimeFunc()">
 	        Set Start Time
@@ -19,12 +18,6 @@
 		    </div>
 	   </form>
 	</div>
-<!-- 	<div class="col-sm-3 col-sm-offset-6" style="margin-top:100px">
-	   	<button class="btn btn-success" id="addFields" ng-click="addField()">+ Translation Field</button>
-	</div> -->
-<!-- 	<div class="edit-me col-sm-12">
-		Edit Translation: {{transcript}}
-	</div> -->
 </div>
 
 <div class="col-sm-6">

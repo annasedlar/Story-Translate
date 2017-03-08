@@ -1,7 +1,7 @@
 var app = angular.module('app', ['ui.router']);
 
 
-app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider){
+app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', function($stateProvider, $urlRouterProvider, $sceDelegateProvider){
     // give name to state. in this case, it is 'firstMessage'
     // as a part of the stateProvider, you need to provide a new state by doing $stateProvider.state
     $stateProvider.state('home',{
@@ -21,8 +21,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
         controller: 'videosToTranslateController'
     })
     // console.log('hello')
-    $stateProvider.state('translateVideo',{
-        url:'/translateVideo',
+    $stateProvider.state('translateVideo/',{
+        url:'/translateVideo/:id',
         templateUrl:'views/translateVideo.html',
         controller: 'translateVideoController'
     })
@@ -44,5 +44,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $ur
     $urlRouterProvider.otherwise('/');
 }]);
 
+app.filter('trustUrl',function($sce){
+    return function(url){
+        return $sce.trustAsResourceUrl(url);
+    }
+})
 
 

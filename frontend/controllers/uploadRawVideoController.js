@@ -65,7 +65,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 		}
 		var file = $('#file')[0].files[0];
 		formData.append('video', file);
-		formData.append('thumbnail', $scope.tempImage);
+		// formData.append('thumbnail', $scope.tempImage);
 		console.log(typeof($scope.tempImage))
 		$http.post('http://localhost:3000/videos', formData, {
 			transformRequest: angular.identity,

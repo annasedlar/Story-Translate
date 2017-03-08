@@ -16,8 +16,8 @@ var upload = multer({ dest: 'public/videos' });
 var fs = require('fs'); 
 
 router.post('/videos', upload.any(), function(req,res,next){
-	console.log(req)
-	// console.log(req.body)
+	console.log(req.files)
+	console.log(req.body)
 	// res.json('test')
 	var name = req.files[0].originalname;
 	var tempPath = req.files[0].path
