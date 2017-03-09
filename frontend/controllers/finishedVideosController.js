@@ -1,4 +1,14 @@
-app.controller('finishedVideosController',['$scope', function($scope){
-    $scope.test = "list of finished videos with thumbnail ";
-    $scope.finishedVideo = "http://placehold.it/350x150"
+app.controller('finishedVideosController',['$scope','$http', function($scope, $http){
+    $scope.videoToBeTranslatedArray = [];
+	var tempUrl = 'http://localhost:3000/videosFinished'
+	$http({
+		method: "GET",
+		url: tempUrl
+	}).then(
+		function successFunction(videoData){
+			$scope.videoData = videoData
+		},
+		function failedFunction(videoData){
+		}
+	)
 }]);
