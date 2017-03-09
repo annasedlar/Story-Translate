@@ -80,7 +80,7 @@ router.post('/thumbnails', upload.any(), function(req,res,next){
     // })
 })
 
-router.post('/transcript', function(req,res,next){
+router.post('/transcript/', function(req,res,next){
     console.log(req.body)
 })
 
