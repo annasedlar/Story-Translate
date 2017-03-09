@@ -59,6 +59,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   $scope.startTimeFunc = function(){
     var theVid = document.getElementById("theVid")
     $scope.startTime = theVid.currentTime.toFixed(2)
+    // theVid.currentTime = 10
   } 
   $scope.endTimeFunc = function(){
     var theVid = document.getElementById("theVid")
