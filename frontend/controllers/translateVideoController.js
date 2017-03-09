@@ -1,6 +1,32 @@
 app.controller('translateVideoController',['$scope', '$location', '$http', '$sce', function($scope, $location, $http, $sce){
-	// console.log($location.$$path.slice(16))
 	var paramsId = $location.$$path.slice(16)
+	
+	var onLoadUrl = 'http://localhost:3000/transcript/' + paramsId
+	$http({
+    	method: "GET",
+    	url: onLoadUrl
+  	}).then(
+    	function successFunction(onLoadData){
+      		var transcriptString = onLoadData.data[0].transcript
+      		// console.log(JSON.parse(transcriptString)[0])
+      		var entireTranscript = JSON.parse(transcriptString)
+      		$scope.entireTranscript = entireTranscript
+    	},
+    	function failedFunction(onLoadData){
+      // console.log(videoData)
+		}
+  	)
+
+
+
+
+
+
+
+
+
+
+
 	$scope.videoToTranslateUrl = ''
 	var tempUrl = 'http://localhost:3000/videosToTranslate'
 	$http({
@@ -8,7 +34,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     	url: tempUrl
   	}).then(
     	function successFunction(videoData){
-      		console.log(videoData)
+      		// console.log(videoData)
       		videoData.data.map((eachVideo, index)=>{
        		// console.log(eachVideo)
        			if(eachVideo.id == paramsId){
@@ -30,13 +56,14 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	$scope.clickedTranscriptIndex=-1 
 	$scope.editOrAddButton = 'Add to Transcript'
 	$scope.addButtonClass = 'btn btn-primary'
+
+	// Adding transcripts to video (shows on the right)
 	$scope.submitEachSection = function(){
 		if(addRange(Math.floor($scope.startTime*100), Math.floor($scope.endTime*100), $scope)){
 	    	$scope.editOrAddButton = 'Add to Transcript'
 	    	$scope.addButtonClass = 'btn btn-primary'
 			var index = $scope.clickedTranscriptIndex
 			var date = new Date();
-			// console.log(date)
 	        if(index == -1){
 	        	$scope.entireTranscript.push({
 					startTime: $scope.startTime,
@@ -57,7 +84,6 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	$scope.startTimeFunc = function(){
     	var theVid = document.getElementById("theVid")
     	$scope.startTime = theVid.currentTime.toFixed(2)
-    	// theVid.currentTime = 10
   	}	 
   	$scope.endTimeFunc = function(){
 		var theVid = document.getElementById("theVid")
@@ -86,22 +112,23 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	}
 
 
-
-  $scope.submitForm = function(){
-
-    $http({
-      method:'POST',
-      url: 'http://localhost:3000/transcript/',
-      data: $scope.entireTranscript
-    }).then(
-      function successFunction(data){
-        console.log(data)
-      },
-      function failedFunction(data){
-        console.log("fail")
-      }
-    )
-  }
+  	// send transcript to the backend
+	$scope.submitForm = function(){
+		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
+		console.log(transcriptUrl)
+		$http({
+			method:'POST',
+      		url: transcriptUrl,
+      		data: $scope.entireTranscript
+    	}).then(
+      		function successFunction(data){
+        	console.log(data)
+      	},
+      	function failedFunction(data){
+	        console.log("fail")
+    	  }
+    	)
+  	}
 
   $scope.makeMeClickable = function(index){
     console.log($scope.entireTranscript[index])

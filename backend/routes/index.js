@@ -79,10 +79,25 @@ router.post('/thumbnails', upload.any(), function(req,res,next){
     //     })
     // })
 })
-
-router.post('/transcript/', function(req,res,next){
-    console.log(req.body)
+// var transcript = {}
+router.post('/transcript/:id', function(req,res,next){
+    var familyId = req.params.id
+    var transcriptString = JSON.stringify(req.body)
+    // json.Parse
+    var updateQuery = 'UPDATE videos SET transcript = ? WHERE id = ?';
+    connection.query(updateQuery, [transcriptString, familyId], (DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })    
 })
+router.get('/transcript/:id', function(req,res,next){
+    var selectQuery = 'SELECT transcript FROM videos where id = ?'
+    // console.log(req.params.id)
+    connection.query(selectQuery, [req.params.id], (DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })  
+})  
 
 router.get('/videosToTranslate', function(req,res,next){
     var selectQuery = 'SELECT * FROM videos WHERE finished = 0'

@@ -36,8 +36,8 @@ app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', func
         templateUrl:'views/finishedVideos.html',
         controller: 'finishedVideosController'
     })
-    $stateProvider.state('videoProduct',{
-        url:'/videoProduct',
+    $stateProvider.state('videoProduct/',{
+        url:'/videoProduct/:id',
         templateUrl:'views/videoProduct.html',
         controller: 'videoProductController'
     })        
