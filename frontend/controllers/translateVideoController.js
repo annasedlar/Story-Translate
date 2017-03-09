@@ -1,4 +1,5 @@
 app.controller('translateVideoController',['$scope', '$location', '$http', '$sce', function($scope, $location, $http, $sce){
+	$scope.range = [-5]
 	var paramsId = $location.$$path.slice(16)
 	
 	var onLoadUrl = 'http://localhost:3000/transcript/' + paramsId
@@ -10,10 +11,13 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
       		var transcriptString = onLoadData.data[0].transcript
       		// console.log(JSON.parse(transcriptString)[0])
       		var entireTranscript = JSON.parse(transcriptString)
+      		console.log(entireTranscript)
       		$scope.entireTranscript = entireTranscript
+      		$scope.entireTranscript.map((eachTranscript, index)=>{
+				addRange(Math.floor(eachTranscript.startTime*100), Math.floor(eachTranscript.endTime*100), $scope)
+			})
     	},
     	function failedFunction(onLoadData){
-      // console.log(videoData)
 		}
   	)
 
@@ -84,6 +88,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	$scope.startTimeFunc = function(){
     	var theVid = document.getElementById("theVid")
     	$scope.startTime = theVid.currentTime.toFixed(2)
+    	// theVid.currentTime = 5
   	}	 
   	$scope.endTimeFunc = function(){
 		var theVid = document.getElementById("theVid")
@@ -115,7 +120,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	// send transcript to the backend
 	$scope.submitForm = function(){
 		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
-		console.log(transcriptUrl)
+		// console.log(transcriptUrl)
 		$http({
 			method:'POST',
       		url: transcriptUrl,
@@ -131,7 +136,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	}
 
   $scope.makeMeClickable = function(index){
-    console.log($scope.entireTranscript[index])
+    // console.log($scope.entireTranscript[index])
     $scope.editOrAddButton = 'Edit Transcript'
     $scope.addButtonClass = 'btn btn-warning'
     $scope.transcript = $scope.entireTranscript[index].transcript
@@ -139,23 +144,39 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     $scope.endTime = $scope.entireTranscript[index].endTime
     $scope.clickedTranscriptIndex = index
   }
+
+	
+// $scope.range = [-2]
+
+	
+
+// console.log(range)
 }]);
 
-
-var range = []
-
 function addRange(startTime, endTime, $scope){
-	if((range.indexOf(startTime) > -1)||(
-		range.indexOf(endTime) > -1)){
+	console.log('before')
+	var range = $scope.range
+	console.log(range)
+	if(range.indexOf(startTime) > -1){
+		$scope.invalidRange = 'Invalid Range of Video'
+		return false
+	}else if(range.indexOf(endTime) > -1){
 		$scope.invalidRange = 'Invalid Range of Video'
 		return false
 	}else{
 		for(let i = startTime; i < endTime; i++){
 			range.push(i)
+			// console.log($scope.range)
 		}
-		console.log('valid range')		
+		// console.log('valid range')		
 		$scope.invalidRange = ''
+		$scope.range = range
+		console.log('after')
+		console.log($scope.range)
 		return true
 	}
-	console.log(range)
+	// console.log(range)
+	// $scope.range = range
+	console.log('after')
+	console.log($scope.range)
 }

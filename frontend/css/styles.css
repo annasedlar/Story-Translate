@@ -1,4 +1,44 @@
-/* line 3, ../compass/sass/styles.scss */
-body {
-  background-color: green;
+/* line 1, ../compass/sass/styles.scss */
+img {
+  border: 1px solid black;
+  max-width: 200px;
+  max-height: 200px;
+}
+
+/* line 6, ../compass/sass/styles.scss */
+.box__dragndrop, .box__uploading, .box__success, .box__error {
+  display: none;
+}
+
+/* line 10, ../compass/sass/styles.scss */
+.videosToTranslate {
+  text-align: center;
+}
+
+/* line 13, ../compass/sass/styles.scss */
+.relatedVids {
+  height: 350px;
+  width: 600px;
+  border: 1px solid black;
+  float: left;
+  margin: 10px;
+}
+
+/* line 20, ../compass/sass/styles.scss */
+.translations {
+  height: 740px;
+  width: 430px;
+  border: 1px solid black;
+  float: right;
+  margin: 30px;
+  right: 0px;
+  top: 70px;
+  position: absolute;
+}
+
+/* line 31, ../compass/sass/styles.scss */
+.cool-video-bar {
+  width: 100%;
+  height: 30px;
+  background-color: grey;
 }
