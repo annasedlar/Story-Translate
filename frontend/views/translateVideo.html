@@ -1,4 +1,9 @@
 <div class="col-sm-6">
+ 	<h3>{{familyName}}</h3>
+ 	<form ng-submit='changeFamilyName()'>
+ 		<input ng-model='tempFamilyName' type='text'/>
+ 		<button class="btn btn-warning"">Edit</button>
+ 	</form>
 	<video ng-src="{{pleasWork}}" type="video/mp4" controls autoplay loop id="theVid" width="100%"/>
     <div class="col-sm-12">
 		<button class="btn btn-info" ng-click="startTimeFunc()">
@@ -7,6 +12,7 @@
 	    <button class="btn btn-info" ng-click="endTimeFunc()">
 	        Set End Time
 	    </button> 
+	    {{invalidRange}}
 	</div>   
 	<div class="col-sm-12" style="overflow-y:scroll; margin-top:30px">
 	    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
