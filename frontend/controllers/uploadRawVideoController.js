@@ -69,7 +69,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 		formData.append('familyName', $scope.familyName)
 		// formData.append('thumbnail', $scope.tempImage);
 		console.log(typeof($scope.tempImage))
-		$http.post('http://localhost:3000/videos', formData, {
+		$http.post('http://annasedlar.com:3000/videos', formData, {
 			transformRequest: angular.identity,
 			headers:{
 				'Content-Type' : undefined
@@ -88,7 +88,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 
 
     	// adding thumbnail to the backend
-		// $http.post('http://localhost:3000/thumbnails', $scope.tempImage, {
+		// $http.post('http://annasedlar.com:3000/thumbnails', $scope.tempImage, {
 		// 	transformRequest: angular.identity,
 		// 	headers:{
 		// 		'Content-Type' : undefined
@@ -106,7 +106,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
   //   	)
   //   	$http({
   //   		method:"POST",
-  //   		url: 'http://localhost:3000/thumbnails',
+  //   		url: 'http://annasedlar.com:3000/thumbnails',
   //   		data: $scope.tempImage
   //   	}).then(
   //   			function successFunction(movieData){

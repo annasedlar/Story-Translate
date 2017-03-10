@@ -2,7 +2,7 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
     // $scope.videoToBeTranslated = "http://placehold.it/350x150"
     $scope.videoToBeTranslatedArray = [];
 
-	var tempUrl = 'http://localhost:3000/videosToTranslate'
+	var tempUrl = 'http://annasedlar.com:3000/videosToTranslate'
 	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
 
 	$http({
