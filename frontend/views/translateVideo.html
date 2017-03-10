@@ -33,25 +33,22 @@
 <div class="col-sm-6">
     <h1>Translation Form:</h1>
     <h3>We need a way to edit each section and save sessions</h3>
-    <button class="btn btn-primary">Save Session</button>
+    <!-- <button class="btn btn-primary">Save Session</button> -->
+    <br/>
     <div class="click-to-edit col-sm-12" style="margin-bottom:20px; border:1px solid black" ng-repeat='eachTranscript in entireTranscript'>
     	<div class="col-sm-4">
 	        Start: {{eachTranscript.startTime}} &nbsp;&nbsp; End: {{eachTranscript.endTime}}
 	        <br/>Transcript: {{eachTranscript.transcript}}
-	        <!-- <br /> Counter: {{eachTranscript.counter}} -->
 	    </div>
+
+	    <div class="col-sm-4">{{eachTranscript.postedTime}}</div>
 	    <div class="col-sm-4">
-	    	<button class="btn btn-danger" ng-click="makeMeClickable($index)">Edit Translation</button>
-	    </div>
-	    <div class="col-sm-4">
-	    	{{eachTranscript.postedTime}} 
-	    	
-	    </div>
+	    	<button class="btn btn-warning" ng-click="editTranscript($index)">Edit</button>
+	    	<button class="btn btn-danger" ng-click="deleteTranscript($index)">Delete</button>
+	    </div>	    
     </div>
-    <div class="col-sm-6 col-sm-offset 6">
     <form ng-submit='submitForm()'>
     	<button style="margin-right:0" class="btn btn-primary">Submit Full Transcript</button>
     </form>
-    </div>
 </div>   
 
