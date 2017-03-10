@@ -1,16 +1,27 @@
 
 <div class="container">
-{{test}}
-	<br />
-	<div class="col-sm-4 videoProduct"><img src={{videoProductVideo}}>Completed Video</div>
-</div>
-
-<div>
-	<br />
-	<h4>Help us translate more videos!</h4>
-	<div class="col-sm-4 relatedVids">Related Videos</div>
-</div>
-
-<div>
-	<div class="col-sm-4 translations">Translations</div>
+	{{test}}
+	<div class="col-sm-4 relatedVids">
+		<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls autoplay loop width="100%"/>
+		<div>{{currentTranscript}}</div>
+		<br />
+		<h4>Help us translate more videos!</h4>
+		<div ng-repeat='video in familyVideoHTML'>
+			<div>
+				{{video.finished}}
+			</div>
+			<div ng-class='video.finishedClass'>
+				<video ng-src="{{video.sce}}" type="video/mp4" controls width="50%" />
+			</div>
+			<a ng-href='{{video.editUrl}}'><button class='btn btn-success'>Edit</button></a>	
+			<a ng-show='video.showOrNot' ng-href='{{video.selectUrl}}'><button class='btn btn-primary'>Select</button></a>
+		</div>
+	</div>
+	<div class="col-sm-4 translations">
+		<div ng-repeat='transcript in transcriptHTML'>
+			Start time: {{transcript.startTime}} &nbsp;&nbsp;
+			End time: {{transcript.endTime}} &nbsp;&nbsp;
+			{{transcript.transcript}}
+		</div>
+	</div>	
 </div>

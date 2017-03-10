@@ -42,3 +42,13 @@ img {
   height: 30px;
   background-color: grey;
 }
+
+/* line 38, ../compass/sass/styles.scss */
+.redClass {
+  border: 5px solid red;
+}
+
+/* line 42, ../compass/sass/styles.scss */
+.greenClass {
+  border: 5px solid green;
+}

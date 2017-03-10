@@ -37,7 +37,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
 			        // console.log(eachVideo.path.slice(7))
-			        // console.log(tempVideoPath)
+			        console.log(tempVideoPath)
         			var myUrl = 'http://localhost:3000/' + tempVideoPath
         		$scope.pleasWork = $sce.trustAsResourceUrl(myUrl)
        			}
@@ -74,7 +74,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	  
 	  var beforeEverything = true;
 	  for(let i = 0; i < timeRangeArray.length; i++){
-	    if((startTime < timeRangeArray[i].startTime)&&(endTime < timeRangeArray[i].endTime)){
+	    if((endTime < timeRangeArray[i].startTime)&&(endTime < timeRangeArray[i].endTime)){
 	    }else{
 	    	beforeEverything = false;
 	    }
@@ -82,7 +82,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	  
 	  var afterEverything = true;
 	  for(let i = 0; i<timeRangeArray.length; i++){
-	    if((startTime > timeRangeArray[i].startTime)&&(endTime > timeRangeArray[i].endTime)){
+	    if((startTime > timeRangeArray[i].startTime)&&(startTime > timeRangeArray[i].endTime)){
 	    }else{
 	    	afterEverything = false;
 	    }

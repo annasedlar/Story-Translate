@@ -113,5 +113,14 @@ router.get('/videosFinished', function(req,res,next){
         res.json(results)
     })
 })
+
+router.get('/videosByFamilyName/:id', function(req,res,next){
+    var selectQuery = 'SELECT * FROM videos WHERE familyName = ?'
+    var familyName = req.params.id
+    connection.query(selectQuery, [familyName],(DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })
+})
 module.exports = router;
 
