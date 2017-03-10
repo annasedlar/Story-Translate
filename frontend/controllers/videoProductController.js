@@ -42,7 +42,8 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      				sce: tempSceThing,
 				      				editUrl : editUrl,
 				      				finishedClass: finishedClass,
-				      				showOrNot: showOrNot
+				      				showOrNot: showOrNot,
+                      selectUrl: selectUrl
 				      			})
 				      		})
 				      		$scope.familyVideoHTML = familyVideoHTML
@@ -70,7 +71,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
   	var video = document.getElementById('productVideoPlaying')
   	// console.dir(videoPlaying.currentTime)
   	
-  	$scope.currentTranscript = '55555'
+  	$scope.currentTranscript = "Translation: "
 
   	var displayInterval = $interval(function(){
   		var videoCurrentTime = Math.floor(video.currentTime*100)
@@ -79,7 +80,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
   			// console.log(video)
   			// console.log(video.startTime)
   			if((videoCurrentTime > video.startTime * 100)&&(videoCurrentTime < video.endTime * 100)){
-  				$scope.currentTranscript = video.transcript
+  				$scope.currentTranscript = "Translation: " +video.transcript
   				// console.log($scope.)
   				console.log(video.transcript)
   			}else{

@@ -5,7 +5,9 @@
 		<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls autoplay loop width="100%"/>
 		<div>{{currentTranscript}}</div>
 		<br />
-		<h4>Help us translate more videos!</h4>
+		<h4>Green Box = Translation Complete, Red Box = needs work</h4>
+		<h3>select button not sending video</h3>
+		
 		<div ng-repeat='video in familyVideoHTML'>
 			<div>
 				{{video.finished}}
@@ -18,9 +20,10 @@
 		</div>
 	</div>
 	<div class="col-sm-4 translations">
+		<h3>Start | End | Transcript</h3>
 		<div ng-repeat='transcript in transcriptHTML'>
-			Start time: {{transcript.startTime}} &nbsp;&nbsp;
-			End time: {{transcript.endTime}} &nbsp;&nbsp;
+			{{transcript.startTime}} &nbsp;&nbsp;
+			{{transcript.endTime}} &nbsp;&nbsp;
 			{{transcript.transcript}}
 		</div>
 	</div>	
