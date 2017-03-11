@@ -98,7 +98,13 @@ router.get('/transcript/:id', function(req,res,next){
         res.json(results)
     })  
 })  
-
+router.get('/videos', function(req,res,next){
+    var selectQuery = 'SELECT * FROM videos'
+    connection.query(selectQuery,(DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })
+})
 router.get('/videosToTranslate', function(req,res,next){
     var selectQuery = 'SELECT * FROM videos WHERE finished = 0'
     connection.query(selectQuery,(DBerror, results, fields)=>{
