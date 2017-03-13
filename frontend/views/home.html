@@ -28,22 +28,34 @@
  rgb(29, 187, 216) -->
 
 <div class='container home-page' style="font-family: 'Avenir', 'sans-serif'; background-color:'white'">
-	<div class="col-sm-12" style="margin-top: 150px">
-		<img src="/frontend/new-story-logo.png"/>
+	<div class="col-sm-12" id="ns" style="margin-top: 80px; margin-bottom: 100px">
+		<img src="/images/new-story-logo.png" style="border: none"/>
 	</div>
-	<div class="col-sm-6" style="background-color:rgb(29, 187, 216)">
-		<h1 style="font-size:60px">New Story Translation App</h1>
-		<h3>Group Video Sharing, Translating, and Annotating made easy</h3>
-		<div class="row">
-			<div class="col-sm-6">See Videos</div>
-			<div class="col-sm-6">Upload Videos</div>
-		</div>
+	<div class="col-sm-6" style="color:rgb(29, 187, 216)">
+		<h1 style="font-size:60px">Video Translation App</h1>
+		<h3 style="color:black; margin-bottom: 50px">Group Video Sharing, Translating, and Annotating made easy</h3>
+	<div class="col-sm-12" style="border:1px solid darkgrey; height:2px; width:600px"></div>
 	</div>
-	<div class="col-sm-4 col-sm-offset-2">
-		<a href="https://github.com/annasedlar/Story-Translate">
-			<h3>Watch a demo</h3>
-			<h5>Confused? Check out the code and a video walk-through on github to learn how this app works</h5>
+	<div class="col-sm-4 col-sm-offset-2" style="text-align:center">
+		<div class="col-sm-4 col-sm-offset-2">
+		<!-- NEED TO ADD UPLOAD POP-UP HERE TOO -->
+			<a href="#/uploadRawVideo"><h3>Upload Videos</h3>
+			<button type="button" class="btn btn-default btn-lg">
+			  <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+			</button>
+		</div></a>
+		<div class="col-sm-6">
+			<a href="#/videosToTranslate"><h3>See Video List</h3>
+			<button type="button" class="btn btn-default btn-lg">
+			  <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+			</button>				
+		</div></a>
+	<div class="row" style="margin-top: 50vh">
+		<a href="https://github.com/annasedlar/Story-Translate" style="color:black">
+			<h3>Watch Demo</h3>
+			<h5>Confused? See the code and a <br/>video walk-through on github</h5>
 		</a>
+	</div>
 	</div>
 
 
