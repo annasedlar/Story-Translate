@@ -20,9 +20,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 			$scope.timeRange = timeRangeArray
     	},
     	function failedFunction(onLoadData){
-		}
+		} 
   	)
-
 	$scope.videoToTranslateUrl = ''
 	var tempUrl = 'http://localhost:3000/videos'
 	$http({
@@ -159,12 +158,13 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     	}).then(
       		function successFunction(data){
         	console.log(data)
+        	console.log("form submitted!")
 	      	},
     	  	function failedFunction(data){
 	    	    console.log("fail")
 			}
   		)
-  	}
+  	} 
 
 	$scope.editTranscript = function(index){
 	    $scope.editOrAddButton = 'Edit Transcript'

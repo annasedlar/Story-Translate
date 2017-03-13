@@ -1,8 +1,17 @@
 <div class="col-sm-6">
  	<h3>{{familyName}}</h3>
+<!--  	<div ng-controller="nameController">
+	 	<button class="btn btn-warning" ng-model="hideMe">Edit Fam Name</button>
+	 	<form class="hideMe" ng-submit="changeFamilyName()">
+	 		<input ng-hide="hideMe" ng-model="tempFamilyName" type="text"/>
+	 	</form>
+	 </div> -->
+
+
+
  	<form ng-submit='changeFamilyName()'>
  		<input ng-model='tempFamilyName' type='text'/>
- 		<button class="btn btn-warning"">Edit</button>
+ 		<button class="btn btn-warning">Edit Family Name</button>
  	</form>
 	<video ng-src="{{pleasWork}}" type="video/mp4" controls autoplay loop id="theVid" width="100%"/>
     <div>
