@@ -1,32 +1,24 @@
-<div class="col-sm-6">
- 	<h3>{{familyName}}</h3>
-<!--  	<div ng-controller="nameController">
-	 	<button class="btn btn-warning" ng-model="hideMe">Edit Fam Name</button>
-	 	<form class="hideMe" ng-submit="changeFamilyName()">
-	 		<input ng-hide="hideMe" ng-model="tempFamilyName" type="text"/>
-	 	</form>
-	 </div> -->
-
-
-
- 	<form ng-submit='changeFamilyName()'>
- 		<input ng-model='tempFamilyName' type='text'/>
- 		<button class="btn btn-warning">Edit Family Name</button>
+<div class="col-sm-6 translate-left-side-wrapper">
+	<div class='family-wrapper'>
+ 	<div class='familyName'>{{familyName}}</div>
+ 	<form ng-submit='changeFamilyName()' class='inline-block'>
+ 		<input ng-model='tempFamilyName' type='text' class='familyInput' placeholder="Edit Family Name" />
+ 		<button class="btn-floating edit-family-button btn-small waves-effect waves-light red"><i class="material-icons">mode_edit</i></button>
  	</form>
+	</div>
+
 	<video ng-src="{{pleasWork}}" type="video/mp4" controls autoplay loop id="theVid" width="100%"/>
+
+
     <div>
-		<button class="btn btn-info" ng-click="startTimeFunc()">
-	        Set Start Time
-	    </button>
-	    <button class="btn btn-info" ng-click="endTimeFunc()">
-	        Set End Time
-	    </button> 
+		<button ng-click="startTimeFunc()" class="waves-effect waves-light btn">Set Start Time</button>
+	    <button class="waves-effect waves-light btn" ng-click="endTimeFunc()">Set End Time</button> 
 	    {{invalidRange}}
 	    <div>&nbsp;</div>
 	</div>   
-	<div class='cool-video-bar'>
-		<div class='start-end-range'></div>
-	</div>
+	<!-- <div class='cool-video-bar'> -->
+		<!-- <div class='start-end-range'></div> -->
+	<!-- </div> -->
 	<div style="overflow-y:scroll; margin-top:30px">
 	    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 		    <div class="new-sections">
@@ -39,22 +31,20 @@
 	</div>
 </div>
 
-<div class="col-sm-6">
-    <h1>Translation Form:</h1>
-    <h3>We need a way to edit each section and save sessions</h3>
-    <!-- <button class="btn btn-primary">Save Session</button> -->
-    <br/>
-    <div class="click-to-edit col-sm-12" style="margin-bottom:20px; border:1px solid black" ng-repeat='eachTranscript in entireTranscript'>
+<div class="col-sm-6 each-translation-box">
+    <div class='translation-header'>Translation Form:</div>
+    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript'>
     	<div class="col-sm-4">
-	        Start: {{eachTranscript.startTime}} &nbsp;&nbsp; End: {{eachTranscript.endTime}}
-	        <br/>Transcript: {{eachTranscript.transcript}}
+	        {{eachTranscript.startTime}} ~ {{eachTranscript.endTime}}
+	        
 	    </div>
 
 	    <div class="col-sm-4">{{eachTranscript.postedTime}}</div>
-	    <div class="col-sm-4">
-	    	<button class="btn btn-warning" ng-click="editTranscript($index)">Edit</button>
-	    	<button class="btn btn-danger" ng-click="deleteTranscript($index)">Delete</button>
+	    <div class='float-right'>
+	    	<button class="btn yellow accent-2 buttonTextBlack1" ng-click="editTranscript($index)">Edit</button>
+	    	<button class="buttonTextBlack btn deep-orange" ng-click="deleteTranscript($index)">Delete</button>
 	    </div>
+	    <div class='col-sm-12 each-actual-transcript'>{{eachTranscript.transcript}}</div>
     </div>
     <form ng-submit='saveForm()'>
     	<button style="margin-right:0" class="btn btn-primary">Save Session</button>
