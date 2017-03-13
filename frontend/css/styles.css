@@ -333,3 +333,8 @@ img {
 .each-actual-transcript {
   clear: both;
 }
+
+/* line 220, ../compass/sass/styles.scss */
+.displayNone {
+  display: none;
+}
