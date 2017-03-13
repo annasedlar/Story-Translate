@@ -21,6 +21,8 @@
     	<script type="text/javascript" src="controllers/videosToTranslateController.js"></script>
     	<script type="text/javascript" src="controllers/videoProductController.js"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
+        <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
+
 
   </head>
 
@@ -28,15 +30,16 @@
 
 
 
-<body ng-app="app" class="container">
-    <a href="#/">Home</a> ***
-    <hr />
-    <a href="#/videosToTranslate">Videos To Be Translated</a> | 
-    <a href="#/uploadRawVideo">Upload Raw Video</a> |
-    <a href="#/finishedVideos">videos with Completed Translation</a>
-
-
+<body ng-app="app">
+    <div class='my-nav-bar'>
+        <div class='my-each-nav'><a href="#/">Home</a></div>
+        <div class='my-each-nav'><a href="#/videosToTranslate">Translate Video</a></div>
+        <div class='my-each-nav'><a href="#/uploadRawVideo">Upload Your Video!</a></div>
+        <div class='my-each-nav'><a href="#/finishedVideos">Finished Videos</a></div>
     <!-- this needs token or account later -->
-    <ui-view></ui-view>
+    </div>
+    <div class='container'>
+        <ui-view></ui-view>
+    </div>
 </body>
 </html>
