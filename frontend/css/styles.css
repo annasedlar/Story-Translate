@@ -1,270 +1,50 @@
-/* line 4, ../compass/sass/_styles2.scss */
-img {
-  max-width: 200px;
-  max-height: 200px;
-}
+/*
+Error: Invalid CSS after "    height:50px": expected "{", was ";"
+        on line 95 of /Users/annasedlar/Desktop/DigitalCrafts/11-16immersive/Story-Translate/frontend/compass/sass/styles.scss
 
-/* line 13, ../compass/sass/_styles2.scss */
-.box__dragndrop, .box__uploading, .box__success, .box__error {
-  display: none;
-}
+90:     color:red;
+91: }
+92: 
+93: .each-video-row{
+94: <<<<<<< HEAD
+95:     height:50px;
+96: }
+97: 
+98: .family-wrapper{
+99:     position: relative;
+100:     height: 50px;
 
-/* line 17, ../compass/sass/_styles2.scss */
-.videosToTranslate {
-  text-align: center;
-}
-
-/* line 20, ../compass/sass/_styles2.scss */
-.relatedVids {
-  height: 350px;
-  width: 600px;
-  border: 1px solid black;
-  float: left;
-  margin: 10px;
-}
-
-/* line 27, ../compass/sass/_styles2.scss */
-.translations {
-  height: 740px;
-  width: 430px;
-  border: 1px solid black;
-  float: right;
-  margin: 30px;
-  right: 0px;
-  top: 70px;
-  position: absolute;
-}
-
-/* line 38, ../compass/sass/_styles2.scss */
-.cool-video-bar {
-  width: 100%;
-  height: 30px;
-  background-color: grey;
-}
-
-/* line 45, ../compass/sass/_styles2.scss */
-.redClass {
-  border: 5px solid red;
-}
-
-/* line 49, ../compass/sass/_styles2.scss */
-.greenClass {
-  border: 5px solid green;
-}
-
-/* line 57, ../compass/sass/_styles2.scss */
-.my-nav-bar {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: grey;
-  color: white;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-/* line 68, ../compass/sass/_styles2.scss */
-.my-each-nav {
-  display: inline-block;
-  width: 20%;
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-/* line 74, ../compass/sass/_styles2.scss */
-.my-each-nav a {
-  color: white;
-}
-
-/* line 79, ../compass/sass/_styles2.scss */
-body {
-  background-color: white;
-  color: #333333;
-}
-
-/* line 84, ../compass/sass/_styles2.scss */
-a {
-  color: grey;
-}
-
-/* line 88, ../compass/sass/_styles2.scss */
-a:hover {
-  color: grey;
-}
-
-/* line 93, ../compass/sass/_styles2.scss */
-.video-incomplete {
-  color: red;
-}
-
-/* line 97, ../compass/sass/_styles2.scss */
-.each-video-row {
-  height: 50px;
-}
-
-/* line 4, ../compass/sass/styles.scss */
-img {
-  border: 1px solid black;
-  max-width: 200px;
-  max-height: 200px;
-}
-
-/* line 9, ../compass/sass/styles.scss */
-.box__dragndrop, .box__uploading, .box__success, .box__error {
-  display: none;
-}
-
-/* line 13, ../compass/sass/styles.scss */
-.videosToTranslate {
-  text-align: center;
-}
-
-/* line 16, ../compass/sass/styles.scss */
-.relatedVids {
-  height: 350px;
-  width: 600px;
-  border: 1px solid black;
-  float: left;
-  margin: 10px;
-}
-
-/* line 23, ../compass/sass/styles.scss */
-.translations {
-  height: 740px;
-  width: 430px;
-  border: 1px solid black;
-  float: right;
-  margin: 30px;
-  right: 0px;
-  top: 70px;
-  position: absolute;
-}
-
-/* line 34, ../compass/sass/styles.scss */
-.cool-video-bar {
-  width: 100%;
-  height: 30px;
-  background-color: grey;
-}
-
-/* line 41, ../compass/sass/styles.scss */
-.redClass {
-  border: 5px solid red;
-}
-
-/* line 45, ../compass/sass/styles.scss */
-.greenClass {
-  border: 5px solid green;
-}
-
-/* line 53, ../compass/sass/styles.scss */
-.my-nav-bar {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: #7AAF45;
-  color: white;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-/* line 63, ../compass/sass/styles.scss */
-.my-each-nav {
-  display: inline-block;
-  width: 20%;
-  font-family: "Mouse Memoirs";
-  font-size: 20px;
-  letter-spacing: 1px;
-}
-/* line 69, ../compass/sass/styles.scss */
-.my-each-nav a {
-  color: white;
-}
-
-/* line 79, ../compass/sass/styles.scss */
-a {
-  color: white;
-}
-
-/* line 84, ../compass/sass/styles.scss */
-.video-incomplete {
-  color: red;
-}
-
-/* line 88, ../compass/sass/styles.scss */
-.each-video-row {
-  height: 50px;
-}
-
-/* line 92, ../compass/sass/styles.scss */
-.family-wrapper {
-  position: relative;
-  height: 50px;
-}
-
-/* line 96, ../compass/sass/styles.scss */
-.familyName {
-  width: 40%;
-  display: inline-block;
-  font-size: 20px;
-}
-
-/* line 101, ../compass/sass/styles.scss */
-.familyInput {
-  display: inline-block;
-  width: 50% !important;
-  position: absolute;
-  left: 40%;
-  margin-right: 10px;
-  top: 0;
-}
-
-/* line 110, ../compass/sass/styles.scss */
-.edit-family-button {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-/* line 115, ../compass/sass/styles.scss */
-.inline-block {
-  display: inline-block;
-  text-align: right;
-}
-
-/* line 120, ../compass/sass/styles.scss */
-.translate-left-side-wrapper {
-  margin-top: 20px;
-}
-
-/* line 124, ../compass/sass/styles.scss */
-.buttonTextBlack {
-  width: 70px;
-  margin-top: 10px;
-  font-size: 11px;
-}
-
-/* line 130, ../compass/sass/styles.scss */
-.buttonTextBlack1 {
-  width: 70px;
-  margin-top: 10px;
-  color: darkblue;
-  font-size: 11px;
-}
-
-/* line 138, ../compass/sass/styles.scss */
-.each-translation-box .each-transcription {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  background-color: #F5F5F5;
-}
-
-/* line 144, ../compass/sass/styles.scss */
-.float-right {
-  position: absolute;
-  right: 20px;
-}
-
-/* line 153, ../compass/sass/styles.scss */
-.each-actual-transcript {
-  clear: both;
-}
+Backtrace:
+/Users/annasedlar/Desktop/DigitalCrafts/11-16immersive/Story-Translate/frontend/compass/sass/styles.scss:95
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:665:in `block'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:674:in `block_contents'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:658:in `ruleset'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/engine.rb:281:in `render'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `call'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `on_change'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+/Users/annasedlar/.rvm/gems/ruby-2.2.1/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Invalid CSS after \"    height:50px\": expected \"{\", was \";\"\A         on line 95 of /Users/annasedlar/Desktop/DigitalCrafts/11-16immersive/Story-Translate/frontend/compass/sass/styles.scss\A \A 90:     color:red;\A 91: }\A 92: \A 93: .each-video-row{\A 94: <<<<<<< HEAD\A 95:     height:50px;\A 96: }\A 97: \A 98: .family-wrapper{\A 99:     position: relative;\A 100:     height: 50px;"; }
