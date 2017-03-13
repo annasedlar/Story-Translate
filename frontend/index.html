@@ -5,11 +5,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
-        
-        <!-- Compiled and minified CSS -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css"> -->
-
-        <!-- Compiled and minified JavaScript -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.2/angular-materialize.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
     	<script type ="text/javascript" src="index.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -21,23 +18,28 @@
     	<script type="text/javascript" src="controllers/videosToTranslateController.js"></script>
     	<script type="text/javascript" src="controllers/videoProductController.js"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
-        <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">
-
-
-  </head>
-
-
-
-
-
+        <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">    
+    </head>
 <body ng-app="app">
     <div class='my-nav-bar'>
         <div class='my-each-nav'><a href="#/">Home</a></div>
         <div class='my-each-nav'><a href="#/videosToTranslate">Translate Video</a></div>
-        <div class='my-each-nav'><a href="#/uploadRawVideo">Upload Your Video!</a></div>
+        <div class='my-each-nav'><a data-target='demoModal' modal>Upload Video</a></div>
         <div class='my-each-nav'><a href="#/finishedVideos">Finished Videos</a></div>
-    <!-- this needs token or account later -->
+        <!-- this needs token or account later -->
+        <div id="demoModal" class="modal" ng-controller="uploadRawVideoController">
+            <form ng-submit="submit()">
+                <div>
+                    <label for=''>Upload video to translate</label>
+                    <input ng-model='familyName' type='text' placeholder="Family or Group Name" />
+                    <input type='file' id='file'>
+                </div>
+                <button>Post</button>
+                {{failedUpload}}
+            </form>
+        </div>
     </div>
+    
     <div class='container'>
         <ui-view></ui-view>
     </div>

@@ -1,21 +1,21 @@
-/* line 1, ../compass/sass/styles.scss */
+/* line 3, ../compass/sass/styles.scss */
 img {
   border: 1px solid black;
   max-width: 200px;
   max-height: 200px;
 }
 
-/* line 6, ../compass/sass/styles.scss */
+/* line 8, ../compass/sass/styles.scss */
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
 }
 
-/* line 10, ../compass/sass/styles.scss */
+/* line 12, ../compass/sass/styles.scss */
 .videosToTranslate {
   text-align: center;
 }
 
-/* line 13, ../compass/sass/styles.scss */
+/* line 15, ../compass/sass/styles.scss */
 .relatedVids {
   height: 350px;
   width: 600px;
@@ -24,7 +24,7 @@ img {
   margin: 10px;
 }
 
-/* line 20, ../compass/sass/styles.scss */
+/* line 22, ../compass/sass/styles.scss */
 .translations {
   height: 740px;
   width: 430px;
@@ -36,24 +36,24 @@ img {
   position: absolute;
 }
 
-/* line 31, ../compass/sass/styles.scss */
+/* line 33, ../compass/sass/styles.scss */
 .cool-video-bar {
   width: 100%;
   height: 30px;
   background-color: grey;
 }
 
-/* line 38, ../compass/sass/styles.scss */
+/* line 40, ../compass/sass/styles.scss */
 .redClass {
   border: 5px solid red;
 }
 
-/* line 42, ../compass/sass/styles.scss */
+/* line 44, ../compass/sass/styles.scss */
 .greenClass {
   border: 5px solid green;
 }
 
-/* line 50, ../compass/sass/styles.scss */
+/* line 52, ../compass/sass/styles.scss */
 .my-nav-bar {
   width: 100%;
   height: 50px;
@@ -64,7 +64,7 @@ img {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 60, ../compass/sass/styles.scss */
+/* line 62, ../compass/sass/styles.scss */
 .my-each-nav {
   display: inline-block;
   width: 20%;
@@ -72,28 +72,28 @@ img {
   font-size: 20px;
   letter-spacing: 1px;
 }
-/* line 66, ../compass/sass/styles.scss */
+/* line 68, ../compass/sass/styles.scss */
 .my-each-nav a {
   color: white;
 }
 
-/* line 71, ../compass/sass/styles.scss */
+/* line 73, ../compass/sass/styles.scss */
 body {
   background-color: #618D34;
   color: white;
 }
 
-/* line 76, ../compass/sass/styles.scss */
+/* line 78, ../compass/sass/styles.scss */
 a {
   color: white;
 }
 
-/* line 81, ../compass/sass/styles.scss */
+/* line 83, ../compass/sass/styles.scss */
 .video-incomplete {
   color: red;
 }
 
-/* line 85, ../compass/sass/styles.scss */
+/* line 87, ../compass/sass/styles.scss */
 .each-video-row {
   height: 50px;
 }
