@@ -10,4 +10,10 @@
   color: #1794ab;
   font-family: Avenir;
   width: 200px;
+  margin: auto;
+}
+
+/* line 15, ../compass/sass/styles3.scss */
+#demoModal {
+  padding-top: 70px;
 }

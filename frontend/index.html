@@ -34,15 +34,11 @@
                 <div>
                     <label for='' class="modalTitle">Upload video to translate</label>
                     <div>
-                        <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black;"/>
+                        <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
                     </div>
-                    <!-- <div class="fileUpload btn btn-primary"> -->
-                       <!-- <span>Upload</span> -->
-                       <input type='file' id='file' class="chooseFileButton" />
-                    <!-- </div>                     -->
-                    
+                       <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
                 </div>
-                    <button class="btn waves-effect waves-light" name="action">Submit</button>
+                    <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
                 <div class="failedUploadMessage">{{failedUpload}}</div>
 
             </form>
