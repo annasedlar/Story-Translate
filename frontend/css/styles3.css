@@ -1,0 +1,13 @@
+/* line 1, ../compass/sass/styles3.scss */
+.modalTitle {
+  color: #1794ab;
+  font-size: 35px;
+  font-family: Avenir;
+}
+
+/* line 7, ../compass/sass/styles3.scss */
+.chooseFileButton {
+  color: #1794ab;
+  font-family: Avenir;
+  width: 200px;
+}
