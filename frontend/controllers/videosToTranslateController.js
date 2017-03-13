@@ -1,7 +1,7 @@
 app.controller('videosToTranslateController',['$scope','$http', function($scope, $http){
     // $scope.videoToBeTranslated = "http://placehold.it/350x150"
     $scope.videoToBeTranslatedArray = [];
-
+    var colors = [];
 	var tempUrl = 'http://localhost:3000/videos'
 	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
 
@@ -20,9 +20,20 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
 
 			$scope.videoData = videoData
 
-			// $scope.targetVideo = 
-			console.log(videoData.data)
+			
+			var tempFamilyName = '';
 			$scope.videoData.data.map((video, index)=>{
+				if(!index){
+					tempFamilyName = video.familyName
+				}else if(video.familyName.toUpperCase() == tempFamilyName.toUpperCase()){
+					video.familyName = ''
+				}else{
+					tempFamilyName = video.familyName
+				}
+
+
+
+
 				if(video.finished){
 					video.finished = 'Complete'
 					video.classStyle = 'video-complete'
