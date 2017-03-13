@@ -12,8 +12,17 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
 		function successFunction(videoData){
 			$scope.videoData = videoData
 			// $scope.targetVideo = 
-			console.log(videoData.data[0].id)
-
+			console.log(videoData.data)
+			$scope.videoData.data.map((video, index)=>{
+				if(video.finished){
+					video.finished = 'Complete'
+					video.classStyle = 'video-complete'
+				}else{
+					video.finished = 'Incomplete'
+					video.classStyle = 'video-incomplete'
+				}
+			})
+			console.log($scope.videoData.data[0].classStyle)
 			// $scope.videoToBeTranslatedArray.push(videoData.data)
 			// $scope.tempArray = []
 

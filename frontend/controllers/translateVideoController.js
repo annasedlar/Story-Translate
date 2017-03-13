@@ -9,9 +9,16 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
       		var transcriptString = onLoadData.data[0].transcript
       		// console.log(JSON.parse(transcriptString)[0])
       		var entireTranscript = JSON.parse(transcriptString)
+      		entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
+      		console.log(entireTranscript)
       		$scope.entireTranscript = entireTranscript
       		var timeRangeArray = []
+      	
+			
+
       		$scope.entireTranscript.map((eachTranscript, index)=>{
+      			
+
 				timeRangeArray.push({
 					startTime: Math.floor(eachTranscript.startTime*100),
 					endTime: Math.floor(eachTranscript.endTime*100)
@@ -53,6 +60,14 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 
 	// Adding transcripts to video (shows on the right)
 	$scope.submitEachSection = function(){
+		$scope.entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
+		if($scope.clickedTranscriptIndex > -1){
+	        $scope.entireTranscript[$scope.clickedTranscriptIndex] = {
+	      		startTime: $scope.startTime,
+	        	endTime: $scope.endTime,
+	          	transcript: $scope.transcript,
+	        }
+		}		
 	  var tempRange = []
 	  var timeRangeArray = $scope.timeRange
 	  var startTime = Math.floor($scope.startTime*100)
@@ -104,12 +119,6 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 					transcript: $scope.transcript,
 					postedTime: date.toString().slice(0,21)
 				})    
-			}else{
-	        	$scope.entireTranscript[index] = {
-	      	    	startTime: $scope.startTime,
-	        	  	endTime: $scope.endTime,
-	          		transcript: $scope.transcript,
-	        	}
 			}
 			$scope.clickedTranscriptIndex = -1
 		}
@@ -149,7 +158,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	}
 
   	// send transcript to the backend
-	$scope.submitForm = function(){
+	$scope.saveForm = function(){
 		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
 		$http({
 			method:'POST',
@@ -166,17 +175,64 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   		)
   	} 
 
+	$scope.submitForm = function(){
+		console.log($scope.entireTranscript)
+		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16);
+		$http({
+			method:'POST',
+      		url: transcriptUrl,
+      		data: $scope.entireTranscript
+    	}).then(
+      		function successFunction(data){			
+				var finishedUrl = 'http://localhost:3000/finished/' + $location.$$path.slice(16);
+		// 		console.log(finishedUrl)
+				var dataArray = [1]
+				$http({
+					method:'POST',
+		      		url: finishedUrl,
+		      		data: dataArray
+		    	}).then(
+		      		function successFunction(data){
+		        	console.log(data)
+		        	console.log('worked')
+			      	},
+		    	  	function failedFunction(data){
+			    	    console.log("fail")
+					}
+		  		)  		
+	      	},
+    	  	function failedFunction(data){
+	    	    console.log("fail")
+			}
+  		)
+
+  	}
+
 	$scope.editTranscript = function(index){
 	    $scope.editOrAddButton = 'Edit Transcript'
 	    $scope.addButtonClass = 'btn btn-warning'
-	    $scope.transcript = $scope.entireTranscript[index].transcript
-	    $scope.startTime = $scope.entireTranscript[index].startTime
-	    $scope.endTime = $scope.entireTranscript[index].endTime
-	    $scope.clickedTranscriptIndex = index
+	    $scope.transcript = $scope.entireTranscript[index].transcript;
+	    $scope.startTime = $scope.entireTranscript[index].startTime;
+	    $scope.endTime = $scope.entireTranscript[index].endTime;
+	    $scope.clickedTranscriptIndex = index;
+	    console.log($scope.clickedTranscriptIndex)
 	}
 
 	$scope.deleteTranscript = function(index){
 		$scope.entireTranscript.splice(index, 1)
+		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
+		$http({
+			method:'POST',
+      		url: transcriptUrl,
+      		data: $scope.entireTranscript
+    	}).then(
+      		function successFunction(data){
+        	console.log(data)
+	      	},
+    	  	function failedFunction(data){
+	    	    console.log("fail")
+			}
+  		)
 	}
 
 }]);

@@ -16,7 +16,7 @@ var upload = multer({ dest: 'public/videos' });
 var fs = require('fs');
 
 router.post('/videos', upload.any(), function(req,res,next){
-    console.log(req.body.familyName)
+    console.log(req.files[0])
     var name = req.files[0].originalname;
     var tempPath = req.files[0].path
     var targetPath = 'public/videos/' + name
@@ -90,6 +90,16 @@ router.post('/transcript/:id', function(req,res,next){
         res.json(results)
     })    
 })
+
+router.post('/finished/:id', function(req,res,next){
+    var familyId = req.params.id
+    var updateQuery = 'UPDATE videos SET finished = ? WHERE id = ?';
+    connection.query(updateQuery, [1, familyId], (DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })    
+})
+
 router.get('/transcript/:id', function(req,res,next){
     var selectQuery = 'SELECT transcript FROM videos where id = ?'
     // console.log(req.params.id)
