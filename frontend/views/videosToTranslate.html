@@ -5,30 +5,6 @@
 	<hr/>
 </div>
 
-<table><thead>
-<div class='each-video-row text-center'>
-	<th>Family/Group</th><th>Video Name</th><th>Video Size</th><th> Status</th>
-</div></thead>
-
-<!-- User can click on box for any video and be redirected to the translation page -->
-<<<<<<< HEAD
-<tr ng-repeat="video in videoData.data" class='each-video-row text-center'>
-	<td class='video-data-2 col-xs-3'>{{video.familyName}}</td>
-	<td class='video-data-1 col-xs-3'><a ng-href='#/translateVideo/{{video.id}}'>{{video.name}}</a></td>
-	
-<<<<<<< HEAD
-	<td class='video-data-3 col-xs-3'>{{video.size}}</td>
-	<td class='video-data-4 col-xs-3' ng-class='video.classStyle'>{{video.finished}}
-		<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.id}}'>Complete</a>
-	</td>
-</tr>
-</table>
-=======
-	<div class='video-data-3 col-xs-3'>{{video.size}}</div>
-	<div class='video-data-4 col-xs-3' ng-class='video.classStyle'>{{video.finished}}</div>
-</div>
->>>>>>> parent of c394803... check out video routed
-=======
 
 <div ng-repeat="video in videoData.data" class='each-video-row text-center'>
 	<div class='each-video-description video-data-2 col-xs-3'>{{video.familyName}}</div>
@@ -39,4 +15,4 @@
 	</div>
 	<br/>
 </div>
->>>>>>> 40111b7e16ad239155c68528a53a8b1ced57cba0
+

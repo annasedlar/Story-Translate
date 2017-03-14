@@ -10,8 +10,6 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
 		url: tempUrl
 	}).then(
 		function successFunction(videoData){
-			// console.log(videoData.data)
-
 			videoData.data.sort(function(a, b){
 			    if(a.familyName < b.familyName) return -1;
 			    if(a.familyName > b.familyName) return 1;
@@ -20,10 +18,6 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
 
 			$scope.videoData = videoData
 
-<<<<<<< HEAD
-			
-=======
->>>>>>> 40111b7e16ad239155c68528a53a8b1ced57cba0
 			var tempFamilyName = '';
 			$scope.videoData.data.map((video, index)=>{
 				var myUrl = 'http://localhost:3000/videos/' + video.name
@@ -34,17 +28,17 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
 					video.familyName = ''
 				}else{
 					tempFamilyName = video.familyName
+
 				}
-
-
-
 
 				if(video.finished){
 					video.finished = 'Complete'
 					video.classStyle = 'video-complete'
+					video.checkItOutClass = ''
 				}else{
 					video.finished = 'Incomplete'
 					video.classStyle = 'video-incomplete'
+					video.checkItOutClass = 'displayNone'
 				}
 			})
 			console.log($scope.videoData.data[0].classStyle)

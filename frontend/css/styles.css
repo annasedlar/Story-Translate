@@ -106,14 +106,14 @@ a:hover {
   height: 50px;
 }
 
-/* line 1, ../compass/sass/styles3.scss */
+/* line 1, ../compass/sass/_styles3.scss */
 .modalTitle {
   color: #1794ab;
   font-size: 35px;
   font-family: Avenir;
 }
 
-/* line 7, ../compass/sass/styles3.scss */
+/* line 7, ../compass/sass/_styles3.scss */
 .chooseFileButton {
   color: #1794ab;
   font-family: Avenir;
@@ -121,7 +121,7 @@ a:hover {
   margin: auto;
 }
 
-/* line 15, ../compass/sass/styles3.scss */
+/* line 15, ../compass/sass/_styles3.scss */
 #demoModal {
   padding-top: 70px;
 }
@@ -340,28 +340,17 @@ img {
   right: 20px;
 }
 
-
 /* line 219, ../compass/sass/styles.scss */
-
-/* line 214, ../compass/sass/styles.scss */
 span .header {
   margin-left: 50px;
 }
 
-/* line 218, ../compass/sass/styles.scss */
-
+/* line 223, ../compass/sass/styles.scss */
 .each-actual-transcript {
   clear: both;
 }
-<<<<<<< HEAD
-=======
 
-
-/* line 225, ../compass/sass/styles.scss */
-
-/* line 224, ../compass/sass/styles.scss */
-
+/* line 228, ../compass/sass/styles.scss */
 .displayNone {
   display: none;
 }
->>>>>>> 40111b7e16ad239155c68528a53a8b1ced57cba0
