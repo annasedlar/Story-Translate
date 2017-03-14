@@ -1,4 +1,4 @@
-app.controller('videosToTranslateController',['$scope','$http', function($scope, $http){
+app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
     // $scope.videoToBeTranslated = "http://placehold.it/350x150"
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
@@ -20,9 +20,10 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
 
 			$scope.videoData = videoData
 
-
 			var tempFamilyName = '';
 			$scope.videoData.data.map((video, index)=>{
+				var myUrl = 'http://localhost:3000/videos/' + video.name
+        		video.name = $sce.trustAsResourceUrl(myUrl)
 				if(!index){
 					tempFamilyName = video.familyName
 				}else if(video.familyName.toUpperCase() == tempFamilyName.toUpperCase()){
