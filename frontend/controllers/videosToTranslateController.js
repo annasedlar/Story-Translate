@@ -1,15 +1,12 @@
 app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
-<<<<<<< HEAD
    $scope.videoToBeTranslatedArray = [];
    var colors = [];
     var tempUrl = 'http://localhost:3000/videos'
     // $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
-=======
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
 	var tempUrl = 'http://localhost:3000/videos'
 	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
->>>>>>> 3d5eb1884acefceb75babcf90dd6f9cfc451fa9c
 
     $http({
         method: "GET",
