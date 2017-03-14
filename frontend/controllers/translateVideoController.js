@@ -45,7 +45,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 			        // console.log(eachVideo.path.slice(7))
 			        console.log(tempVideoPath)
         			var myUrl = 'http://localhost:3000/' + tempVideoPath
-        		$scope.pleasWork = $sce.trustAsResourceUrl(myUrl)
+        			$scope.pleasWork = $sce.trustAsResourceUrl(myUrl)
        			}
       		})
     	},

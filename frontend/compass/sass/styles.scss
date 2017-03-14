@@ -75,13 +75,18 @@ a{
     // color: white;
 }
 
+.each-video-description{
+    display: inline-block;
 
+}
 .video-incomplete{
     color:red;
 }
 
 .each-video-row{
-    height:50px;
+    height:300px;
+    clear: both;
+
 }
 
 .family-wrapper{
