@@ -1,17 +1,23 @@
 
-<div class="videosToTranslate">
-	<h1>Which video(s) would you like to lend your skills to?</h1>
-	<h3>Click on any video to start your magic.</h3>
+<div class="videosToTranslate" style="text-align:left">
+	<h1>Videos </h1>
+	<h3>Click a video to start or see translation.</h3>
 	<hr/>
 </div>
 
+<table><thead>
+<div class='each-video-row text-center'>
+	<th>Family/Group</th><th>Video Name</th><th>Video Size</th><th>Status</th>
+</div></thead>
+
 <!-- User can click on box for any video and be redirected to the translation page -->
-<div ng-repeat="video in videoData.data" class='each-video-row text-center'>
-	<div class='video-data-2 col-xs-3'>{{video.familyName}}</div>
-	<div class='video-data-1 col-xs-3'><a ng-href='#/translateVideo/{{video.id}}'>{{video.name}}</a></div>
+<tr ng-repeat="video in videoData.data" class='each-video-row text-center'>
+	<td class='video-data-2 col-xs-3'>{{video.familyName}}</td>
+	<td class='video-data-1 col-xs-3'><a ng-href='#/translateVideo/{{video.id}}'>{{video.name}}</a></td>
 	
-	<div class='video-data-3 col-xs-3'>{{video.size}}</div>
-	<div class='video-data-4 col-xs-3' ng-class='video.classStyle'>{{video.finished}}
-		<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.id}}'>Check Out<br/> Video</a>
-	</div>
-</div>
+	<td class='video-data-3 col-xs-3'>{{video.size}}</td>
+	<td class='video-data-4 col-xs-3' ng-class='video.classStyle'>{{video.finished}}
+		<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.id}}'>Complete</a>
+	</td>
+</tr>
+</table>

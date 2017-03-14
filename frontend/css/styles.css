@@ -5,16 +5,21 @@ img {
 }
 
 /* line 13, ../compass/sass/_styles2.scss */
+span .header {
+  margin-left: 50px;
+}
+
+/* line 17, ../compass/sass/_styles2.scss */
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
 }
 
-/* line 17, ../compass/sass/_styles2.scss */
+/* line 21, ../compass/sass/_styles2.scss */
 .videosToTranslate {
   text-align: center;
 }
 
-/* line 20, ../compass/sass/_styles2.scss */
+/* line 24, ../compass/sass/_styles2.scss */
 .relatedVids {
   height: 350px;
   width: 600px;
@@ -23,7 +28,7 @@ img {
   margin: 10px;
 }
 
-/* line 27, ../compass/sass/_styles2.scss */
+/* line 31, ../compass/sass/_styles2.scss */
 .translations {
   height: 740px;
   width: 430px;
@@ -35,24 +40,24 @@ img {
   position: absolute;
 }
 
-/* line 38, ../compass/sass/_styles2.scss */
+/* line 42, ../compass/sass/_styles2.scss */
 .cool-video-bar {
   width: 100%;
   height: 30px;
   background-color: grey;
 }
 
-/* line 45, ../compass/sass/_styles2.scss */
+/* line 49, ../compass/sass/_styles2.scss */
 .redClass {
   border: 5px solid red;
 }
 
-/* line 49, ../compass/sass/_styles2.scss */
+/* line 53, ../compass/sass/_styles2.scss */
 .greenClass {
   border: 5px solid green;
 }
 
-/* line 57, ../compass/sass/_styles2.scss */
+/* line 61, ../compass/sass/_styles2.scss */
 .my-nav-bar {
   width: 100%;
   height: 50px;
@@ -63,40 +68,40 @@ img {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 68, ../compass/sass/_styles2.scss */
+/* line 72, ../compass/sass/_styles2.scss */
 .my-each-nav {
   display: inline-block;
   width: 20%;
   font-size: 20px;
   letter-spacing: 1px;
 }
-/* line 74, ../compass/sass/_styles2.scss */
+/* line 78, ../compass/sass/_styles2.scss */
 .my-each-nav a {
   color: white;
 }
 
-/* line 79, ../compass/sass/_styles2.scss */
+/* line 83, ../compass/sass/_styles2.scss */
 body {
   background-color: white;
   color: #333333;
 }
 
-/* line 84, ../compass/sass/_styles2.scss */
+/* line 88, ../compass/sass/_styles2.scss */
 a {
   color: grey;
 }
 
-/* line 88, ../compass/sass/_styles2.scss */
+/* line 92, ../compass/sass/_styles2.scss */
 a:hover {
   color: grey;
 }
 
-/* line 93, ../compass/sass/_styles2.scss */
+/* line 97, ../compass/sass/_styles2.scss */
 .video-incomplete {
   color: red;
 }
 
-/* line 97, ../compass/sass/_styles2.scss */
+/* line 101, ../compass/sass/_styles2.scss */
 .each-video-row {
   height: 50px;
 }
@@ -330,11 +335,16 @@ img {
 }
 
 /* line 214, ../compass/sass/styles.scss */
+span .header {
+  margin-left: 50px;
+}
+
+/* line 218, ../compass/sass/styles.scss */
 .each-actual-transcript {
   clear: both;
 }
 
-/* line 220, ../compass/sass/styles.scss */
+/* line 224, ../compass/sass/styles.scss */
 .displayNone {
   display: none;
 }
