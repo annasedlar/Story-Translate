@@ -343,8 +343,3 @@ span .header {
 .each-actual-transcript {
   clear: both;
 }
-
-/* line 224, ../compass/sass/styles.scss */
-.displayNone {
-  display: none;
-}

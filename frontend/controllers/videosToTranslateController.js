@@ -20,7 +20,7 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
 
 			$scope.videoData = videoData
 
-
+			
 			var tempFamilyName = '';
 			$scope.videoData.data.map((video, index)=>{
 				if(!index){
@@ -31,14 +31,15 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
 					tempFamilyName = video.familyName
 				}
 
+
+
+
 				if(video.finished){
-					video.finished = ''
+					video.finished = 'Complete'
 					video.classStyle = 'video-complete'
-					video.checkItOutClass = 'placeholder'
 				}else{
 					video.finished = 'Incomplete'
 					video.classStyle = 'video-incomplete'
-					video.checkItOutClass = 'displayNone'
 				}
 			})
 			console.log($scope.videoData.data[0].classStyle)
@@ -54,17 +55,4 @@ app.controller('videosToTranslateController',['$scope','$http', function($scope,
 			// console.log(videoData)
 		}
 	)
-
-    $scope.videoToBeTranslatedArray = [];
-	var tempUrl = 'http://localhost:3000/videosFinished'
-	$http({
-		method: "GET",
-		url: tempUrl
-	}).then(
-		function successFunction(videoData){
-			$scope.videoData = videoData
-		},
-		function failedFunction(videoData){
-		}
-	)	
 }]);
