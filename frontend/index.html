@@ -21,32 +21,27 @@
     	<script type="text/javascript" src="controllers/videoProductController.js"></script>
         <link rel="stylesheet" href="css/styles.css" type="text/css"/>
         <link href="https://fonts.googleapis.com/css?family=Mouse+Memoirs" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
     </head>
 <body ng-app="app">
-    <div class='my-nav-bar'>
+<!--     <div class='my-nav-bar'>
         <div class='my-each-nav'><a href="#/">Home</a></div>
         <div class='my-each-nav'><a href="#/videosToTranslate">Translate Video</a></div>
         <div class='my-each-nav'><a data-target='demoModal' modal>Upload Video</a></div>
         <div class='my-each-nav'><a href="#/finishedVideos">Finished Videos</a></div>
         <!-- this needs token or account later -->
-        <div id="demoModal" class="modal" ng-controller="uploadRawVideoController">
-            <form ng-submit="submit()">
-                <div>
-                    <label for='' class="modalTitle">Upload video to translate</label>
-                    <div>
-                        <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
-                    </div>
-                       <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
-                </div>
-                    <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
-                <div class="failedUploadMessage">{{failedUpload}}</div>
 
-            </form>
-        </div>
-    </div>
+    </div> 
     
     <div class='container'>
         <ui-view></ui-view>
     </div>
 </body>
 </html>
+
+
+<!-- #00BDB7 turquoise
+#0F1012 kinda black
+#3B4044 grey
+#01827E dark green -->

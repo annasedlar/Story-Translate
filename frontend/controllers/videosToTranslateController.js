@@ -1,5 +1,4 @@
 app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
-    // $scope.videoToBeTranslated = "http://placehold.it/350x150"
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
 	var tempUrl = 'http://localhost:3000/videos'
