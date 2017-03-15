@@ -1,4 +1,9 @@
-app.controller('loginController',
+
+'use strict';
+  
+angular.module('Authentication')
+  
+.controller('loginController',
     ['$scope', '$rootScope', '$location', 'AuthenticationService',
     function ($scope, $rootScope, $location, AuthenticationService) {
         // reset login status

@@ -1,11 +1,17 @@
-var app = angular.module('app', ['ui.router', 'ui.materialize', 'ngCookies']);
+var app = angular.module('app', ['ui.router', 'ui.materialize', 'ngCookies', 'Authentication']);
 
-//declare modules
+// declare modules
 angular.module('Authentication', []);
 angular.module('Home', []);
-angular.module('BasicHttpAuthExample', ['Authentication', 'Home','ngCookies']);
+ 
+angular.module('BasicHttpAuthExample', [
+    'Authentication',
+    'Home',
+    'ngRoute',
+    'ngCookies'
+])
 
-app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', '$AuthenticationService' function($stateProvider, $urlRouterProvider, $sceDelegateProvider, AuthenticationService){
+app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', function($stateProvider, $urlRouterProvider, $sceDelegateProvider){
     // give name to state. in this case, it is 'firstMessage'
     // as a part of the stateProvider, you need to provide a new state by doing $stateProvider.state
     $stateProvider.state('home',{
@@ -57,7 +63,8 @@ app.filter('trustUrl',function($sce){
     }
 })
 
-app.run(['$rootScope', '$location', '$cookieStore', '$http',
+  
+.run(['$rootScope', '$location', '$cookieStore', '$http',
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
