@@ -27,15 +27,17 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
+                    // video.skipClass = 'hide-class'
                 }else if(video.familyName.toUpperCase() == tempFamilyName.toUpperCase()){
                     video.familyName = ''
+                    video.skipClass = 'hide-class'
                 }else{
                     tempFamilyName = video.familyName
-
+                    video.skipClass = 'nothing'
                 }
 
                 if(video.finished){
-                    video.finished = 'Complete'
+                    video.finished = ''
                     video.classStyle = 'video-complete'
                     video.checkItOutClass = ''
                 }else{

@@ -1,6 +1,10 @@
 @import "./styles2.scss";
 @import "./styles3.scss";
 
+$dark-background : rgba(15,16,20,1);
+$corner-background : rgba(43,43,43,1);
+$my-turquoise: rgb(29, 187, 216);
+
 body{
     overflow-x:hidden;
 }
@@ -78,19 +82,12 @@ a{
     // color: white;
 }
 
-.each-video-description{
-    display: inline-block;
 
-}
 .video-incomplete{
     color:red;
 }
 
-.each-video-row{
-    height:300px;
-    clear: both;
 
-}
 
 .family-wrapper{
     position: relative;
@@ -235,8 +232,8 @@ span .header{
 
 
 // HOME PAGE NEW STYLES
-.home-left-wrapper{
-    background-color: rgba(15,16,20,0.95);
+.home-wrapper{
+    background-color: $dark-background;
     // background: linear-gradient(to bottom, #212121 0%,#101112 100%); 
     height:100vh;
     width:100vw;
@@ -249,23 +246,33 @@ span .header{
         margin-left: 50px;
     }
 }
-#ns{
-    position: absolute;
-    top: 80px; 
-    left: 50px;
-}
-.home-right-wrapper{
-    background-color: rgba(43,43,43,1);
+
+.home-corner-wrapper{
+    background-color: $corner-background;
     height:400px;
     width:400px;    
     position: absolute;
-    left:-90px;
+    left:-70px;
     top:-200px;
-    transform:rotate(45deg)
-
+    transform:rotate(45deg);
 }
-// .home-right-wrapper:hover{
-    // opacity: 0.9
+.home-corner-wrapper:hover{
+    opacity: 0.6;
+    cursor:pointer;
+}
+    #ns{
+        position: absolute;
+        top: 80px; 
+        left: 50px;
+    }
+// .spin-this:hover{
+    
+    // background-color: blue;
+    // .home-corner-wrapper{
+    // transform:rotate(45deg);
+    // transform: rotateY(-180deg);
+    // transition: transform 2s;
+    // }
 // }
 
 .github-wrapper{
@@ -322,4 +329,171 @@ span .header{
 .home-page-buttons:hover{
     background-color: rgba(255,255,255,0.3);
     transition: background 0.6s;
+}
+
+
+
+
+// videos to translate
+.each-video-row{
+    height:140px;
+    padding:10px;
+    // width:50%;
+    display: inline-block;
+    // position: relative;
+    // border:1px solid black;
+    // overflow: hidden;
+    // line-height: 147px;
+}
+.card-class{
+    background-color: #F5F5F5;
+    // border: 1px solid white;
+    height:120px;
+    padding:5px;
+    padding-left:10px;
+    // opacity: 0.5;
+}
+.card-class:hover{
+    // border-radius: 5%;
+    // transition:border-radius .5s;
+}
+// name
+.video-data-1{
+    // width:25%;  
+    // position: absolute;
+    // left:0;
+    // top:0;
+    height:20px;
+    // background-color: blue;
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    // margin-bottom: 10px;
+    // color: rgba(255,255,255,0.85);
+    color: white;
+}
+
+// video
+.video-data-2{
+    width:180px;
+    height:110px;
+    position: relative;
+    video{
+        // margin-left: 30px;
+        // border:2px solid white;
+        width:180px;
+        height:110px;
+        // margin-top: 10px;
+        // border-radius: 5%;
+        filter:brightness(100%);
+    } 
+
+    .translate-letter{
+        position: absolute;
+        text-align: center;
+        top:40%;
+        width:180px;
+        z-index: 4;
+        color: white;
+    }
+    // height:300px;   
+}
+.video-data-2:hover{
+    video{
+        filter:brightness(30%);
+        transition:filter 0.5s;
+    }
+    .translate-letter{
+        // color:black;
+    }
+}
+
+
+// complete
+.video-data-3{
+    padding-top:62px;
+    width:50%;  
+    position: absolute;
+    left:50%;
+    text-align: center;
+    top:0;
+    .watch-button{
+        // height:55px;
+        font-size:13px;
+        padding:10px;
+    }    
+    .watch-button:hover{
+        filter:brightness(50%);
+    }
+}
+
+
+// general styling
+.each-video-description{
+    display: inline-block;
+    height:110px;
+
+}
+
+.hide-class{
+    display:none;
+}
+
+.skip-placeholder{
+        height:60px;
+    .horiz-line{
+        height: 30px;
+        border-bottom: 3px solid $my-turquoise;
+        margin-bottom: 30px;            
+    }
+}
+
+.each-family-class{
+    border:1px solid black;
+}
+
+
+
+.card-class:hover{
+    // filter:brightness(85%);
+}
+
+
+// .translate-background{
+body{
+    // background-color: #0F1014;
+
+}
+
+.translate-header{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100px;
+    background-color: rgba(15,16,20,.8);
+    color:white;
+    text-align: center;
+    line-height: 100px;
+    font-size: 33px;
+    font-family: 'Montserrat';
+    color: $my-turquoise;
+    border-bottom: 1px solid $my-turquoise;
+}
+
+.translate-background{
+    margin-top:100px;
+}
+
+.translate-bg{
+    width:100vw;
+    height:100vh;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    img{
+        width:100%;
+        filter:brightness(20%);
+        min-height: 100vh;
+    }
 }
