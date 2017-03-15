@@ -31,26 +31,55 @@
 	</div>
 </div>
 
-<div class="col-sm-6 each-translation-box">
-    <div class='translation-header'>Translation Form:</div>
-    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript'>
-    	<div class="col-sm-4">
-	        {{eachTranscript.startTime}} ~ {{eachTranscript.endTime}}
-	        
-	    </div>
 
-	    <div class="col-sm-4">{{eachTranscript.postedTime}}</div>
-	    <div class='float-right'>
-	    	<button class="btn yellow accent-2 buttonTextBlack1" ng-click="editTranscript($index)">Edit</button>
-	    	<button class="buttonTextBlack btn deep-orange" ng-click="deleteTranscript($index)">Delete</button>
+
+
+<div class="col-sm-6 each-translation-box" style="background-color: black">
+
+
+    <div class='translation-header' style="color:white">Translation Form:</div>
+    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript'>
+
+    <!-- 	<div>
+    			Put this on the left side of each card??
+			<i class="large material-icons" style="float:left;">label_outline</i>
+		</div> -->
+		<!-- <div style="text-align: center">{{eachTranscript.startTime}} ~ 	{{eachTranscript.endTime}} </div> -->
+    	<!-- <div class="col-sm-6">
+	        {{eachTranscript.postedTime}}
+	    </div> -->
+	    <!-- <div class='col-sm-12 each-actual-transcript' style="text-align:center;">{{eachTranscript.transcript}}</div>
+	    <div> -->
+	    	<!-- <div class="col-sm-12" style="text-align: right; padding-top: 20px;">{{eachTranscript.postedTime}}</div> -->
+		    <!-- <button class="btn lime accent-2 buttonTextBlack1" ng-click="editTranscript($index)" style="float: right;">Edit</button>
+		    <button class="buttonTextBlack btn #b71c1c red darken-4" ng-click="deleteTranscript($index)" style="float:right;margin-right:10px;">Delete</button>
+		    <div>
+		    	{{eachTranscript.postedTime}}
+		    </div> -->
+		 	<div class="col-sm-12">
+		 		<div class="col-sm-4">{{eachTranscript.postedTime}}</div>
+		 		<div class="col-sm-4" style="font-weight: bold">{{eachTranscript.startTime}} ~ {{eachTranscript.endTime}}</div> 
+		 		<div class="col-sm-12 transcript-buttons" style="position:absolute;">
+		 			<button class="buttonTextBlack1 btn yellow lighten-1 " ng-click="editTranscript($index)" style="float: right;">Edit</button>
+		    		<button class="buttonTextBlack btn #b71c1c red lighten-1" ng-click="deleteTranscript($index)" style="float:right;margin-right:10px;">Delete</button>
+		    	</div>
+		 	</div>
+		 	<div>
+		 		{{eachTranscript.transcript}}
+		 	</div>
 	    </div>
-	    <div class='col-sm-12 each-actual-transcript'>{{eachTranscript.transcript}}</div>
     </div>
+
+
+
     <form ng-submit='saveForm()'>
-    	<button style="margin-right:0" class="btn btn-primary">Save Session</button>
+    	<button style="margin-right:0" class="waves-effect waves-light btn" ng-click="saveForm()">Save Session</button>
     </form>
     <form ng-submit='submitForm()'>	
-    	<button style="margin-right:0" class="btn btn-primary">Submit Transcript</button>
+    	<button style="margin-right:0;" class="#00bfa5 teal darken-2 waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
     </form>
+
+
+ 
 </div>   
 

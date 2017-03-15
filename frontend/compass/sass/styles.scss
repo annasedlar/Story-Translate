@@ -117,8 +117,46 @@ a{
     text-align: right;
 }
 
+.float-right{
+    position: absolute;
+    right:20px;
+    // text-align: right;
+    // margin-right: 5px;
+    button{
+    }
+}
+
+.family-wrapper{
+    position: relative;
+    height: 50px;
+}
+.familyName{
+    width:40%;
+    display: inline-block;
+    font-size: 20px;
+}
+.familyInput{
+    display: inline-block;
+    width:50% !important;
+    position: absolute;
+    left:40%;
+    margin-right: 10px;
+    top:0;
+}
+
+.edit-family-button{
+    position: absolute;
+    right:0;
+    top:0;
+}
+.inline-block{
+    display: inline-block;
+    text-align: right;
+}
+
 .translate-left-side-wrapper{
     margin-top:20px;
+    background-color: $corner-background;
 }
 
 .buttonTextBlack{
@@ -133,12 +171,12 @@ a{
     color: darkblue;    
     font-size: 11px;
 }
-
 .each-translation-box{
     .each-transcription{
         margin-bottom:20px;
         padding-bottom: 20px;
-        background-color: #F5F5F5 ;
+        // background-color: #F5F5F5;
+        background-color: rgb(29, 187, 216);
     }
 }
 .float-right{
@@ -150,78 +188,12 @@ a{
     }
 }
 
+span .header{
+    margin-left: 50px
+}
+
 .each-actual-transcript{
     clear:both;
-
-}
-
-.family-wrapper{
-	position: relative;
-	height: 50px;
-}
-.familyName{
-	width:40%;
-	display: inline-block;
-	font-size: 20px;
-}
-.familyInput{
-	display: inline-block;
-	width:50% !important;
-	position: absolute;
-	left:40%;
-	margin-right: 10px;
-	top:0;
-}
-
-.edit-family-button{
-	position: absolute;
-	right:0;
-	top:0;
-}
-.inline-block{
-	display: inline-block;
-	text-align: right;
-}
-
-.translate-left-side-wrapper{
-	margin-top:20px;
-}
-
-.buttonTextBlack{
-	// color: lightgrey;
-	width:70px;
-	margin-top: 10px;
-	font-size: 11px;
-}
-.buttonTextBlack1{
-	width:70px;
-	margin-top: 10px;
-	color: darkblue;	
-	font-size: 11px;
-}
-
-.each-translation-box{
-	.each-transcription{
-		margin-bottom:20px;
-		padding-bottom: 20px;
-		background-color: #F5F5F5;
-	}
-}
-.float-right{
-	position: absolute;
-	right:20px;
-	// text-align: right;
-	// margin-right: 5px;
-	button{
-	}
-}
-
-span .header{
-	margin-left: 50px
-}
-
-.each-actual-transcript{
-	clear:both;
 
 }
 
