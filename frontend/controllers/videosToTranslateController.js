@@ -13,6 +13,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
         url: tempUrl
     }).then(
         function successFunction(videoData){
+            console.log(videoData)
             videoData.data.sort(function(a, b){
                 if(a.familyName < b.familyName) return -1;
                 if(a.familyName > b.familyName) return 1;

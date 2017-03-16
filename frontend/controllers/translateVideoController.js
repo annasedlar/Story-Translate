@@ -13,12 +13,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
       		console.log(entireTranscript)
       		$scope.entireTranscript = entireTranscript
       		var timeRangeArray = []
-      	
-			
-
-      		$scope.entireTranscript.map((eachTranscript, index)=>{
-      			
-
+       		$scope.entireTranscript.map((eachTranscript, index)=>{
 				timeRangeArray.push({
 					startTime: Math.floor(eachTranscript.startTime*100),
 					endTime: Math.floor(eachTranscript.endTime*100)
@@ -39,7 +34,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
       		// console.log(videoData)
       		videoData.data.map((eachVideo, index)=>{
        		// console.log(eachVideo)
-       			if(eachVideo.id == paramsId){
+       			if(eachVideo.token == paramsId){
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
 			        // console.log(eachVideo.path.slice(7))
@@ -62,11 +57,16 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	$scope.submitEachSection = function(){
 		$scope.entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
 		if($scope.clickedTranscriptIndex > -1){
+			var date = new Date();
 	        $scope.entireTranscript[$scope.clickedTranscriptIndex] = {
 	      		startTime: $scope.startTime,
 	        	endTime: $scope.endTime,
 	          	transcript: $scope.transcript,
+	          	postedTime: date.toString().slice(0,21)
 	        }
+	        $scope.editOrAddButton = 'Add to Transcript'
+	    	$scope.addButtonClass = 'btn btn-primary'
+	    	$scope.clickedTranscriptIndex = -1
 		}		
 	  var tempRange = []
 	  var timeRangeArray = $scope.timeRange
@@ -141,7 +141,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		$scope.familyName = $scope.tempFamilyName
 		var tempDataToSend = {
 			familyName : $scope.familyName,
-			id: $location.$$path.slice(16)
+			token: $location.$$path.slice(16)
 		}
   	    $http({
 			method:'POST',

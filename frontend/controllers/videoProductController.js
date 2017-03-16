@@ -8,7 +8,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
     	function successFunction(videoData){
     		$scope.videoData = videoData
       		videoData.data.map((eachVideo, index)=>{
-       			if(eachVideo.id == paramsId){
+       			if(eachVideo.token == paramsId){
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
         			var myUrl = 'http://localhost:3000/' + tempVideoPath

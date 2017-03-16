@@ -19,14 +19,14 @@
 	<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row'>
 		<div class='card-panel card-class'>
 			<div class='each-video-description video-data-2' '>
-				<a ng-href='#/translateVideo/{{video.id}}'>
+				<a ng-href='#/translateVideo/{{video.token}}'>
 					<video ng-src="{{video.name}}"></video>
 					<div class='translate-letter'>TRANSLATE</div>
 				</a>
 			</div>
 			<div class='each-video-description video-data-3' ng-class='video.classStyle'>
 				{{video.finished}}
-				<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.id}}'>
+				<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.token}}'>
 					<button class='btn teal accent-4 watch-button'>Watch</button>
 				</a>
 			</div>

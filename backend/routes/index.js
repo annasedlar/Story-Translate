@@ -2,6 +2,9 @@ var express = require('express');
 var router = express.Router();
 var config = require('../config');
 var mysql = require('mysql'); 
+var randtoken = require('rand-token');
+var token = randtoken.uid(40);
+
 var connection = mysql.createConnection({
     host: config.host, 
     user: config.user, 
@@ -22,8 +25,9 @@ router.post('/videos', upload.any(), function(req,res,next){
     var targetPath = 'public/videos/' + name
     var size = req.files[0].size
     var familyName = req.body.familyName
-    var insertQuery = "INSERT INTO videos (name, path, size, familyName) VALUES (?,?,?,?)";
-    connection.query(insertQuery, [name,targetPath,size,familyName], (DBerror, results, fields)=>{
+    var token = randtoken.uid(40);
+    var insertQuery = "INSERT INTO videos (name, path, size, familyName, token) VALUES (?,?,?,?,?)";
+    connection.query(insertQuery, [name,targetPath,size,familyName,token], (DBerror, results, fields)=>{
         if(DBerror) throw DBerror; 
         res.json("uploaded succesfully"); 
         fs.readFile(tempPath, (readError, readContents)=>{
@@ -41,10 +45,10 @@ router.post('/videos', upload.any(), function(req,res,next){
 router.post('/changeFamilyName', function(req,res,next){
     console.log(req.body.familyName)
     console.log(req.body.id)
-    var familyId = req.body.id
+    var token = req.body.token
     var familyName = req.body.familyName
-    var insertQuery = "UPDATE videos SET familyName = ? WHERE id = ?";
-    connection.query(insertQuery, [familyName, familyId], (DBerror, results, fields)=>{
+    var insertQuery = "UPDATE videos SET familyName = ? WHERE token = ?";
+    connection.query(insertQuery, [familyName, token], (DBerror, results, fields)=>{
         if(DBerror) throw DBerror; 
         res.json("uploaded succesfully"); 
     })
@@ -81,27 +85,27 @@ router.post('/thumbnails', upload.any(), function(req,res,next){
 })
 // var transcript = {}
 router.post('/transcript/:id', function(req,res,next){
-    var familyId = req.params.id
+    var token = req.params.id
     var transcriptString = JSON.stringify(req.body)
     // json.Parse
-    var updateQuery = 'UPDATE videos SET transcript = ? WHERE id = ?';
-    connection.query(updateQuery, [transcriptString, familyId], (DBerror, results, fields)=>{
+    var updateQuery = 'UPDATE videos SET transcript = ? WHERE token = ?';
+    connection.query(updateQuery, [transcriptString, token], (DBerror, results, fields)=>{
         if(DBerror) throw DBerror; 
         res.json(results)
-    })    
+    })
 })
 
 router.post('/finished/:id', function(req,res,next){
-    var familyId = req.params.id
-    var updateQuery = 'UPDATE videos SET finished = ? WHERE id = ?';
-    connection.query(updateQuery, [1, familyId], (DBerror, results, fields)=>{
+    var token = req.params.id
+    var updateQuery = 'UPDATE videos SET finished = ? WHERE token = ?';
+    connection.query(updateQuery, [1, token], (DBerror, results, fields)=>{
         if(DBerror) throw DBerror; 
         res.json(results)
     })    
 })
 
 router.get('/transcript/:id', function(req,res,next){
-    var selectQuery = 'SELECT transcript FROM videos where id = ?'
+    var selectQuery = 'SELECT transcript FROM videos where token = ?'
     // console.log(req.params.id)
     connection.query(selectQuery, [req.params.id], (DBerror, results, fields)=>{
         if(DBerror) throw DBerror; 
