@@ -126,12 +126,12 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	
   	$scope.startTimeFunc = function(){
     	var theVid = document.getElementById("theVid")
-    	$scope.startTime = theVid.currentTime.toFixed(2)
+    	$scope.startTime = theVid.currentTime.toFixed(0)
     	// theVid.currentTime = 5
   	}	 
   	$scope.endTimeFunc = function(){
 		var theVid = document.getElementById("theVid")
-		var endTempTime = theVid.currentTime.toFixed(2);
+		var endTempTime = theVid.currentTime.toFixed(0);
 		if(endTempTime > $scope.startTime){
 			$scope.endTime = endTempTime
 		}
