@@ -1,4 +1,5 @@
 <div class="entireTranslateVideoWrapper">
+
 	<div class="col-sm-6 translate-left-side-wrapper">
 		<div class='family-wrapper'>
 	 	<div class='familyName'>{{familyName}}</div>
@@ -15,7 +16,6 @@
 			<button ng-click="startTimeFunc()" class="waves-effect waves-light btn">Set Start Time</button>
 		    <button class="waves-effect waves-light btn" ng-click="endTimeFunc()">Set End Time</button> 
 		    {{invalidRange}}
-		    <div>&nbsp;</div>
 		</div>   
 		<!-- <div class='cool-video-bar'> -->
 			<!-- <div class='start-end-range'></div> -->
@@ -24,15 +24,22 @@
 		    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 			    <div class="new-sections">
 				  <div class="startTime">Start Time: {{startTime}}</div>
+				  <br>
 				  <div class="endTime">End Time: {{endTime}}</div>
-			        <TEXTAREA NAME="transcript" COLS=70 ROWS=5 ng-model="transcript"/>
+				  	<div>&nbsp;</div>
+			        <TEXTAREA NAME="transcript" COLS=70 ROWS=5 ng-model="transcript" class="textAreaInput"/>
 			        <button ng-class="addButtonClass">{{editOrAddButton}}</button>
+		
 			    </div>
 		   </form>
 		</div>
 	</div>
+
+
+
 	<div class="col-sm-6 each-translation-box">
-	    <div class='translation-header'>Translation Form:</div>
+	    <div class='translation-header'>Translation Form</div>
+	    <hr>
 	    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript'>
 		 	<div class="col-sm-12">
 		 		<div class="col-sm-4">{{eachTranscript.postedTime}}</div>
@@ -48,7 +55,7 @@
 		</div>
 	</div> 
 	    <form ng-submit='saveForm()'>
-	    	<button style="margin-right:0" class="waves-effect waves-light btn" ng-click="saveForm()">Save Session</button>
+	    	<button style="margin-right: 0;" class="waves-effect waves-light btn" ng-click="saveForm()">Save Session</button>
 	    </form>
 	    <form ng-submit='submitForm()'>	
 	    	<button style="margin-right:0;" class="#00bfa5 teal darken-2 waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
