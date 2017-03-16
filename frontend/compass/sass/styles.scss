@@ -156,7 +156,9 @@ a{
 
 .translate-left-side-wrapper{
     margin-top:20px;
-    background-color: $corner-background;
+    .familyName, .startTime, .endTime{
+        color:white;
+    }
 }
 
 .buttonTextBlack{
@@ -171,13 +173,28 @@ a{
     color: darkblue;    
     font-size: 11px;
 }
+.translation-header{
+    color: white;
+}
+.entireTranslateVideoWrapper{
+    background-color: #212121;
+}
 .each-translation-box{
+    // background-color: #212121;
+    // height: 100vw;
+    // width: 50vw;
     .each-transcription{
         margin-bottom:20px;
         padding-bottom: 20px;
-        // background-color: #F5F5F5;
-        background-color: rgb(29, 187, 216);
+        background-color: #424242;
+        color: white;
     }
+        .transcript-buttons{
+            position: absolute;
+        }
+        .timeRange{
+            font-weight: bold;
+        }
 }
 .float-right{
     position: absolute;
@@ -302,8 +319,6 @@ span .header{
     background-color: rgba(255,255,255,0.3);
     transition: background 0.6s;
 }
-
-
 
 
 // videos to translate
