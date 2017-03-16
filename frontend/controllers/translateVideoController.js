@@ -51,7 +51,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	$scope.entireTranscript = [];
 	$scope.clickedTranscriptIndex=-1 
 	$scope.editOrAddButton = 'Add to Transcript'
-	$scope.addButtonClass = 'btn btn-primary'
+	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
 
 	// Adding transcripts to video (shows on the right)
 	$scope.submitEachSection = function(){
@@ -65,7 +65,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	          	postedTime: date.toString().slice(0,21)
 	        }
 	        $scope.editOrAddButton = 'Add to Transcript'
-	    	$scope.addButtonClass = 'btn btn-primary'
+	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
 	    	$scope.clickedTranscriptIndex = -1
 		}		
 	  var tempRange = []
@@ -109,7 +109,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	    })
 	    $scope.timeRange = timeRangeArray;
 			$scope.editOrAddButton = 'Add to Transcript'
-	    	$scope.addButtonClass = 'btn btn-primary'
+	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
 			var index = $scope.clickedTranscriptIndex
 			var date = new Date();
 	        if(index == -1){
@@ -210,7 +210,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 
 	$scope.editTranscript = function(index){
 	    $scope.editOrAddButton = 'Edit Transcript'
-	    $scope.addButtonClass = 'btn btn-warning'
+	    $scope.addButtonClass = 'btn #ff6f00 amber darken-4'
 	    $scope.transcript = $scope.entireTranscript[index].transcript;
 	    $scope.startTime = $scope.entireTranscript[index].startTime;
 	    $scope.endTime = $scope.entireTranscript[index].endTime;
