@@ -11,16 +11,16 @@
 <!-- </div> -->
 <a href='https://www.newstorycharity.org/' target='_blank'><div id='ns'><img src="/images/new-story-logo.png" style="border: none;width:200px;"/></div></a>
 
-<div style="position:absolute; left:0; width:100%; text-align:center; top:40vh; font-size:45px; font-weight:900; margin-top: 20px; color:rgb(29, 187, 216); font-family: 'Montserrat'">Video Translation<div style="font-size: 28px">Login</div></div>
+<div style="position:absolute; left:0; width:100%; text-align:center; top:40vh; font-size:45px; font-weight:900; margin-top: 20px; color:rgb(29, 77, 156); font-family: 'Montserrat'">Video Translation<div style="font-size: 28px">Login</div></div>
 
-<div style="margin:auto; text-align:center; background-color: #0f1014; position: relative; margin-top: 60vh; z-index: 100; color:white;  height: 200px; width: 500px">
+<div style="margin:auto; text-align:center; position: relative; margin-top: 60vh; z-index: 100; color:white;  height: 200px; width: 500px">
     <div ng-show="error" class="alert alert-danger">{{error}}</div>
     <form name="form" ng-submit="login()" role="form">
         <div class="form-group">
             <label for="username">Username</label>
             <i class="fa fa-key"></i>
             <input type="text" name="username" id="username" class="form-control" ng-model="username" required />
-            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+            <span ng-show="form.username.$pristine && form.username.$error.required" class="help-block">Username is required</span>
         </div>
         <div class="form-group">
             <label for="password">Password</label>

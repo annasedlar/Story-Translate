@@ -142,5 +142,20 @@ router.get('/videosByFamilyName/:id', function(req,res,next){
         res.json(results)
     })
 })
+
+router.post('/deleteVideo', function(req,res,next){
+    var selectQuery = 'DELETE FROM videos WHERE token = ?'
+    var token = req.body.token;
+    connection.query(selectQuery, [token],(DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })    
+})
+
+
+
+
 module.exports = router;
+
+
 

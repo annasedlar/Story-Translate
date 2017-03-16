@@ -25,7 +25,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             var tempFamilyName = '';
             $scope.videoData.data.map((video, index)=>{
                 var myUrl = 'http://localhost:3000/videos/' + video.name
-               video.name = $sce.trustAsResourceUrl(myUrl)
+                video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
                     // video.skipClass = 'hide-class'
@@ -46,6 +46,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                     video.classStyle = 'video-incomplete'
                     video.checkItOutClass = 'displayNone'
                 }
+
             })
             console.log($scope.videoData.data[0].classStyle)
             // $scope.videoToBeTranslatedArray.push(videoData.data)
@@ -60,4 +61,24 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             // console.log(videoData)
         }
     )
+
+                $scope.deleteVideo = function(video){
+                    console.log(tempDataToSend)
+                    var tempDataToSend = {
+                        token: video.token
+                    }
+                    console.log(tempDataToSend.token)
+                    $http({
+                        method:'POST',
+                        url: 'http://localhost:3000/deleteVideo/',
+                        data: tempDataToSend
+                    }).then(
+                        function successFunction(data){
+                            console.log(data)
+                          },
+                        function failedFunction(data){
+                            console.log("fail")
+                        }
+                    )
+                }    
 }]);
