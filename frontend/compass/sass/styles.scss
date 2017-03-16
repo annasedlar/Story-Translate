@@ -176,16 +176,18 @@ a{
 .entireTranslateVideoWrapper{
     background-color: #212121;
 }
-
+body{
+    background-color: #212121;    
+}
 .translate-left-side-wrapper{
     margin-top: 20px;
-    padding-left: 30px;
+    // padding-left: 30px;
     .familyName, .startTime, .endTime{
         color: white;
     }
 }
 .each-translation-box{
-    height: 100vw;
+    height: 100vh;
     margin-top: 20px;
     .each-transcription{
         margin-bottom:20px;

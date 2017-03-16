@@ -1,4 +1,4 @@
-<div class="entireTranslateVideoWrapper">
+<div class="container-fluid entireTranslateVideoWrapper">
 
 	<div class="col-sm-6 translate-left-side-wrapper">
 		<div class='family-wrapper'>
@@ -53,13 +53,15 @@
 		 		{{eachTranscript.transcript}}
 		 	</div>
 		</div>
-	</div> 
-	    <form ng-submit='saveForm()'>
+		<form ng-submit='saveForm()' style='display:inline-block; '>
 	    	<button style="margin-right: 0;" class="waves-effect waves-light btn" ng-click="saveForm()">Save Session</button>
 	    </form>
-	    <form ng-submit='submitForm()'>	
+	    <form ng-submit='submitForm()' style='display:inline-block; '>	
 	    	<button style="margin-right:0;" class="#00bfa5 teal darken-2 waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
 	    </form>
+	</div> 
+	    
 	</div>  
 </div> 
+
 
