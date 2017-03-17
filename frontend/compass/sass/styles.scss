@@ -1,5 +1,6 @@
 @import "./styles2.scss";
 @import "./styles3.scss";
+@import "./styles4.scss";
 
 // $dark-background : rgba(15,16,20,1);
 $dark-background : rgba(180,180,180,1);
@@ -21,23 +22,14 @@ body{
 .videosToTranslate{
     text-align: center;
 }
-.relatedVids{
-    height: 350px;
-    width: 600px;
-    border: 1px solid black;
-    float: left;
-    margin: 10px;
-}
-.translations{
-    height: 740px;
-    width: 430px;
-    border: 1px solid black;
-    float: right;
-    margin: 30px;
-    right: 0px;
-    top: 70px;
-    position: absolute;
-}
+// .relatedVids{
+//     height: 350px;
+//     width: 600px;
+//     border: 1px solid black;
+//     float: left;
+//     margin: 10px;
+// }
+
 
 .cool-video-bar{
     width:100%;
@@ -203,6 +195,7 @@ body{
 .each-translation-box{
     // height: 100vh;
     margin-top: 20px;
+    min-height:150px;
     .each-transcription{
         background-color: rgba(200,200,200,1);
         box-shadow: 4px 4px 1px rgb(150,150,150);

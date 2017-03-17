@@ -29,8 +29,8 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      			var tempSceThing = $sce.trustAsResourceUrl(myUrl)	
 				      			var finishedClass = ''
 				      			// var editUrl = ''
-				      			var editUrl = '#/translateVideo/' + video.id 
-				      			var selectUrl = '#/videoProduct/' + video.id 
+				      			var editUrl = '#/translateVideo/' + video.token
+				      			var selectUrl = '#/videoProduct/' + video.token 
 				      			var showOrNot = false
 				      			if(video.finished){
 				      				finishedClass = 'greenClass'
@@ -71,7 +71,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
   	var video = document.getElementById('productVideoPlaying')
   	// console.dir(videoPlaying.currentTime)
   	
-  	$scope.currentTranscript = "Translation: "
+  	$scope.currentTranscript = ""
 
   	var displayInterval = $interval(function(){
   		var videoCurrentTime = Math.floor(video.currentTime*100)
@@ -80,7 +80,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
   			// console.log(video)
   			// console.log(video.startTime)
   			if((videoCurrentTime > video.startTime * 100)&&(videoCurrentTime < video.endTime * 100)){
-  				$scope.currentTranscript = "Translation: " +video.transcript
+  				$scope.currentTranscript = video.transcript
   				// console.log($scope.)
   				console.log(video.transcript)
   			}else{

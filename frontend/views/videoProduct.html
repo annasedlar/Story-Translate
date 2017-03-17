@@ -1,29 +1,42 @@
 <a href='/'><div class='go-home'><span class='glyphicon glyphicon-home'></span></div></a>
-<div class="container">
-	{{test}}
-	<div class="col-sm-4 relatedVids">
-		<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls autoplay loop width="100%"/>
-		<div>{{currentTranscript}}</div>
+<div class="container-fluid entireProductVideoWrapper">
+	<div class="col-sm-6 relatedVids">
+		<div>{{familyName}}</div>
+		<div class='video-wrapper'>
+			<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls autoplay loop width="100%"/>
+			<div class='current-transcript'>{{currentTranscript}}</div>
+		</div>
 		<br />
-		<h4>Green Box = Translation Complete, Red Box = needs work</h4>
+		<h4>Related: </h4>
 		
 		<div ng-repeat='video in familyVideoHTML'>
 			<div>
 				{{video.finished}}
 			</div>
 			<div ng-class='video.finishedClass'>
-				<video ng-src="{{video.sce}}" type="video/mp4" controls width="50%" />
+				<video ng-src="{{video.sce}}" width="25%" />
 			</div>
 			<a ng-href='{{video.editUrl}}'><button class='btn btn-success'>Edit</button></a>	
 			<a ng-show='video.showOrNot' ng-href='{{video.selectUrl}}'><button class='btn btn-primary'>Select</button></a>
 		</div>
 	</div>
-	<div class="col-sm-4 translations">
-		<h3>Start | End | Transcript</h3>
-		<div ng-repeat='transcript in transcriptHTML'>
-			{{transcript.startTime}} &nbsp;&nbsp;
-			{{transcript.endTime}} &nbsp;&nbsp;
-			{{transcript.transcript}}
+
+
+	<div class="col-sm-6 translations">
+		<div>Transcript</div>
+		<div class='transcript-wrapper'>
+			<div ng-repeat='transcript in transcriptHTML' class='row'>
+				<div class='col-sm-2'>
+					{{transcript.startTime}} &nbsp; ~ &nbsp; 
+					{{transcript.endTime}} &nbsp;&nbsp;
+				</div>
+				<div class='col-sm-10'>
+					{{transcript.transcript}}
+				</div>
+			</div>
 		</div>
 	</div>	
+
+
+
 </div>
