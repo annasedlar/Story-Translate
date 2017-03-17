@@ -16,7 +16,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
        		$scope.entireTranscript.map((eachTranscript, index)=>{
 				timeRangeArray.push({
 					startTime: Math.floor(eachTranscript.startTime*100),
-					endTime: Math.floor(eachTranscript.endTime*100)
+					endTime: Math.floor(eachTranscript.endTime*100),
+					// timeFrame: timeFrame.toString()
 				})				
 			})
 			$scope.timeRange = timeRangeArray
@@ -58,11 +59,19 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		$scope.entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
 		if($scope.clickedTranscriptIndex > -1){
 			var date = new Date();
+			var day = (date.getUTCDate()).toString();
+			var month = (date.getMonth()+1).toString(); 
+			var year = (date.getUTCFullYear()).toString(); 
+
+			var seconds = date.getSeconds();
+			var minutes = date.getMinutes(); 
+			var timeFrame = minutes+':'+seconds
 	        $scope.entireTranscript[$scope.clickedTranscriptIndex] = {
 	      		startTime: $scope.startTime,
 	        	endTime: $scope.endTime,
 	          	transcript: $scope.transcript,
-	          	postedTime: date.toString().slice(0,21)
+	          	postedTime: month+'/'+day+'/'+year
+	          	
 	        }
 	        $scope.editOrAddButton = 'Add to Transcript'
 	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
@@ -112,12 +121,18 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
 			var index = $scope.clickedTranscriptIndex
 			var date = new Date();
+			var day = (date.getUTCDate()).toString();
+			var month = (date.getMonth()+1).toString(); 
+			var year = (date.getUTCFullYear()).toString(); 
+			var seconds = date.getSeconds();
+			var minutes = date.getMinutes(); 
+			var timeFrame = minutes+':'+seconds
 	        if(index == -1){
 	        	$scope.entireTranscript.push({
 					startTime: $scope.startTime,
 					endTime: $scope.endTime,
 					transcript: $scope.transcript,
-					postedTime: date.toString().slice(0,21)
+					postedTime: month+'/'+day+'/'+year
 				})    
 			}
 			$scope.clickedTranscriptIndex = -1
@@ -128,6 +143,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     	var theVid = document.getElementById("theVid")
     	$scope.startTime = theVid.currentTime.toFixed(0)
     	// theVid.currentTime = 5
+    	theVid.play(); 
   	}	 
   	$scope.endTimeFunc = function(){
 		var theVid = document.getElementById("theVid")
@@ -135,6 +151,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		if(endTempTime > $scope.startTime){
 			$scope.endTime = endTempTime
 		}
+		theVid.pause(); 
   	}
   	$scope.rewind = function(){
     	var theVid = document.getElementById("theVid")
@@ -184,6 +201,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
       		function successFunction(data){
         	console.log(data)
         	console.log("form submitted!")
+        	$scope.submissionStatus = "Form Saved Successfully"
 	      	},
     	  	function failedFunction(data){
 	    	    console.log("fail")
@@ -209,11 +227,13 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		      		data: dataArray
 		    	}).then(
 		      		function successFunction(data){
-		        	console.log(data)
-		        	console.log('worked')
-			      	},
+			        	console.log(data)
+			        	console.log('worked')
+			        	$scope.submissionStatus = "Form submission success"
+				    },
 		    	  	function failedFunction(data){
 			    	    console.log("fail")
+			    	    $scope.submissionStatus = "Form submission NOT successful, please try again"
 					}
 		  		)  		
 	      	},
@@ -235,7 +255,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	}
 
 	$scope.deleteTranscript = function(index){
-		var deleteThis = confirm('Delete transcript?');
+		var deleteThis = confirm('Are you sure you want to delete this translation?');
 		if(deleteThis){
 			$scope.entireTranscript.splice(index, 1)
 			var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
