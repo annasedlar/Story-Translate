@@ -92,6 +92,9 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	        $scope.editOrAddButton = 'Add to Transcript'
 	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
 	    	$scope.clickedTranscriptIndex = -1
+	    	$scope.transcript = ''
+			$scope.startTimes = '00:00'
+			$scope.endTimes = '00:00'
 		}		
 	  var tempRange = []
 	  var timeRangeArray = $scope.timeRange
@@ -167,11 +170,17 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 					startMinsSecs: startMinutes+":"+startSeconds,
 					endMinsSecs: endMinutes+":"+endSeconds
 				})    
+
 			}
 			$scope.clickedTranscriptIndex = -1
-		}else{
-	    	$scope.invalidRange = "Your time range is invalid, please reset"
+			$scope.transcript = ''
+			$scope.startTimes = '00:00'
+			$scope.endTimes = '00:00'
+			// document.getElementById('translation-form').reset();
 		}
+		// else{
+	    	// $scope.invalidRange = "Your time range is invalid, please reset"
+		// }
 	}	
   	
   	$scope.startTimeFunc = function(){
@@ -195,19 +204,20 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		var endTempTime = theVid.currentTime.toFixed(0);
 		if(endTempTime > $scope.startTime){
 			$scope.endTime = endTempTime
+			var endMinutes = Math.floor($scope.endTime / 60);
+			if(endMinutes < 10){
+				endMinutes =  "0"+endMinutes;
+			}
+			var endSeconds = Math.floor($scope.endTime - endMinutes * 60);
+			if(endSeconds < 10){
+				endSeconds = "0"+ endSeconds;
+			}
+			$scope.endMins = endMinutes
+			$scope.endSecs = endSeconds
+			$scope.endTimes = endMinutes+":"+endSeconds
+			theVid.pause(); 
 		}
-		var endMinutes = Math.floor($scope.endTime / 60);
-		if(endMinutes < 10){
-			endMinutes =  "0"+endMinutes;
-		}
-		var endSeconds = Math.floor($scope.endTime - endMinutes * 60);
-		if(endSeconds < 10){
-			endSeconds = "0"+ endSeconds;
-		}
-		$scope.endMins = endMinutes
-		$scope.endSecs = endSeconds
-		$scope.endTimes = endMinutes+":"+endSeconds
-		theVid.pause(); 
+		
   	}
   	$scope.rewind = function(){
     	var theVid = document.getElementById("theVid")
@@ -307,7 +317,32 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	    $scope.startTime = $scope.entireTranscript[index].startTime;
 	    $scope.endTime = $scope.entireTranscript[index].endTime;
 	    $scope.clickedTranscriptIndex = index;
-	    console.log($scope.clickedTranscriptIndex)
+	    var endTempTime = $scope.endTime
+	    	if(endTempTime > $scope.startTime){
+			$scope.endTime = endTempTime
+			var endMinutes = Math.floor($scope.endTime / 60);
+			if(endMinutes < 10){
+				endMinutes =  "0"+endMinutes;
+			}
+			var endSeconds = Math.floor($scope.endTime - endMinutes * 60);
+			if(endSeconds < 10){
+				endSeconds = "0"+ endSeconds;
+			}
+			$scope.endMins = endMinutes
+			$scope.endSecs = endSeconds
+			$scope.endTimes = endMinutes+":"+endSeconds
+		}
+		var startMinutes = Math.floor($scope.startTime / 60);
+		if(startMinutes < 10){
+			startMinutes = '0'+ startMinutes;
+		}
+		var startSeconds = Math.floor($scope.startTime - startMinutes * 60);
+		if(startSeconds < 10){
+			startSeconds = "0"+ startSeconds;
+		}
+		$scope.startMins = startMinutes
+		$scope.startSeconds = startSeconds
+		$scope.startTimes = startMinutes+":"+startSeconds		
 	}
 
 	$scope.deleteTranscript = function(index){
