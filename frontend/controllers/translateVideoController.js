@@ -136,7 +136,23 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 			$scope.endTime = endTempTime
 		}
   	}
-
+  	$scope.rewind = function(){
+    	var theVid = document.getElementById("theVid")
+    	theVid.currentTime -= 3
+    	theVid.currentTime = theVid.currentTime
+  	}	 
+  	$scope.forward = function(){
+    	var theVid = document.getElementById("theVid")
+    	theVid.currentTime += 3
+  	}	   	
+  	$scope.pause = function(){
+    	var theVid = document.getElementById("theVid")
+    	theVid.pause();
+  	}
+  	$scope.play = function(){
+    	var theVid = document.getElementById("theVid")
+    	theVid.play();
+  	}	   	  	  		   	  	
 	$scope.changeFamilyName = function(){
 		$scope.familyName = $scope.tempFamilyName
 		var tempDataToSend = {
@@ -219,20 +235,23 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	}
 
 	$scope.deleteTranscript = function(index){
-		$scope.entireTranscript.splice(index, 1)
-		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
-		$http({
-			method:'POST',
-      		url: transcriptUrl,
-      		data: $scope.entireTranscript
-    	}).then(
-      		function successFunction(data){
-        	console.log(data)
-	      	},
-    	  	function failedFunction(data){
-	    	    console.log("fail")
-			}
-  		)
+		var deleteThis = confirm('Delete transcript?');
+		if(deleteThis){
+			$scope.entireTranscript.splice(index, 1)
+			var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
+			$http({
+				method:'POST',
+	      		url: transcriptUrl,
+	      		data: $scope.entireTranscript
+	    	}).then(
+	      		function successFunction(data){
+	        	console.log(data)
+		      	},
+	    	  	function failedFunction(data){
+		    	    console.log("fail")
+				}
+	  		)
+    	}
 	}
 
 }]);

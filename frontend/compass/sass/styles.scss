@@ -103,6 +103,8 @@ a{
     left:40%;
     margin-right: 10px;
     top:0;
+    color:black;
+    font-size: 17px !important;
 }
 
 .edit-family-button{
@@ -155,20 +157,28 @@ a{
 
 .buttonTextBlack{
     // color: lightgrey;
-    width:70px;
+    width:45px;
     margin-top: 10px;
     font-size: 11px;
+    color: black;
+    &:hover{
+        filter:invert(20%);
+    }    
 }
 .buttonTextBlack1{
-    width:70px;
-    margin-top: 10px;
-    color: darkblue;    
+    width:45px;
+    margin-top: 10px; 
+    color: black;
     font-size: 11px;
+    &:hover{
+        filter:invert(20%);
+    }
 }
 .textAreaInput{
-    color: white;
+    color: black;
     border: 2px solid $my-turquoise;
     border-radius: 5px;
+
 }
 .translation-header{
     // color: white;
@@ -176,6 +186,9 @@ a{
 }
 .entireTranslateVideoWrapper{
     // background-color: $dark-background;
+}
+textarea{
+    height:auto;
 }
 body{
     

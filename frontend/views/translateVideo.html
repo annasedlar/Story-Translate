@@ -1,8 +1,7 @@
 <a href='/'><div class='go-home'><span class='glyphicon glyphicon-home'></span></div></a>
-
+<a href='#/videosToTranslate'><div class='go-home go-home2'><span class='glyphicon glyphicon-list-alt'></span></div></a>
 
 <div class="container-fluid entireTranslateVideoWrapper">
-
 	<div class="col-sm-6 translate-left-side-wrapper">
 		<div class='family-wrapper'>
 	 	<div class='familyName'>{{familyName}}</div>
@@ -12,13 +11,18 @@
 	 	</form>
 		</div>
 
-		<video ng-src="{{pleasWork}}" type="video/mp4" controls autoplay loop id="theVid" width="100%"/>
+		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%"/>
 
 
 	    <div>
+	    	
 			<button ng-click="startTimeFunc()" class="waves-effect waves-light btn">Set Start Time</button>
 		    <button class="waves-effect waves-light btn" ng-click="endTimeFunc()">Set End Time</button> 
 		    {{invalidRange}}
+		    <button ng-click="rewind()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-backward'></span></button>
+		    <button ng-click="pause()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-pause'></span></button>
+		    <button ng-click="play()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-play'></span></button>
+		    <button ng-click="forward()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-forward'></span></button>
 		</div>   
 		<!-- <div class='cool-video-bar'> -->
 			<!-- <div class='start-end-range'></div> -->
@@ -30,7 +34,7 @@
 				  <br>
 				  <div class="endTime">End Time: {{endTime}}</div>
 				  	<div>&nbsp;</div>
-			        <TEXTAREA NAME="transcript" COLS=70 ROWS=5 ng-model="transcript" class="textAreaInput"/>
+			        <textarea name="transcript" rows='5' ng-model="transcript" class="textAreaInput"/>
 			        <button ng-class="addButtonClass">{{editOrAddButton}}</button>
 			    </div>
 		   </form>
@@ -47,8 +51,12 @@
 		 		<div class="col-sm-4">{{eachTranscript.postedTime}}</div>
 		 		<div class="col-sm-4 timeRange">{{eachTranscript.startTime}} ~ {{eachTranscript.endTime}}</div> 
 		 		<div class="col-sm-12 transcript-buttons">
-		 			<button class="buttonTextBlack1 btn yellow lighten-1 " ng-click="editTranscript($index)" style="float: right;">Edit</button>
-		    		<button class="buttonTextBlack btn #b71c1c red lighten-1" ng-click="deleteTranscript($index)" style="float:right;margin-right:10px;">Delete</button>
+		 			
+		    		<button class="buttonTextBlack btn #b71c1c red lighten-1" ng-click="deleteTranscript($index)" style="float:right;">
+		    		<span style='font-size:15px;' class='glyphicon glyphicon-trash'></span></button>
+		    		<button class="buttonTextBlack1 btn yellow lighten-1 " ng-click="editTranscript($index)" style="float: right;margin-right:5px;">
+		    			<span style='font-size:15px;' class='glyphicon glyphicon-pencil'></span>
+		    		</button>
 		    	</div>
 		 	</div>
 		 	<div>
@@ -56,10 +64,10 @@
 		 	</div>
 		</div>
 		<form ng-submit='saveForm()' style='display:inline-block; '>
-	    	<button style="margin-right: 0;" class="waves-effect waves-light btn" ng-click="saveForm()">Save Session</button>
+	    	<button style="margin-right: 0;" class="#00bfa5 waves-effect btn" ng-click="saveForm()">Save Session</button>
 	    </form>
 	    <form ng-submit='submitForm()' style='display:inline-block; '>	
-	    	<button style="margin-right:0;" class="#00bfa5 teal darken-2 waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
+	    	<button style="margin-right:0;" class="blue waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
 	    </form>
 	</div> 
 	    
@@ -67,3 +75,4 @@
 </div> 
 
 
+<!-- #00bfa5 teal darken-2 -->
