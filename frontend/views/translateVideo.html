@@ -1,5 +1,7 @@
-<a href='/'><div class='go-home'><span class='glyphicon glyphicon-home'></span></div></a>
-<a href='#/videosToTranslate'><div class='go-home go-home2'><span class='glyphicon glyphicon-list-alt'></span></div></a>
+<div style="float:left">
+	<a href='/'><div class='go-home'><span class='glyphicon glyphicon-home'></span></div></a>
+	<a href='#/videosToTranslate'><div class='go-home go-home2'><span class='glyphicon glyphicon-list-alt'></span></div></a>
+</div>
 
 <div class="container-fluid entireTranslateVideoWrapper">
 	<div class="col-sm-6 translate-left-side-wrapper">
@@ -11,27 +13,27 @@
 	 	</form>
 		</div>
 
-		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%"/>
+		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%" style="border:1px solid black"/>
 
 
-	    <div>
-	    	
-			<button ng-click="startTimeFunc()" class="waves-effect waves-light btn">Set Start Time</button>
-		    <button class="waves-effect waves-light btn" ng-click="endTimeFunc()">Set End Time</button> 
-		    {{invalidRange}}
-		    <button ng-click="rewind()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-backward'></span></button>
-		    <button ng-click="pause()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-pause'></span></button>
-		    <button ng-click="play()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-play'></span></button>
-		    <button ng-click="forward()" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-forward'></span></button>
+	    <div class="col-sm-12">
+				<button ng-click="startTimeFunc()" class="waves-effect waves-light btn">Set Start</button>
+			    <button class="waves-effect waves-light btn" ng-click="endTimeFunc()">Set End</button> 
+
+			    <button ng-click="rewind()" class="waves-effect waves-light btn" style="background-color:blue"><span class='glyphicon glyphicon-backward'></span></button>
+			    <button ng-click="pause()"  style="background-color:blue" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-pause'></span></button>
+			    <button ng-click="play()"  style="background-color:blue" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-play'></span></button>
+			    <button ng-click="forward()"  style="background-color:blue" class="waves-effect waves-light btn"><span class='glyphicon glyphicon-forward'></span></button>
+			<div class="row">{{invalidRange}}</div>
 		</div>   
 		<!-- <div class='cool-video-bar'> -->
 			<!-- <div class='start-end-range'></div> -->
 		<!-- </div> -->
-		<div style="overflow-y:scroll; margin-top:30px">
+		<div class="col-sm-12" style="overflow-y:scroll; margin-top:60px">
 		    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 			    <div class="new-sections">
 				  <div class="startTime">Start Time: {{startTimes}}</div>
-				  <br>
+				  
 				  <div class="endTime">End Time: {{endTimes}}</div>
 				  	<div>&nbsp;</div>
 			        <textarea name="transcript" rows='5' ng-model="transcript" class="textAreaInput"/>
@@ -46,7 +48,7 @@
 	    <div class='translation-header'>Translation Form</div>
 	    <hr>
 	    <div class="row" style="margin-bottom: -15px">
-	    	<div class="col-sm-3">Time Frame:<p>(mm:ss)</p></div>
+	    	<div class="col-sm-3">Time Frame:</div>
 	    	<div class="col-sm-4">Translation: </div>
 	    	<div class="col-sm-2 col-sm-offset-2"> Actions:</div>
 	    	<hr/>

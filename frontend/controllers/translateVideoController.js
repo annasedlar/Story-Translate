@@ -169,6 +169,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 				})    
 			}
 			$scope.clickedTranscriptIndex = -1
+		}else{
+	    	$scope.invalidRange = "Your time range is invalid, please reset"
 		}
 	}	
   	
