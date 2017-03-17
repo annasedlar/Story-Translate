@@ -247,13 +247,13 @@ span .header{
 
 .home-corner-wrapper{
     background-color: white;
-    height:400px;
-    width:400px;    
+    height:500px;
+    width:500px;    
     position: absolute;
-    left:-70px;
-    top:-200px;
+    left:-120px;
+    top:-300px;
     transform:rotate(45deg);
-    border:1px solid grey;
+    border:50px solid lightgrey;
 }
 .home-corner-wrapper:hover{
     opacity: 0.6;
@@ -261,8 +261,8 @@ span .header{
 }
     #ns{
         position: absolute;
-        top: 80px; 
-        left: 50px;
+        top: 60px; 
+        left: 40px;
     }
 // .spin-this:hover{
     
@@ -351,7 +351,7 @@ span .header{
     // font-weight: 900;
     // transition: background 0.6s;
     // opacity: 0.8;
-    filter:brightness(85%);
+    filter:brightness(72%);
 }
 
 
@@ -367,12 +367,14 @@ span .header{
     // line-height: 147px;
 }
 .card-class{
-    background-color: rgba(200,200,200,1);
-    box-shadow: 4px 4px 1px rgb(150,150,150);
+    background-color: rgba(230,230,230,1);
+    // background-color: white;
+    box-shadow: 4px 4px 1px rgb(190,190,190);
     // border: 1px solid white;
+    // border-radius: 3%;
     height:140px;
     padding:15px;
-    padding-left:10px;
+    padding-left:20px;
     // opacity: 0.5;
 }
 .card-class:hover{
@@ -483,7 +485,7 @@ span .header{
 
 // .translate-background{
 body{
-    // background-color: #0F1014;
+    // background-color: rgba(230,230,230,1);
 
 }
 

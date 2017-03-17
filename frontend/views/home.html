@@ -1,68 +1,27 @@
-
-<!-- New Story Blue:
- rgb(29, 187, 216)  -->
-<!-- <div style='position: absolute; left:0; top:50vh;'>
-	<img style='width: 100vw;' width='1000px' src='images/houses.jpeg'/>
-</div> -->
-<!-- <div style='position: absolute; left:0; bottom:0;'>
-	<img style='width: 100vw;' width='1000px' src='images/houses.jpeg'/>
-</div> -->
-<!-- <div class='container home-page' style="font-family: 'Avenir', 'sans-serif'; background-color:'white'"> -->
-
-<!-- <div class='container-fluid home-page' style="font-family: 'Avenir', 'sans-serif'; background-color:'white'"> -->
-	<!-- <div class="col-sm-12" id="ns" style="margin-top: 80px; margin-bottom: 100px"> -->
-		<!-- <img src="/images/new-story-logo.png" style="border: none"/> -->
-	<!-- </div> -->
-<!-- 	<div style="color:rgb(29, 187, 216)">
-		<h1 style="font-size:60px">Video Translation App</h1>
-		<h3 style="color:black; margin-bottom: 50px">Group Video Sharing, Translating, and Annotating made easy</h3>
-	</div> -->
-	<!-- <div class="col-sm-12" style="border:1px solid darkgrey; height:2px; width:600px"></div> -->
-	<!-- </div> -->
-<!-- 	<div class="col-sm-4 col-sm-offset-2" style="text-align:center">
-		<div class="col-sm-4 col-sm-offset-2">
-		 NEED TO ADD UPLOAD POP-UP HERE TOO -->
-			<!-- <a data-target='demoModal' modal><h3>Upload Videos</h3>
-			<button type="button" class="btn btn-default btn-lg">
-			  <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
-			</button>
-		</div></a> -->
-		<!-- <div class="col-sm-6"> -->
-			
- 
-<!-- </div> -->
-
-
-
-
-
 <!-- upload video modal -->
-        <div id="demoModal" class="modal" style='text-align: center;' ng-controller="uploadRawVideoController">
-            <form ng-submit="submit()">
-                <div>
-                    <label for='' class="modalTitle">Upload video to translate</label>
-                    <div>
-                        <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
-                    </div>
-                       <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
-                </div>
-                    <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
-                <div class="failedUploadMessage">{{failedUpload}}</div>
-
-            </form>
+<div id="demoModal" class="modal" style='text-align: center;' ng-controller="uploadRawVideoController">
+    <form ng-submit="submit()">
+        <div>
+            <label for='' class="modalTitle">Upload video to translate</label>
+            <div>
+                <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
+            </div>
+               <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
         </div>
+            <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
+        <div class="failedUploadMessage">{{failedUpload}}</div>
+
+    </form>
+</div>
 
 
 
 <!-- New Styles -->
 
 <div class='home-wrapper'>
-
-	
-		<div class='left-top-header' style="color:rgb(29, 187, 216)">
-			
-			<!-- <div style="font-size:18px; margin-top: 10px; color:white">Group Video Sharing, Translating, and Annotating made easy</div> -->
-		</div>
+	<div class='left-top-header' style="color:rgb(29, 187, 216)">
+		<!-- <div style="font-size:18px; margin-top: 10px; color:white">Group Video Sharing, Translating, and Annotating made easy</div> -->
+	</div>
 </div>
 <!-- <div class='spin-this'> -->
 <a href='https://www.newstorycharity.org/' target='_blank'><div class='home-corner-wrapper'></div></a>
@@ -72,7 +31,7 @@
 <div class='home-page-video-translation'>Video Translation</div>
 
 <div class='github-wrapper'>
-	<a href="https://github.com/annasedlar/Story-Translate" style="color:black">
+	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
 		<!-- <h3>Watch Demo</h3> -->
 		<!-- <h5>Confused? See the code and a <br/>video walk-through on github</h5> -->
 		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>

@@ -13,7 +13,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
         url: tempUrl
     }).then(
         function successFunction(videoData){
-            console.log(videoData)
+            // console.log(videoData)
             videoData.data.sort(function(a, b){
                 if(a.familyName < b.familyName) return -1;
                 if(a.familyName > b.familyName) return 1;
@@ -36,7 +36,6 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                     tempFamilyName = video.familyName
                     video.skipClass = 'nothing'
                 }
-
                 if(video.finished){
                     video.finished = ''
                     video.classStyle = 'video-complete'
@@ -62,23 +61,26 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
         }
     )
 
-                $scope.deleteVideo = function(video){
-                    console.log(tempDataToSend)
-                    var tempDataToSend = {
-                        token: video.token
-                    }
-                    console.log(tempDataToSend.token)
-                    $http({
-                        method:'POST',
-                        url: 'http://localhost:3000/deleteVideo/',
-                        data: tempDataToSend
-                    }).then(
-                        function successFunction(data){
-                            console.log(data)
-                          },
-                        function failedFunction(data){
-                            console.log("fail")
-                        }
-                    )
-                }    
+    $scope.deleteVideo = function(video){
+        var deleteVid = confirm("Delete Video?")
+        if(deleteVid){
+            var tempDataToSend = {
+                token: video.token
+            }
+            console.log($scope.videoData.data['video'])
+            // console.log(tempDataToSend.token)
+            $http({
+                method:'POST',
+                url: 'http://localhost:3000/deleteVideo/',
+                data: tempDataToSend
+            }).then(
+                function successFunction(data){
+                    // console.log(data)
+                  },
+                function failedFunction(data){
+                    // console.log("fail")
+                }
+            )
+        }
+    }    
 }]);
