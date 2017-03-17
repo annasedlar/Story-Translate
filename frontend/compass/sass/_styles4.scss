@@ -40,16 +40,62 @@
 	color:white;
 	font-size: 20px;
 }
-
-.each-transcript-time{
-	// width:80px;
-	// display: inline-block;
-	// clear:both;
-	// float: left;
+.related-videos-wrapper{
+	position: relative;
 }
 
-.each-actual-transcript{
-	// width:80px;
-	// display: inline-block;
-	// float: left;
+.currentlyPlaying{
+	position: absolute;
+	color:white;
+	text-align: center;
+	width: 30%;
+	left: 0;
+	bottom:25px;
+}
+
+.each-related-video{
+	filter:brightness(70%)
+}
+
+.editAndWatch{
+	position: relative;
+}
+.product-edit{
+	position: absolute;
+	left: 10px;
+
+}
+.product-watch{
+	position: absolute;
+	right: 10px;
+	cursor: pointer;
+}
+
+.product-inline{
+	display: inline-block;
+	width:30%;
+	margin-right: 3%;
+}
+
+
+.redClass{
+    .product-watch{
+        display: none;
+    }
+}
+
+.greenClass{
+    height:auto;
+    .product-incomplete{
+        display: none;
+    }
+}
+.product-incomplete{
+	color:red;
+	position: absolute;
+	right: 10px;
+}
+
+.related-videos-header{
+
 }

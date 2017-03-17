@@ -7,17 +7,28 @@
 			<div class='current-transcript'>{{currentTranscript}}</div>
 		</div>
 		<br />
-		<h4>Related: </h4>
-		
-		<div ng-repeat='video in familyVideoHTML'>
-			<div>
-				{{video.finished}}
+		<div class='related-videos-wrapper'>
+			<div class='related-videos-header'>
+				{{familyName}} Videos
 			</div>
-			<div ng-class='video.finishedClass'>
-				<video ng-src="{{video.sce}}" width="25%" />
+			<div ng-repeat='video in familyVideoHTML' class='product-inline'>
+
+				<div>
+					{{video.finished}}
+				</div>
+				<div ng-class='video.finishedClass'>
+					<video ng-src="{{video.sce}}" class='each-related-video' width="100%" />
+				
+<!-- 				<a ng-href='{{video.editUrl}}'><button class='btn btn-success'>Edit</button></a>	
+				<a ng-show='video.showOrNot' ng-href='{{video.selectUrl}}'><button class='btn btn-primary'>Select</button></a> -->
+				<div class='editAndWatch'>
+				<a class='product-edit' ng-href='{{video.editUrl}}'>Edit</a>
+				<a class='product-watch' ng-href='{{video.video.selectUrl}}'>Watch</a>	
+				<span class='product-incomplete'>Incomplete</span>
+				</div>
+				</div>
 			</div>
-			<a ng-href='{{video.editUrl}}'><button class='btn btn-success'>Edit</button></a>	
-			<a ng-show='video.showOrNot' ng-href='{{video.selectUrl}}'><button class='btn btn-primary'>Select</button></a>
+		<div class='currentlyPlaying'>Currently <br/>Playing</div>
 		</div>
 	</div>
 
