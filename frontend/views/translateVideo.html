@@ -30,9 +30,9 @@
 		<div style="overflow-y:scroll; margin-top:30px">
 		    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 			    <div class="new-sections">
-				  <div class="startTime">Start Time: {{startTime}}</div>
+				  <div class="startTime">Start Time: {{startTimes}}</div>
 				  <br>
-				  <div class="endTime">End Time: {{endTime}}</div>
+				  <div class="endTime">End Time: {{endTimes}}</div>
 				  	<div>&nbsp;</div>
 			        <textarea name="transcript" rows='5' ng-model="transcript" class="textAreaInput"/>
 			        <button ng-class="addButtonClass">{{editOrAddButton}}</button>
@@ -46,7 +46,7 @@
 	    <div class='translation-header'>Translation Form</div>
 	    <hr>
 	    <div class="row" style="margin-bottom: -15px">
-	    	<div class="col-sm-3">Time Frame: </div>
+	    	<div class="col-sm-3">Time Frame:<p>(mm:ss)</p></div>
 	    	<div class="col-sm-4">Translation: </div>
 	    	<div class="col-sm-2 col-sm-offset-2"> Actions:</div>
 	    	<hr/>
@@ -54,8 +54,7 @@
 	    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript'>
 		 	<div class="col-sm-12">
 		 		<div class="col-sm-3 timeRange">
-		 			<div>{{eachTranscript.startMinsSecs}} - eachTranscript.endMindsSecs</div>
-		 			<div>{{eachTranscript.startTime}} - {{eachTranscript.endTime}}</div>
+		 			<div>{{eachTranscript.startMinsSecs}} - {{eachTranscript.endMinsSecs}}</div>
 		 		</div> 
 		 		<div class="col-sm-9">
 		 		{{eachTranscript.transcript}}
