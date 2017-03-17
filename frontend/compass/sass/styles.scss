@@ -14,7 +14,9 @@ $my-blue: rgb(89, 175, 204);
 body{
     overflow-x:hidden;
 }
-
+#materialize-modal-overlay-1{
+    display: none !important;
+}
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
 }
