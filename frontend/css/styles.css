@@ -113,9 +113,9 @@ a:hover {
 
 /* line 41, ../compass/sass/_styles3.scss */
 .go-home {
-  position: absolute;
+  position: fixed;
   top: 5px;
-  right: 5px;
+  left: 5px;
   z-index: 2;
   border: 3px solid black;
   padding: 5px;
