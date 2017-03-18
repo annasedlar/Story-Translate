@@ -14,9 +14,7 @@ $my-blue: rgb(89, 175, 204);
 body{
     overflow-x:hidden;
 }
-#materialize-modal-overlay-1{
-    display: none !important;
-}
+
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
 }
@@ -490,7 +488,7 @@ body{
 
 }
 
-.translate-header{
+.translate-header, .final-product-header{
     position: absolute;
     top:0;
     left:0;
@@ -523,3 +521,12 @@ body{
     }
 }
 
+.entireProductVideoWrapper{
+    margin-top: 120px;
+    // background-color: $dark-background;
+
+}
+
+.final-product-header, .related-videos-header, .final-translation-transcript{
+    font-size: 25px;
+}

@@ -1,7 +1,8 @@
 <a href='/'><div class='go-home'><span class='glyphicon glyphicon-home'></span></div></a>
 <div class="container-fluid entireProductVideoWrapper">
+	<div class="final-product-header"><h1>Final Product Page</h1></div>
 	<div class="col-sm-6 relatedVids">
-		<div>{{familyName}}</div>
+		<div class="family-name-in-product-video">{{familyName}}</div>
 		<div class='video-wrapper'>
 			<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls autoplay loop width="100%"/>
 			<div class='current-transcript'>{{currentTranscript}}</div>
@@ -34,7 +35,7 @@
 
 
 	<div class="col-sm-6 translations">
-		<div>Transcript</div>
+		<div class="final-translation-transcript">Transcript</div><hr>
 		<div class='transcript-wrapper'>
 			<div ng-repeat='transcript in transcriptHTML' class='row'>
 				<div class='col-sm-2'>
@@ -45,6 +46,7 @@
 					{{transcript.transcript}}
 				</div>
 			</div>
+			<div class="final-product-timestamp">Last edited: {{}}</div>
 		</div>
 	</div>	
 
