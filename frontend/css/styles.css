@@ -145,7 +145,7 @@ a:hover {
 /* line 23, ../compass/sass/_styles4.scss */
 .transcript-wrapper {
   background-color: #e6e6e6;
-  box-shadow: 2px 2px 2px grey;
+  box-shadow: 7px 7px 5px 2px grey;
   padding: 10px;
   overflow: hidden;
 }
@@ -650,7 +650,7 @@ span .header {
 }
 
 /* line 491, ../compass/sass/styles.scss */
-.translate-header, .final-product-header {
+.translate-header {
   position: absolute;
   top: 0;
   left: 0;
@@ -691,6 +691,53 @@ span .header {
 }
 
 /* line 530, ../compass/sass/styles.scss */
-.final-product-header, .related-videos-header, .final-translation-transcript {
+.final-product-header, .related-videos-header, .final-translation-transcript, .family-name-in-product-video {
   font-size: 25px;
+}
+
+/* line 533, ../compass/sass/styles.scss */
+.final-product-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: grey;
+  text-align: center;
+  line-height: 100px;
+  font-size: 33px;
+  font-family: 'Montserrat';
+  color: white;
+  border-bottom: 20px solid black;
+}
+
+/* line 550, ../compass/sass/styles.scss */
+.videoProductHr {
+  border-color: black;
+}
+
+/* line 553, ../compass/sass/styles.scss */
+.go-home3 {
+  position: fixed;
+  top: 15px;
+  left: 10px;
+  z-index: 2;
+  border: 3px solid black;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+}
+/* line 563, ../compass/sass/styles.scss */
+.go-home3 span {
+  padding-left: 1px;
+  font-size: 30px;
+  color: black;
+}
+/* line 568, ../compass/sass/styles.scss */
+.go-home3:hover {
+  background-color: black;
+}
+/* line 570, ../compass/sass/styles.scss */
+.go-home3:hover span {
+  color: grey;
 }

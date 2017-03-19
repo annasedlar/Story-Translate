@@ -488,7 +488,7 @@ body{
 
 }
 
-.translate-header, .final-product-header{
+.translate-header{
     position: absolute;
     top:0;
     left:0;
@@ -527,6 +527,48 @@ body{
 
 }
 
-.final-product-header, .related-videos-header, .final-translation-transcript{
+.final-product-header, .related-videos-header, .final-translation-transcript, .family-name-in-product-video{
     font-size: 25px;
+}
+.final-product-header{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100px;
+    // background-color: $dark-background;
+    background-color: grey;
+    // color:white;
+    text-align: center;
+    line-height: 100px;
+    font-size: 33px;
+    font-family: 'Montserrat';
+    color: white;
+    border-bottom: 20px solid black;
+    // border-top: 20px solid lightgrey;
+}
+.videoProductHr{
+    border-color: black;
+}
+.go-home3{
+    position: fixed;
+    top:15px;
+    left:10px;
+    z-index: 2;
+    // border-radius: 50%;
+    border: 3px solid black;
+    padding: 5px;
+    height:50px;
+    width:50px;
+    span{
+        padding-left: 1px;
+        font-size: 30px;
+        color: black;
+    }
+    &:hover{
+        background-color: black;
+        span{
+            color: grey;
+        }
+    }
 }
