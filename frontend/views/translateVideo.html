@@ -9,7 +9,7 @@
 	<div class="final-product-header"><h1>Translate Video</h1></div>
 </div>
  <div class="container-fluid entireTranslateVideoWrapper" style="margin-top:100px">
-	<div class="col-sm-6 translate-left-side-wrapper">
+	<div class="col-xs-12 col-md-6 translate-left-side-wrapper">
 		<div class='family-wrapper'>
 	 	<div class='familyName'>{{familyName}}</div>
 	 	<form ng-submit='changeFamilyName()' class='inline-block'>
@@ -49,7 +49,7 @@
 	</div>
 
 
-	<div class="col-sm-6 each-translation-box">
+	<div class="col-xs-12 col-md-6 each-translation-box">
 	    <div class='translation-header'>Translation Form</div>
 	    <hr>
 	    <div class="row">
@@ -57,12 +57,12 @@
 	    	<div class="col-xs-7">Translation: </div>
 	    </div>
 	    <hr/>
-	    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript' style="margin-top:3%">
+	    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript' style="margin-top:3%; min-height:130px">
 		 	<div class="col-xs-8">
-		 		<div class="col-sm-4 timeRange" style="margin-left: -8%">
+		 		<div class="col-xs-12 col-sm-4 timeRange" style="margin-left: -8%">
 		 			{{eachTranscript.startMinsSecs}} - {{eachTranscript.endMinsSecs}}
 		 		</div> 
-		 		<div class="col-sm-6">
+		 		<div class="col-xs-12 col-sm-6">
 		 		{{eachTranscript.transcript}}
 		 		</div>
 		 	</div>
@@ -84,7 +84,7 @@
 		    <form ng-submit='submitForm()' style='display:inline-block; clear:both'>	
 		    	<button style="margin-right:0;" class="blue waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
 	    	</form>
-	    	<div ng-hide style="color:red">{{submissionStatus}}</div>
+	    	<div ng-hide style="color:blue; text-align: right">{{submissionStatus}}</div>
 		</div> 
 	</div>
 	    
