@@ -51,8 +51,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	$scope.rangePossible = false;
 	$scope.entireTranscript = [];
 	$scope.clickedTranscriptIndex=-1 
-	$scope.editOrAddButton = 'Add to Transcript'
-	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
+	$scope.editOrAddButton = 'Add to Transcript >>'
+	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
 
 	// Adding transcripts to video (shows on the right)
 	$scope.submitEachSection = function(){
@@ -89,8 +89,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 				endMinsSecs: endMinutes+":"+endSeconds
 	          	
 	        }
-	        $scope.editOrAddButton = 'Add to Transcript'
-	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
+	        $scope.editOrAddButton = 'Add to Transcript >>'
+	    	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
 	    	$scope.clickedTranscriptIndex = -1
 	    	$scope.transcript = ''
 			$scope.startTimes = '00:00'
@@ -137,7 +137,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	    })
 	    $scope.timeRange = timeRangeArray;
 			$scope.editOrAddButton = 'Add to Transcript'
-	    	$scope.addButtonClass = 'btn #90a4ae blue-grey darken-1'
+	    	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
 			var index = $scope.clickedTranscriptIndex
 			var date = new Date();
 			var day = (date.getUTCDate()).toString();
@@ -311,8 +311,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	}
 
 	$scope.editTranscript = function(index){
-	    $scope.editOrAddButton = 'Edit Transcript'
-	    $scope.addButtonClass = 'btn #ff6f00 amber darken-4'
+	    $scope.editOrAddButton = 'Save Edited Transcript >>'
+	    $scope.addButtonClass = 'btn #ffcc80 orange lighten-2 waves-effect'
 	    $scope.transcript = $scope.entireTranscript[index].transcript;
 	    $scope.startTime = $scope.entireTranscript[index].startTime;
 	    $scope.endTime = $scope.entireTranscript[index].endTime;
