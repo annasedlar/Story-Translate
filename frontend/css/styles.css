@@ -137,11 +137,6 @@ a:hover {
   color: grey;
 }
 
-/* line 63, ../compass/sass/_styles3.scss */
-.go-home2 {
-  top: 60px;
-}
-
 /* line 23, ../compass/sass/_styles4.scss */
 .transcript-wrapper {
   background-color: #e6e6e6;
@@ -686,17 +681,17 @@ span .header {
   min-height: 100vh;
 }
 
-/* line 524, ../compass/sass/styles.scss */
+/* line 523, ../compass/sass/styles.scss */
 .entireProductVideoWrapper {
   margin-top: 120px;
 }
 
-/* line 530, ../compass/sass/styles.scss */
+/* line 529, ../compass/sass/styles.scss */
 .final-product-header, .related-videos-header, .final-translation-transcript, .family-name-in-product-video {
   font-size: 25px;
 }
 
-/* line 533, ../compass/sass/styles.scss */
+/* line 532, ../compass/sass/styles.scss */
 .final-product-header {
   position: absolute;
   top: 0;
@@ -712,12 +707,12 @@ span .header {
   border-bottom: 20px solid black;
 }
 
-/* line 550, ../compass/sass/styles.scss */
+/* line 549, ../compass/sass/styles.scss */
 .videoProductHr {
   border-top: 2px solid black;
 }
 
-/* line 553, ../compass/sass/styles.scss */
+/* line 552, ../compass/sass/styles.scss */
 .go-home3 {
   position: absolute;
   top: 15px;
@@ -728,22 +723,22 @@ span .header {
   height: 50px;
   width: 50px;
 }
-/* line 563, ../compass/sass/styles.scss */
+/* line 562, ../compass/sass/styles.scss */
 .go-home3 span {
   padding-left: 1px;
   font-size: 30px;
   color: black;
 }
-/* line 568, ../compass/sass/styles.scss */
+/* line 567, ../compass/sass/styles.scss */
 .go-home3:hover {
   background-color: black;
 }
-/* line 570, ../compass/sass/styles.scss */
+/* line 569, ../compass/sass/styles.scss */
 .go-home3:hover span {
   color: grey;
 }
 
-/* line 577, ../compass/sass/styles.scss */
+/* line 576, ../compass/sass/styles.scss */
 .container .row {
   margin-left: -0.75rem;
   margin-right: 15.25rem;
