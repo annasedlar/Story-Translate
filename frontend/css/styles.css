@@ -229,6 +229,50 @@ a:hover {
   right: 10px;
 }
 
+@media (max-width: 768px) {
+  /* line 102, ../compass/sass/_styles4.scss */
+  .final-translation-transcript {
+    margin-top: 55px;
+  }
+
+  /* line 114, ../compass/sass/_styles4.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media (min-width: 768px) {
+  /* line 122, ../compass/sass/_styles4.scss */
+  .final-translation-transcript {
+    margin-top: -2px;
+  }
+
+  /* line 125, ../compass/sass/_styles4.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media (min-width: 992px) {
+  /* line 135, ../compass/sass/_styles4.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 144, ../compass/sass/_styles4.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
 /* line 14, ../compass/sass/styles.scss */
 body {
   overflow-x: hidden;
@@ -736,10 +780,4 @@ span .header {
 /* line 569, ../compass/sass/styles.scss */
 .go-home3:hover span {
   color: grey;
-}
-
-/* line 576, ../compass/sass/styles.scss */
-.container .row {
-  margin-left: -0.75rem;
-  margin-right: 15.25rem;
 }

@@ -97,6 +97,54 @@
 	right: 10px;
 }
 
-.related-videos-header{
+// Only on sm and xs views, final-translation-transcript will have top margin of 55px;
+@media (max-width: 768px){
+	.final-translation-transcript{
+		margin-top: 55px;
+	}
+	// .currentlyPlaying{
+	// 	position: absolute;
+	// 	color:white;
+	// 	text-align: center;
+	// 	width: 30%;
+	// 	left: 0;
+		// bottom:10px;
+		// top: 5px;
+	// }
+	.container .row {
+  		margin-left: -0.75rem;
+  		// margin-right: 15.25rem;
+  		word-wrap: break-word; 
+  		overflow-wrap: break-word;
+	}
+}
+@media (min-width: 768px){
+	.final-translation-transcript{
+		margin-top: -2px;
+	}
+	.container .row {
+  		margin-left: -0.75rem;
+  		// margin-right: 15.25rem;
+  		word-wrap: break-word; 
+  		overflow-wrap: break-word;
 
+	}
+}
+
+@media (min-width: 992px){
+	.container .row {
+		margin-left: -0.75rem;
+		margin-right: -0.75rem;
+		word-wrap: break-word; 
+  		overflow-wrap: break-word;
+	}
+}
+
+@media (min-width: 1200px){
+	.container .row {
+		margin-left: -0.75rem;
+		margin-right: -0.75rem;
+		word-wrap: break-word; 
+  		overflow-wrap: break-word;
+	}
 }
