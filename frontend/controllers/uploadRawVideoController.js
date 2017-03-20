@@ -3,6 +3,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 	$scope.tempImage
 
 	$scope.submit = function(){
+		$(’# demoModal').modal('close');
 		// modal.parentElement.removeChild(modal);
 		// Posting video to the backend
 		var formData = new FormData;

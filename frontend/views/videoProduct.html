@@ -1,14 +1,14 @@
 <a href='/'><div class='go-home3'><span class='glyphicon glyphicon-home'></span></div></a>
 <div class="container-fluid entireProductVideoWrapper">
 	<div class="final-product-header"><h1>Final Product</h1></div>
-	<div class="col-sm-6 relatedVids">
+	<div class="col-xs-12 col-md-6 relatedVids">
 		<div class="family-name-in-product-video">{{familyName}}</div>
 		<div class='video-wrapper'>
 			<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls width="100%"/>
 			<div class='current-transcript'>{{currentTranscript}}</div>
 		</div>
 		<br />
-		<div class='related-videos-wrapper'>
+		<div class='col-xs-12 related-videos-wrapper'>
 			<div class='related-videos-header'>
 				{{familyName}} Videos
 			</div>
@@ -31,20 +31,21 @@
 	</div>
 
 
-	<div class="col-sm-6 translations">
+	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 translations">
 		<div class="final-translation-transcript">Completed Transcript</div><hr class="videoProductHr">
 		<div class='transcript-wrapper'>
 			<div ng-repeat='transcript in transcriptHTML' class='row'>
-				<div class='col-sm-2'>
+				<div class='col-sm-2 col-md-4 col-lg-3'>
 					{{transcript.startTime}} -  
 					{{transcript.endTime}} &nbsp;&nbsp;
 				</div>
-				<div class='col-sm-10'>
+				<div class='col-sm-10 col-md-8 col-lg-9'>
 					{{transcript.transcript}}
 				</div>
 			</div>
 			<!-- Want to get the last modified time-->
 			<!-- <div class="final-product-timestamp">Last edited: {{datesArray.postedTime}}</div> -->
 		</div>
+
 	</div>	
 </div>
