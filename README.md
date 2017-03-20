@@ -132,15 +132,6 @@ All team members are full stack web development students of the [DigitalCrafts](
 
 
 
-
-**I want to help out!**
-
-*If you would like to report an issue with our code or a suggest a way to improve it, simply contact one of us. We are always looking for ways to improve!* 
-
-
-If you would like to contribute to our project, we are looking to add the the following:
-
-
 ##Project Timeline
 Project start: 3/6/2017
 

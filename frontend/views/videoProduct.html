@@ -19,9 +19,6 @@
 				</div>
 				<div ng-class='video.finishedClass'>
 					<video ng-src="{{video.sce}}" class='each-related-video' width="100%" />
-				
-<!-- 				<a ng-href='{{video.editUrl}}'><button class='btn btn-success'>Edit</button></a>	
-				<a ng-show='video.showOrNot' ng-href='{{video.selectUrl}}'><button class='btn btn-primary'>Select</button></a> -->
 				<div class='editAndWatch'>
 				<a class='product-edit' ng-href='{{video.editUrl}}'>Edit</a>
 				<a class='product-watch' ng-href='{{video.video.selectUrl}}'>Watch</a>	
@@ -46,7 +43,7 @@
 					{{transcript.transcript}}
 				</div>
 			</div>
-			<div class="final-product-timestamp">Last edited: {{}}</div>
+			<!-- <div class="final-product-timestamp">Last edited: {{}}}</div> -->
 		</div>
 	</div>	
 

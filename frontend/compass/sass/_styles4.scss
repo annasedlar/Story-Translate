@@ -33,12 +33,13 @@
 }
 .current-transcript{
 	position: absolute;
-	bottom:10px;
+	bottom:38px;
 	width:100%;
 	font-weight: 800;
 	text-align: center;
 	color:white;
 	font-size: 20px;
+	word-wrap: break-word; 
 }
 .related-videos-wrapper{
 	position: relative;

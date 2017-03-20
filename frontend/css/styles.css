@@ -159,20 +159,21 @@ a:hover {
 /* line 34, ../compass/sass/_styles4.scss */
 .current-transcript {
   position: absolute;
-  bottom: 10px;
+  bottom: 38px;
   width: 100%;
   font-weight: 800;
   text-align: center;
   color: white;
   font-size: 20px;
+  word-wrap: break-word;
 }
 
-/* line 43, ../compass/sass/_styles4.scss */
+/* line 44, ../compass/sass/_styles4.scss */
 .related-videos-wrapper {
   position: relative;
 }
 
-/* line 47, ../compass/sass/_styles4.scss */
+/* line 48, ../compass/sass/_styles4.scss */
 .currentlyPlaying {
   position: absolute;
   color: white;
@@ -182,51 +183,51 @@ a:hover {
   bottom: 25px;
 }
 
-/* line 56, ../compass/sass/_styles4.scss */
+/* line 57, ../compass/sass/_styles4.scss */
 .each-related-video {
   filter: brightness(70%);
 }
 
-/* line 60, ../compass/sass/_styles4.scss */
+/* line 61, ../compass/sass/_styles4.scss */
 .editAndWatch {
   position: relative;
 }
 
-/* line 63, ../compass/sass/_styles4.scss */
+/* line 64, ../compass/sass/_styles4.scss */
 .product-edit {
   position: absolute;
   left: 10px;
 }
 
-/* line 68, ../compass/sass/_styles4.scss */
+/* line 69, ../compass/sass/_styles4.scss */
 .product-watch {
   position: absolute;
   right: 10px;
   cursor: pointer;
 }
 
-/* line 74, ../compass/sass/_styles4.scss */
+/* line 75, ../compass/sass/_styles4.scss */
 .product-inline {
   display: inline-block;
   width: 30%;
   margin-right: 3%;
 }
 
-/* line 82, ../compass/sass/_styles4.scss */
+/* line 83, ../compass/sass/_styles4.scss */
 .redClass .product-watch {
   display: none;
 }
 
-/* line 87, ../compass/sass/_styles4.scss */
+/* line 88, ../compass/sass/_styles4.scss */
 .greenClass {
   height: auto;
 }
-/* line 89, ../compass/sass/_styles4.scss */
+/* line 90, ../compass/sass/_styles4.scss */
 .greenClass .product-incomplete {
   display: none;
 }
 
-/* line 93, ../compass/sass/_styles4.scss */
+/* line 94, ../compass/sass/_styles4.scss */
 .product-incomplete {
   color: red;
   position: absolute;
@@ -705,7 +706,7 @@ span .header {
   background-color: grey;
   text-align: center;
   line-height: 100px;
-  font-size: 33px;
+  font-size: 40px;
   font-family: 'Montserrat';
   color: white;
   border-bottom: 20px solid black;
@@ -713,12 +714,12 @@ span .header {
 
 /* line 550, ../compass/sass/styles.scss */
 .videoProductHr {
-  border-color: black;
+  border-top: 2px solid black;
 }
 
 /* line 553, ../compass/sass/styles.scss */
 .go-home3 {
-  position: fixed;
+  position: absolute;
   top: 15px;
   left: 10px;
   z-index: 2;
@@ -740,4 +741,10 @@ span .header {
 /* line 570, ../compass/sass/styles.scss */
 .go-home3:hover span {
   color: grey;
+}
+
+/* line 577, ../compass/sass/styles.scss */
+.container .row {
+  margin-left: -0.75rem;
+  margin-right: 15.25rem;
 }

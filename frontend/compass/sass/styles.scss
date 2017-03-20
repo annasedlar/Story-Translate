@@ -541,17 +541,17 @@ body{
     // color:white;
     text-align: center;
     line-height: 100px;
-    font-size: 33px;
+    font-size: 40px;
     font-family: 'Montserrat';
     color: white;
     border-bottom: 20px solid black;
     // border-top: 20px solid lightgrey;
 }
 .videoProductHr{
-    border-color: black;
+    border-top: 2px solid black;
 }
 .go-home3{
-    position: fixed;
+    position: absolute;
     top:15px;
     left:10px;
     z-index: 2;
@@ -571,4 +571,10 @@ body{
             color: grey;
         }
     }
+}
+
+// from materialize (changes the final product transcript container margins)
+.container .row {
+  margin-left: -0.75rem;
+  margin-right: 15.25rem;
 }
