@@ -61,10 +61,22 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
     	url: transcriptUrl
   	}).then(
     	function successFunction(transcriptData){
+          var datesArray = [];
       		var transcriptArray = JSON.parse(transcriptData.data[0].transcript)
       		$scope.transcriptHTML = transcriptArray
-      		
-      		
+          // $scope.lastModified = transcriptArray[0].postedTime
+          // var date = Date(headers()['lastModified']);
+          // $scope.lastModified['postedTime'] = date;
+          // console.log(transcriptArray[1].postedTime)
+          // $scope.transcriptArray.map((transcript, index)=>{
+          //     datesArray.push({
+          //       lastModified: transcriptArray.postedTime
+
+          //     })
+          //     $scope.lastModified = datesArray
+          // })
+          // console.log($scope.transcriptHTML[2].postedTime) //displays posted time for that particular transcript
+          // console.log("transcript data: " + transcriptData.data[0].transcript)
     	},
     	function failedFunction(videoData){}
   	)  	
