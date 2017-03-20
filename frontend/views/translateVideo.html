@@ -73,14 +73,16 @@
 		    	</div>
 		 	</div>
 		</div>
-		<form ng-submit='saveForm()' style='display:inline-block; '>
-	    	<button style="margin-right: 0;" class="#00bfa5 waves-effect btn" ng-click="saveForm()">Save Session</button>
-	    </form>
-	    <form ng-submit='submitForm()' style='display:inline-block; '>	
-	    	<button style="margin-right:0;" class="blue waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
-	    </form>
-	    <div ng-hide style="color:red">{{submissionStatus}}</div>
-	</div> 
+		<div>
+			<form ng-submit='saveForm()' style='display:inline-block; '>
+		    	<button style="margin-right: 0;" class="#00bfa5 waves-effect btn" ng-click="saveForm()">Save Session</button>
+		    </form>
+		    <form ng-submit='submitForm()' style='display:inline-block; '>	
+		    	<button style="margin-right:0;" class="blue waves-effect btn" ng-click="submitForm()">Submit Transcript</button>
+	    	</form>
+	    	<div ng-hide style="color:red">{{submissionStatus}}</div>
+		</div> 
+	</div>
 	    
 	</div>  
 </div> 

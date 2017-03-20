@@ -603,7 +603,7 @@ span .header {
   transition: filter 0.5s;
 }
 
-/* line 436, ../compass/sass/styles.scss */
+/* line 435, ../compass/sass/styles.scss */
 .video-data-3 {
   padding-top: 62px;
   width: 50%;
@@ -612,44 +612,44 @@ span .header {
   text-align: center;
   top: 0;
 }
-/* line 443, ../compass/sass/styles.scss */
+/* line 442, ../compass/sass/styles.scss */
 .video-data-3 .watch-button {
   font-size: 13px;
   padding: 10px;
 }
-/* line 448, ../compass/sass/styles.scss */
+/* line 447, ../compass/sass/styles.scss */
 .video-data-3 .watch-button:hover {
   filter: brightness(50%);
 }
 
-/* line 455, ../compass/sass/styles.scss */
+/* line 454, ../compass/sass/styles.scss */
 .each-video-description {
   display: inline-block;
   height: 110px;
 }
 
-/* line 461, ../compass/sass/styles.scss */
+/* line 460, ../compass/sass/styles.scss */
 .hide-class {
   display: none;
 }
 
-/* line 465, ../compass/sass/styles.scss */
+/* line 464, ../compass/sass/styles.scss */
 .skip-placeholder {
   height: 60px;
 }
-/* line 467, ../compass/sass/styles.scss */
+/* line 466, ../compass/sass/styles.scss */
 .skip-placeholder .horiz-line {
   height: 30px;
   border-bottom: 3px solid #1dbbd8;
   margin-bottom: 30px;
 }
 
-/* line 474, ../compass/sass/styles.scss */
+/* line 473, ../compass/sass/styles.scss */
 .each-family-class {
   border: 1px solid black;
 }
 
-/* line 491, ../compass/sass/styles.scss */
+/* line 490, ../compass/sass/styles.scss */
 .translate-header {
   position: absolute;
   top: 0;
@@ -665,12 +665,12 @@ span .header {
   color: black;
 }
 
-/* line 507, ../compass/sass/styles.scss */
+/* line 506, ../compass/sass/styles.scss */
 .translate-background {
   margin-top: 100px;
 }
 
-/* line 511, ../compass/sass/styles.scss */
+/* line 510, ../compass/sass/styles.scss */
 .translate-bg {
   width: 100vw;
   height: 100vh;
@@ -678,7 +678,7 @@ span .header {
   bottom: 0;
   left: 0;
 }
-/* line 517, ../compass/sass/styles.scss */
+/* line 516, ../compass/sass/styles.scss */
 .translate-bg img {
   width: 100%;
   filter: brightness(20%);
