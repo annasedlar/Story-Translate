@@ -190,52 +190,53 @@ a:hover {
 
 /* line 64, ../compass/sass/_styles4.scss */
 .product-edit {
-  position: absolute;
+  float: left;
   left: 10px;
 }
 
-/* line 69, ../compass/sass/_styles4.scss */
+/* line 70, ../compass/sass/_styles4.scss */
 .product-watch {
-  position: absolute;
+  float: right;
   right: 10px;
   cursor: pointer;
+  clear: both;
 }
 
-/* line 75, ../compass/sass/_styles4.scss */
+/* line 78, ../compass/sass/_styles4.scss */
 .product-inline {
   display: inline-block;
   width: 30%;
   margin-right: 3%;
 }
 
-/* line 83, ../compass/sass/_styles4.scss */
+/* line 86, ../compass/sass/_styles4.scss */
 .redClass .product-watch {
   display: none;
 }
 
-/* line 88, ../compass/sass/_styles4.scss */
+/* line 91, ../compass/sass/_styles4.scss */
 .greenClass {
   height: auto;
 }
-/* line 90, ../compass/sass/_styles4.scss */
+/* line 93, ../compass/sass/_styles4.scss */
 .greenClass .product-incomplete {
   display: none;
 }
 
-/* line 94, ../compass/sass/_styles4.scss */
+/* line 97, ../compass/sass/_styles4.scss */
 .product-incomplete {
   color: red;
-  position: absolute;
   right: 10px;
+  float: right;
 }
 
 @media (max-width: 768px) {
-  /* line 102, ../compass/sass/_styles4.scss */
+  /* line 106, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 55px;
   }
 
-  /* line 114, ../compass/sass/_styles4.scss */
+  /* line 118, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
@@ -243,12 +244,12 @@ a:hover {
   }
 }
 @media (min-width: 768px) {
-  /* line 122, ../compass/sass/_styles4.scss */
+  /* line 126, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
-    margin-top: -2px;
+    margin-top: 50px;
   }
 
-  /* line 125, ../compass/sass/_styles4.scss */
+  /* line 129, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
@@ -256,7 +257,7 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
-  /* line 135, ../compass/sass/_styles4.scss */
+  /* line 139, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -265,7 +266,7 @@ a:hover {
   }
 }
 @media (min-width: 1200px) {
-  /* line 144, ../compass/sass/_styles4.scss */
+  /* line 148, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -286,6 +287,11 @@ body {
 /* line 22, ../compass/sass/styles.scss */
 .videosToTranslate {
   text-align: center;
+}
+
+/* line 25, ../compass/sass/styles.scss */
+.relatedVids {
+  margin-bottom: 30px;
 }
 
 /* line 34, ../compass/sass/styles.scss */

@@ -62,14 +62,17 @@
 	position: relative;
 }
 .product-edit{
-	position: absolute;
+	// position: absolute;
+	float: left;
 	left: 10px;
 
 }
 .product-watch{
-	position: absolute;
+	float: right;
+	// position: absolute;
 	right: 10px;
 	cursor: pointer;
+	clear: both;
 }
 
 .product-inline{
@@ -93,8 +96,9 @@
 }
 .product-incomplete{
 	color:red;
-	position: absolute;
+	// position: absolute;
 	right: 10px;
+	float: right;
 }
 
 // Only on sm and xs views, final-translation-transcript will have top margin of 55px;
@@ -120,14 +124,14 @@
 }
 @media (min-width: 768px){
 	.final-translation-transcript{
-		margin-top: -2px;
+		margin-top: 50px;
 	}
 	.container .row {
   		margin-left: -0.75rem;
+  		// margin-top: 50px;
   		// margin-right: 15.25rem;
   		word-wrap: break-word; 
   		overflow-wrap: break-word;
-
 	}
 }
 
