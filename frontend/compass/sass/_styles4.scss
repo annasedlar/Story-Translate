@@ -22,7 +22,7 @@
 
 .transcript-wrapper{
 	background-color: rgb(230,230,230);
-	box-shadow: 2px 2px 2px grey;
+	box-shadow: 7px 7px 5px 2px grey;
 	padding:10px;
 	overflow: hidden;
 
@@ -33,12 +33,13 @@
 }
 .current-transcript{
 	position: absolute;
-	bottom:10px;
+	bottom:38px;
 	width:100%;
 	font-weight: 800;
 	text-align: center;
 	color:white;
 	font-size: 20px;
+	word-wrap: break-word; 
 }
 .related-videos-wrapper{
 	position: relative;
