@@ -17,24 +17,40 @@
 }
 
 .delete-button{
+	// position: absolute;
+	// top:20px;
+	// right:15px;
+	// background-color: rgb(250,100,100);
+	// font-size: 18px;
+	// z-index: 10;
+	// height:25px;
+	// width:25px;
+	// padding:0 !important;
+	// // line-height: 25px;
+	// color:white;
+	// text-align: center;
+	// font-size: 13px;
+	// // border:none;
 	position: absolute;
-	top:20px;
-	right:15px;
-	background-color: rgb(250,100,100);
-	font-size: 18px;
-	z-index: 10;
-	height:25px;
-	width:25px;
-	padding:0 !important;
-	// line-height: 25px;
-	color:white;
-	text-align: center;
-	font-size: 13px;
-	// border:none;
+    top: 20px;
+    right: 15px;
+    background-color: #E6E6E6;
+    font-size: 18px;
+    z-index: 10;
+    height: 25px;
+    width: 25px;
+    padding: 0 !important;
+    color: black;
+    text-align: center;
+    font-size: 13px;
+    border: none;
 	&:active{
-		background-color: white;
-		color: black;
-		font-weight: 900;
+		// background-color: white;
+		// color: black;
+		// font-weight: 900;
+		background-color: rgb(250,100,100);
+		border-radius: 25px;
+		text-decoration: none;
 	}
 }
 

@@ -164,6 +164,14 @@
 	.final-translation-transcript{
 		margin-top: -1px;
 	}
+	.currentlyPlaying{
+		position: absolute;
+	    color: white;
+	    text-align: center;
+	    width: 30%;
+	    left: 10px;
+    	bottom: 49px;
+	}
 	.container .row {
 		margin-left: -0.75rem;
 		margin-right: -0.75rem;
