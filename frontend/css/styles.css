@@ -235,6 +235,7 @@ a:hover {
   .product-incomplete {
     color: red;
     float: right;
+    position: relative;
   }
 }
 @media (max-width: 768px) {
@@ -258,7 +259,7 @@ a:hover {
 @media (min-width: 768px) {
   /* line 139, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
-    margin-top: 50px;
+    margin-top: 2px;
   }
 
   /* line 142, ../compass/sass/_styles4.scss */

@@ -109,7 +109,7 @@
 		// position: absolute;
 		// right: 10px;
 		float: right;
-		// position: relative;
+		position: relative;
 	}
 }
 @media (max-width: 768px){
@@ -137,7 +137,7 @@
 }
 @media (min-width: 768px){
 	.final-translation-transcript{
-		margin-top: 50px;
+		margin-top: 2px;
 	}
 	.container .row {
   		margin-left: -0.75rem;
