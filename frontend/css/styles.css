@@ -165,66 +165,67 @@ a:hover {
   word-wrap: break-word;
 }
 
-/* line 44, ../compass/sass/_styles4.scss */
+/* line 45, ../compass/sass/_styles4.scss */
 .related-videos-wrapper {
   position: relative;
 }
 
-/* line 48, ../compass/sass/_styles4.scss */
+/* line 49, ../compass/sass/_styles4.scss */
 .currentlyPlaying {
-  position: absolute;
+  position: relative;
   color: white;
   text-align: center;
   width: 30%;
-  left: 0;
-  bottom: 25px;
+  left: 30%;
+  bottom: 87px;
+  display: block;
 }
 
-/* line 57, ../compass/sass/_styles4.scss */
+/* line 59, ../compass/sass/_styles4.scss */
 .each-related-video {
   filter: brightness(70%);
 }
 
-/* line 61, ../compass/sass/_styles4.scss */
+/* line 63, ../compass/sass/_styles4.scss */
 .editAndWatch {
   position: relative;
 }
 
-/* line 64, ../compass/sass/_styles4.scss */
+/* line 66, ../compass/sass/_styles4.scss */
 .product-edit {
   float: left;
   left: 10px;
 }
 
-/* line 70, ../compass/sass/_styles4.scss */
+/* line 72, ../compass/sass/_styles4.scss */
 .product-watch {
   float: right;
   right: 10px;
   cursor: pointer;
 }
 
-/* line 78, ../compass/sass/_styles4.scss */
+/* line 80, ../compass/sass/_styles4.scss */
 .product-inline {
   display: inline-block;
   width: 30%;
   margin-right: 3%;
 }
 
-/* line 86, ../compass/sass/_styles4.scss */
+/* line 88, ../compass/sass/_styles4.scss */
 .redClass .product-watch {
   display: none;
 }
 
-/* line 91, ../compass/sass/_styles4.scss */
+/* line 93, ../compass/sass/_styles4.scss */
 .greenClass {
   height: auto;
 }
-/* line 93, ../compass/sass/_styles4.scss */
+/* line 95, ../compass/sass/_styles4.scss */
 .greenClass .product-incomplete {
   display: none;
 }
 
-/* line 97, ../compass/sass/_styles4.scss */
+/* line 99, ../compass/sass/_styles4.scss */
 .product-incomplete {
   color: red;
   right: 10px;
@@ -233,7 +234,7 @@ a:hover {
 }
 
 @media (max-width: 550px) {
-  /* line 107, ../compass/sass/_styles4.scss */
+  /* line 109, ../compass/sass/_styles4.scss */
   .product-incomplete {
     color: red;
     float: right;
@@ -241,30 +242,30 @@ a:hover {
   }
 }
 @media (max-width: 768px) {
-  /* line 116, ../compass/sass/_styles4.scss */
+  /* line 118, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 2px;
   }
 
-  /* line 128, ../compass/sass/_styles4.scss */
+  /* line 130, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
 
-  /* line 134, ../compass/sass/_styles4.scss */
+  /* line 136, ../compass/sass/_styles4.scss */
   .product-edit {
     text-align: center;
   }
 }
 @media (min-width: 768px) {
-  /* line 139, ../compass/sass/_styles4.scss */
+  /* line 141, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 2px;
   }
 
-  /* line 142, ../compass/sass/_styles4.scss */
+  /* line 144, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
@@ -272,12 +273,12 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
-  /* line 152, ../compass/sass/_styles4.scss */
+  /* line 154, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: -1px;
   }
 
-  /* line 155, ../compass/sass/_styles4.scss */
+  /* line 157, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -286,22 +287,12 @@ a:hover {
   }
 }
 @media (min-width: 1200px) {
-  /* line 164, ../compass/sass/_styles4.scss */
+  /* line 166, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: -1px;
   }
 
-  /* line 167, ../compass/sass/_styles4.scss */
-  .currentlyPlaying {
-    position: absolute;
-    color: white;
-    text-align: center;
-    width: 30%;
-    left: 10px;
-    bottom: 49px;
-  }
-
-  /* line 175, ../compass/sass/_styles4.scss */
+  /* line 177, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;

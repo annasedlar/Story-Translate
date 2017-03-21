@@ -39,19 +39,21 @@
 	text-align: center;
 	color:white;
 	font-size: 20px;
-	word-wrap: break-word; 
+	word-wrap: break-word;
+	// box-shadow: 2px 2px 2px white; 
 }
 .related-videos-wrapper{
 	position: relative;
 }
 
 .currentlyPlaying{
-	position: absolute;
+	position: relative;
 	color:white;
 	text-align: center;
 	width: 30%;
-	left: 0;
-	bottom:25px;
+	left: 30%;
+	bottom: 87px;
+	display: block;
 }
 
 .each-related-video{
@@ -164,14 +166,14 @@
 	.final-translation-transcript{
 		margin-top: -1px;
 	}
-	.currentlyPlaying{
-		position: absolute;
-	    color: white;
-	    text-align: center;
-	    width: 30%;
-	    left: 10px;
-    	bottom: 49px;
-	}
+	// .currentlyPlaying{
+	// 	position: absolute;
+	//     color: white;
+	//     text-align: center;
+	//     width: 30%;
+	//     left: 10px;
+ //    	bottom: 49px;
+	// }
 	.container .row {
 		margin-left: -0.75rem;
 		margin-right: -0.75rem;

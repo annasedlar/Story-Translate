@@ -12,22 +12,29 @@
 			<div class='related-videos-header'>
 				{{familyName}} Videos
 			</div>
-			<div ng-repeat='video in familyVideoHTML' class='product-inline'>
+			<div ng-repeat='video in familyVideoHTML' class='product-inline' ng-click="currentlyPlaying(video)">
+				<!-- <div class='currentlyPlaying'>Currently <br/>Playing</div> -->
 
 				<div>
 					{{video.finished}}
 				</div>
+
 				<div ng-class='video.finishedClass'>
 					<video ng-src="{{video.sce}}" class='each-related-video' width="100%" />
 				<div class='editAndWatch'>
+
 				<a class='product-edit' ng-href='{{video.editUrl}}'>Edit</a>
-				<a class='product-watch' ng-href='{{video.selectUrl}}'>Watch</a>	
+				<a class='product-watch' ng-href='{{video.selectUrl}}'>Watch</a>
+				 <!-- ng-click="currentlyPlaying={'display':'block'}"	 -->
 				<span class='product-incomplete'>Incomplete</span>
 				</div>
+				<!-- <div class='currentlyPlaying'>Currently <br/>Playing</div> -->
+		 		<!-- ng-style="{'display':'block'}" -->
+				</div>
+				<div class="currentlyPlaying" ng-hide="thisOne">Currently Playing</div>
 				</div>
 			</div>
-		<div class='currentlyPlaying'>Currently <br/>Playing</div>
-		</div>
+		
 	</div>
 
 

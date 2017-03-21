@@ -1,5 +1,11 @@
 app.controller('videoProductController',  function($scope, $location, $http, $sce, $interval){
-	var paramsId = $location.$$path.slice(14)
+ $scope.currentlyPlaying = false;
+  $scope.thisOne = true;
+  $scope.currentlyPlaying = function(video){
+    $scope.thisOne = false;
+    console.log()
+  } 
+  var paramsId = $location.$$path.slice(14)
 	var tempUrl = 'http://annasedlar.com:3000/videosFinished'
 	$http({
     	method: "GET",
@@ -32,6 +38,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      			var editUrl = '#/translateVideo/' + video.token
 				      			var selectUrl = '#/videoProduct/' + video.token 
 				      			var showOrNot = false
+                    // var currentlyPlaying = "Currently Playing"
 				      			if(video.finished){
 				      				finishedClass = 'greenClass'
 				      				showOrNot = true;
