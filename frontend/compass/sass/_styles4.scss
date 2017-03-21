@@ -72,7 +72,7 @@
 	// position: absolute;
 	right: 10px;
 	cursor: pointer;
-	clear: both;
+	// clear: both;
 }
 
 .product-inline{
@@ -99,12 +99,22 @@
 	// position: absolute;
 	right: 10px;
 	float: right;
+	position: relative;
 }
 
 // Only on sm and xs views, final-translation-transcript will have top margin of 55px;
+@media (max-width: 550px){
+	.product-incomplete{
+		color:red;
+		// position: absolute;
+		// right: 10px;
+		float: right;
+		// position: relative;
+	}
+}
 @media (max-width: 768px){
 	.final-translation-transcript{
-		margin-top: 55px;
+		margin-top: 2px;
 	}
 	// .currentlyPlaying{
 	// 	position: absolute;
@@ -121,6 +131,9 @@
   		word-wrap: break-word; 
   		overflow-wrap: break-word;
 	}
+	.product-edit{
+		text-align: center;
+	}
 }
 @media (min-width: 768px){
 	.final-translation-transcript{
@@ -136,6 +149,9 @@
 }
 
 @media (min-width: 992px){
+	.final-translation-transcript{
+		margin-top: -1px;
+	}
 	.container .row {
 		margin-left: -0.75rem;
 		margin-right: -0.75rem;
@@ -145,6 +161,9 @@
 }
 
 @media (min-width: 1200px){
+	.final-translation-transcript{
+		margin-top: -1px;
+	}
 	.container .row {
 		margin-left: -0.75rem;
 		margin-right: -0.75rem;

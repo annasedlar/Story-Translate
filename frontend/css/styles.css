@@ -199,7 +199,6 @@ a:hover {
   float: right;
   right: 10px;
   cursor: pointer;
-  clear: both;
 }
 
 /* line 78, ../compass/sass/_styles4.scss */
@@ -228,28 +227,41 @@ a:hover {
   color: red;
   right: 10px;
   float: right;
+  position: relative;
 }
 
+@media (max-width: 550px) {
+  /* line 107, ../compass/sass/_styles4.scss */
+  .product-incomplete {
+    color: red;
+    float: right;
+  }
+}
 @media (max-width: 768px) {
-  /* line 106, ../compass/sass/_styles4.scss */
+  /* line 116, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
-    margin-top: 55px;
+    margin-top: 2px;
   }
 
-  /* line 118, ../compass/sass/_styles4.scss */
+  /* line 128, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
+
+  /* line 134, ../compass/sass/_styles4.scss */
+  .product-edit {
+    text-align: center;
+  }
 }
 @media (min-width: 768px) {
-  /* line 126, ../compass/sass/_styles4.scss */
+  /* line 139, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 50px;
   }
 
-  /* line 129, ../compass/sass/_styles4.scss */
+  /* line 142, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
@@ -257,7 +269,12 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
-  /* line 139, ../compass/sass/_styles4.scss */
+  /* line 152, ../compass/sass/_styles4.scss */
+  .final-translation-transcript {
+    margin-top: -1px;
+  }
+
+  /* line 155, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -266,7 +283,12 @@ a:hover {
   }
 }
 @media (min-width: 1200px) {
-  /* line 148, ../compass/sass/_styles4.scss */
+  /* line 164, ../compass/sass/_styles4.scss */
+  .final-translation-transcript {
+    margin-top: -1px;
+  }
+
+  /* line 167, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
