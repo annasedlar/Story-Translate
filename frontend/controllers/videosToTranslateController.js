@@ -1,11 +1,11 @@
 app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
    $scope.videoToBeTranslatedArray = [];
    var colors = [];
-    var tempUrl = 'http://localhost:3000/videos'
+    var tempUrl = 'http://annasedlar.com:3000/videos'
     // $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
-	var tempUrl = 'http://localhost:3000/videos'
+	var tempUrl = 'http://annasedlar.com:3000/videos'
 	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
 
     $http({
@@ -24,7 +24,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
 
             var tempFamilyName = '';
             $scope.videoData.data.map((video, index)=>{
-                var myUrl = 'http://localhost:3000/videos/' + video.name
+                var myUrl = 'http://annasedlar.com:3000/videos/' + video.name
                 video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
@@ -71,7 +71,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             // console.log(tempDataToSend.token)
             $http({
                 method:'POST',
-                url: 'http://localhost:3000/deleteVideo/',
+                url: 'http://annasedlar.com:3000/deleteVideo/',
                 data: tempDataToSend
             }).then(
                 function successFunction(data){
