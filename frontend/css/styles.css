@@ -105,14 +105,15 @@ a:hover {
   font-size: 13px;
   border: none;
 }
-/* line 47, ../compass/sass/_styles3.scss */
-.delete-button:active {
+
+/* line 56, ../compass/sass/_styles3.scss */
+.delete-button:hover {
   background-color: #fa6464;
   border-radius: 25px;
   text-decoration: none;
 }
 
-/* line 57, ../compass/sass/_styles3.scss */
+/* line 65, ../compass/sass/_styles3.scss */
 .go-home {
   position: fixed;
   top: 5px;
@@ -123,17 +124,17 @@ a:hover {
   height: 50px;
   width: 50px;
 }
-/* line 67, ../compass/sass/_styles3.scss */
+/* line 75, ../compass/sass/_styles3.scss */
 .go-home span {
   padding-left: 1px;
   font-size: 30px;
   color: black;
 }
-/* line 72, ../compass/sass/_styles3.scss */
+/* line 80, ../compass/sass/_styles3.scss */
 .go-home:hover {
   background-color: black;
 }
-/* line 74, ../compass/sass/_styles3.scss */
+/* line 82, ../compass/sass/_styles3.scss */
 .go-home:hover span {
   color: grey;
 }
@@ -646,7 +647,13 @@ span .header {
   padding-left: 20px;
 }
 
-/* line 384, ../compass/sass/styles.scss */
+@media (max-width: 768px) {
+  /* line 380, ../compass/sass/styles.scss */
+  .card-class {
+    margin-top: 2px;
+  }
+}
+/* line 389, ../compass/sass/styles.scss */
 .video-data-1 {
   height: 20px;
   font-family: sans-serif;
@@ -655,19 +662,19 @@ span .header {
   color: black;
 }
 
-/* line 400, ../compass/sass/styles.scss */
+/* line 405, ../compass/sass/styles.scss */
 .video-data-2 {
   width: 180px;
   height: 110px;
   position: relative;
 }
-/* line 404, ../compass/sass/styles.scss */
+/* line 409, ../compass/sass/styles.scss */
 .video-data-2 video {
   width: 180px;
   height: 110px;
   filter: brightness(100%);
 }
-/* line 414, ../compass/sass/styles.scss */
+/* line 419, ../compass/sass/styles.scss */
 .video-data-2 .translate-letter {
   position: absolute;
   text-align: center;
@@ -677,13 +684,13 @@ span .header {
   color: white;
 }
 
-/* line 425, ../compass/sass/styles.scss */
+/* line 430, ../compass/sass/styles.scss */
 .video-data-2:hover video {
   filter: brightness(30%);
   transition: filter 0.5s;
 }
 
-/* line 435, ../compass/sass/styles.scss */
+/* line 440, ../compass/sass/styles.scss */
 .video-data-3 {
   padding-top: 62px;
   width: 50%;
@@ -692,44 +699,44 @@ span .header {
   text-align: center;
   top: 0;
 }
-/* line 442, ../compass/sass/styles.scss */
+/* line 447, ../compass/sass/styles.scss */
 .video-data-3 .watch-button {
   font-size: 13px;
   padding: 10px;
 }
-/* line 447, ../compass/sass/styles.scss */
+/* line 452, ../compass/sass/styles.scss */
 .video-data-3 .watch-button:hover {
   filter: brightness(50%);
 }
 
-/* line 454, ../compass/sass/styles.scss */
+/* line 459, ../compass/sass/styles.scss */
 .each-video-description {
   display: inline-block;
   height: 110px;
 }
 
-/* line 460, ../compass/sass/styles.scss */
+/* line 465, ../compass/sass/styles.scss */
 .hide-class {
   display: none;
 }
 
-/* line 464, ../compass/sass/styles.scss */
+/* line 469, ../compass/sass/styles.scss */
 .skip-placeholder {
   height: 60px;
 }
-/* line 466, ../compass/sass/styles.scss */
+/* line 471, ../compass/sass/styles.scss */
 .skip-placeholder .horiz-line {
   height: 30px;
   border-bottom: 3px solid #1dbbd8;
   margin-bottom: 30px;
 }
 
-/* line 473, ../compass/sass/styles.scss */
+/* line 478, ../compass/sass/styles.scss */
 .each-family-class {
   border: 1px solid black;
 }
 
-/* line 490, ../compass/sass/styles.scss */
+/* line 495, ../compass/sass/styles.scss */
 .translate-header {
   position: absolute;
   top: 0;
@@ -745,12 +752,12 @@ span .header {
   color: black;
 }
 
-/* line 506, ../compass/sass/styles.scss */
+/* line 511, ../compass/sass/styles.scss */
 .translate-background {
   margin-top: 100px;
 }
 
-/* line 510, ../compass/sass/styles.scss */
+/* line 515, ../compass/sass/styles.scss */
 .translate-bg {
   width: 100vw;
   height: 100vh;
@@ -758,24 +765,24 @@ span .header {
   bottom: 0;
   left: 0;
 }
-/* line 516, ../compass/sass/styles.scss */
+/* line 521, ../compass/sass/styles.scss */
 .translate-bg img {
   width: 100%;
   filter: brightness(20%);
   min-height: 100vh;
 }
 
-/* line 523, ../compass/sass/styles.scss */
+/* line 528, ../compass/sass/styles.scss */
 .entireProductVideoWrapper {
   margin-top: 120px;
 }
 
-/* line 529, ../compass/sass/styles.scss */
+/* line 534, ../compass/sass/styles.scss */
 .final-product-header, .related-videos-header, .final-translation-transcript, .family-name-in-product-video {
   font-size: 25px;
 }
 
-/* line 532, ../compass/sass/styles.scss */
+/* line 537, ../compass/sass/styles.scss */
 .final-product-header {
   position: absolute;
   top: 0;
@@ -791,12 +798,12 @@ span .header {
   border-bottom: 20px solid black;
 }
 
-/* line 549, ../compass/sass/styles.scss */
+/* line 554, ../compass/sass/styles.scss */
 .videoProductHr {
   border-top: 2px solid black;
 }
 
-/* line 552, ../compass/sass/styles.scss */
+/* line 557, ../compass/sass/styles.scss */
 .go-home3 {
   position: absolute;
   top: 15px;
@@ -807,17 +814,17 @@ span .header {
   height: 50px;
   width: 50px;
 }
-/* line 562, ../compass/sass/styles.scss */
+/* line 567, ../compass/sass/styles.scss */
 .go-home3 span {
   padding-left: 1px;
   font-size: 30px;
   color: black;
 }
-/* line 567, ../compass/sass/styles.scss */
+/* line 572, ../compass/sass/styles.scss */
 .go-home3:hover {
   background-color: black;
 }
-/* line 569, ../compass/sass/styles.scss */
+/* line 574, ../compass/sass/styles.scss */
 .go-home3:hover span {
   color: grey;
 }

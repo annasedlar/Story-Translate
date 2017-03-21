@@ -376,6 +376,11 @@ span .header{
     padding-left:20px;
     // opacity: 0.5;
 }
+@media (max-width: 768px){
+    .card-class{
+        margin-top: 2px;
+    }
+}
 .card-class:hover{
     // border-radius: 5%;
     // transition:border-radius .5s;
