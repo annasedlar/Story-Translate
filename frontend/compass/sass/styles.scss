@@ -492,21 +492,21 @@ body{
 
 }
 
-.translate-header{
-    position: absolute;
-    top:0;
-    left:0;
-    width:100vw;
-    height:100px;
-    background-color: $dark-background;
-    color:white;
-    text-align: center;
-    line-height: 100px;
-    font-size: 33px;
-    font-family: 'Montserrat';
-    color: black;
-    // border-bottom: 1px solid black;
-}
+// .translate-header{
+//     position: absolute;
+//     top:0;
+//     left:0;
+//     width:100vw;
+//     height:100px;
+//     background-color: $dark-background;
+//     color:white;
+//     text-align: center;
+//     line-height: 100px;
+//     font-size: 33px;
+//     font-family: 'Montserrat';
+//     color: black;
+//     // border-bottom: 1px solid black;
+// }
 
 .translate-background{
     margin-top:100px;
@@ -554,27 +554,44 @@ body{
 .videoProductHr{
     border-top: 2px solid black;
 }
-.go-home3{
-    position: absolute;
-    top:15px;
-    left:10px;
-    z-index: 2;
-    // border-radius: 50%;
-    border: 3px solid black;
-    padding: 5px;
-    height:50px;
-    width:50px;
-    span{
-        padding-left: 1px;
-        font-size: 30px;
-        color: black;
-    }
-    &:hover{
-        background-color: black;
-        span{
-            color: grey;
-        }
-    }
+.nav-button-container{
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 7;
+}
+
+.nav-buttons {
+  display: inline-block;
+  z-index: 8;
+  border: 3px solid black;
+  padding: 5px;
+  height: 50px;
+  width: 50px;
+}
+.nav-buttons span {
+  padding-left: 1px;
+  font-size: 30px;
+  color: black;
+}
+.nav-buttons:hover {
+  background-color: black;
+}
+.nav-buttons:hover span {
+  color: grey;
+}
+.grey-header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100px;
+  background-color: grey;
+  text-align: center;
+  font-size: 25px;
+  font-family: 'Montserrat';
+  color: white;
+  border-bottom: 20px solid black;
 }
 
 // from materialize (changes the final product transcript container margins)

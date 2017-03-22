@@ -831,7 +831,7 @@ span .header {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 10%;
+  height: 100px;
   background-color: grey;
   text-align: center;
   font-size: 25px;
