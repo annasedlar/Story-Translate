@@ -48,13 +48,13 @@
 }
 
 .currentlyPlaying{
-	position: relative;
-	color:white;
-	text-align: center;
-	width: 30%;
-	left: 30%;
-	bottom: 87px;
-	display: none;
+	// position: relative;
+	// color:white;
+	// text-align: center;
+	// width: 30%;
+	// left: 30%;
+	// bottom: 87px;
+	// display: none;
 }
 
 .displayCP{
@@ -68,19 +68,21 @@
 }
 .hideCP{
 	position: relative;
-	color:white;
+	color:transparent;
 	text-align: center;
 	width: 30%;
 	left: 30%;
 	bottom: 87px;
-	display: none;
+	// display: none;
 }
 .each-related-video{
-	filter:brightness(70%)
+	filter:brightness(70%);
+	height:6vw;
 }
 
 .editAndWatch{
 	position: relative;
+	padding: 0 15px;
 }
 .product-edit{
 	// position: absolute;
@@ -110,7 +112,7 @@
 }
 
 .greenClass{
-    height:auto;
+    // height:auto;
     .product-incomplete{
         display: none;
     }

@@ -170,17 +170,6 @@ a:hover {
   position: relative;
 }
 
-/* line 50, ../compass/sass/_styles4.scss */
-.currentlyPlaying {
-  position: relative;
-  color: white;
-  text-align: center;
-  width: 30%;
-  left: 30%;
-  bottom: 87px;
-  display: none;
-}
-
 /* line 60, ../compass/sass/_styles4.scss */
 .displayCP {
   position: relative;
@@ -195,59 +184,56 @@ a:hover {
 /* line 69, ../compass/sass/_styles4.scss */
 .hideCP {
   position: relative;
-  color: white;
+  color: transparent;
   text-align: center;
   width: 30%;
   left: 30%;
   bottom: 87px;
-  display: none;
 }
 
 /* line 78, ../compass/sass/_styles4.scss */
 .each-related-video {
   filter: brightness(70%);
+  height: 6vw;
 }
 
-/* line 82, ../compass/sass/_styles4.scss */
+/* line 83, ../compass/sass/_styles4.scss */
 .editAndWatch {
   position: relative;
+  padding: 0 15px;
 }
 
-/* line 85, ../compass/sass/_styles4.scss */
+/* line 87, ../compass/sass/_styles4.scss */
 .product-edit {
   float: left;
   left: 10px;
 }
 
-/* line 91, ../compass/sass/_styles4.scss */
+/* line 93, ../compass/sass/_styles4.scss */
 .product-watch {
   float: right;
   right: 10px;
   cursor: pointer;
 }
 
-/* line 99, ../compass/sass/_styles4.scss */
+/* line 101, ../compass/sass/_styles4.scss */
 .product-inline {
   display: inline-block;
   width: 30%;
   margin-right: 3%;
 }
 
-/* line 107, ../compass/sass/_styles4.scss */
+/* line 109, ../compass/sass/_styles4.scss */
 .redClass .product-watch {
   display: none;
 }
 
-/* line 112, ../compass/sass/_styles4.scss */
-.greenClass {
-  height: auto;
-}
-/* line 114, ../compass/sass/_styles4.scss */
+/* line 116, ../compass/sass/_styles4.scss */
 .greenClass .product-incomplete {
   display: none;
 }
 
-/* line 118, ../compass/sass/_styles4.scss */
+/* line 120, ../compass/sass/_styles4.scss */
 .product-incomplete {
   color: red;
   right: 10px;
@@ -256,7 +242,7 @@ a:hover {
 }
 
 @media (max-width: 550px) {
-  /* line 128, ../compass/sass/_styles4.scss */
+  /* line 130, ../compass/sass/_styles4.scss */
   .product-incomplete {
     color: red;
     float: right;
@@ -264,30 +250,30 @@ a:hover {
   }
 }
 @media (max-width: 768px) {
-  /* line 137, ../compass/sass/_styles4.scss */
+  /* line 139, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 2px;
   }
 
-  /* line 149, ../compass/sass/_styles4.scss */
+  /* line 151, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
 
-  /* line 155, ../compass/sass/_styles4.scss */
+  /* line 157, ../compass/sass/_styles4.scss */
   .product-edit {
     text-align: center;
   }
 }
 @media (min-width: 768px) {
-  /* line 160, ../compass/sass/_styles4.scss */
+  /* line 162, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 2px;
   }
 
-  /* line 163, ../compass/sass/_styles4.scss */
+  /* line 165, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
@@ -295,12 +281,12 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
-  /* line 173, ../compass/sass/_styles4.scss */
+  /* line 175, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: -1px;
   }
 
-  /* line 176, ../compass/sass/_styles4.scss */
+  /* line 178, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -309,12 +295,12 @@ a:hover {
   }
 }
 @media (min-width: 1200px) {
-  /* line 185, ../compass/sass/_styles4.scss */
+  /* line 187, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: -1px;
   }
 
-  /* line 196, ../compass/sass/_styles4.scss */
+  /* line 198, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
