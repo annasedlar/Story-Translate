@@ -1,11 +1,30 @@
+		<!-- upload video modal -->
+<div id="demoModal" class="modal" style='text-align: center' ng-controller="uploadRawVideoController">
+    <form ng-submit="submit()">
+        <div>
+            <label for='' class="modalTitle">Upload video to translate</label>
+            <div>
+                <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
+            </div>
+               <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
+        </div>
+            <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
+        <div class="failedUploadMessage">{{failedUpload}}</div>
+
+    </form>
+</div>
+
+
+
+
 <div class="grey-header">
-	<h1>Translate Video</h1>
+	<h1>Click a Video to Translate or View</h1>
 	<div class="nav-button-container">	
 		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
+		<a data-target='demoModal' modal><div class='nav-buttons' style="cursor:pointer"><span class='glyphicon glyphicon-upload'></span></div></a>
 	</div>
 </div>
-
 
  <div class="container-fluid entireTranslateVideoWrapper" style="margin-top:100px">
 	<div class="col-xs-12 col-md-6 translate-left-side-wrapper">
