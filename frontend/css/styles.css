@@ -139,7 +139,7 @@ a:hover {
   color: grey;
 }
 
-/* line 23, ../compass/sass/_styles4.scss */
+/* line 24, ../compass/sass/_styles4.scss */
 .transcript-wrapper {
   background-color: #e6e6e6;
   box-shadow: 7px 7px 5px 2px grey;
@@ -147,13 +147,13 @@ a:hover {
   overflow: hidden;
 }
 
-/* line 30, ../compass/sass/_styles4.scss */
+/* line 31, ../compass/sass/_styles4.scss */
 .video-wrapper {
   position: relative;
   width: 100%;
 }
 
-/* line 34, ../compass/sass/_styles4.scss */
+/* line 35, ../compass/sass/_styles4.scss */
 .current-transcript {
   position: absolute;
   bottom: 38px;
@@ -165,13 +165,24 @@ a:hover {
   word-wrap: break-word;
 }
 
-/* line 45, ../compass/sass/_styles4.scss */
+/* line 46, ../compass/sass/_styles4.scss */
 .related-videos-wrapper {
   position: relative;
 }
 
-/* line 49, ../compass/sass/_styles4.scss */
+/* line 50, ../compass/sass/_styles4.scss */
 .currentlyPlaying {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 30%;
+  left: 30%;
+  bottom: 87px;
+  display: none;
+}
+
+/* line 60, ../compass/sass/_styles4.scss */
+.displayCP {
   position: relative;
   color: white;
   text-align: center;
@@ -181,51 +192,62 @@ a:hover {
   display: block;
 }
 
-/* line 59, ../compass/sass/_styles4.scss */
+/* line 69, ../compass/sass/_styles4.scss */
+.hideCP {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 30%;
+  left: 30%;
+  bottom: 87px;
+  display: none;
+}
+
+/* line 78, ../compass/sass/_styles4.scss */
 .each-related-video {
   filter: brightness(70%);
 }
 
-/* line 63, ../compass/sass/_styles4.scss */
+/* line 82, ../compass/sass/_styles4.scss */
 .editAndWatch {
   position: relative;
 }
 
-/* line 66, ../compass/sass/_styles4.scss */
+/* line 85, ../compass/sass/_styles4.scss */
 .product-edit {
   float: left;
   left: 10px;
 }
 
-/* line 72, ../compass/sass/_styles4.scss */
+/* line 91, ../compass/sass/_styles4.scss */
 .product-watch {
   float: right;
   right: 10px;
   cursor: pointer;
 }
 
-/* line 80, ../compass/sass/_styles4.scss */
+/* line 99, ../compass/sass/_styles4.scss */
 .product-inline {
   display: inline-block;
   width: 30%;
   margin-right: 3%;
 }
 
-/* line 88, ../compass/sass/_styles4.scss */
+/* line 107, ../compass/sass/_styles4.scss */
 .redClass .product-watch {
   display: none;
 }
 
-/* line 93, ../compass/sass/_styles4.scss */
+/* line 112, ../compass/sass/_styles4.scss */
 .greenClass {
   height: auto;
 }
-/* line 95, ../compass/sass/_styles4.scss */
+/* line 114, ../compass/sass/_styles4.scss */
 .greenClass .product-incomplete {
   display: none;
 }
 
-/* line 99, ../compass/sass/_styles4.scss */
+/* line 118, ../compass/sass/_styles4.scss */
 .product-incomplete {
   color: red;
   right: 10px;
@@ -234,7 +256,7 @@ a:hover {
 }
 
 @media (max-width: 550px) {
-  /* line 109, ../compass/sass/_styles4.scss */
+  /* line 128, ../compass/sass/_styles4.scss */
   .product-incomplete {
     color: red;
     float: right;
@@ -242,30 +264,30 @@ a:hover {
   }
 }
 @media (max-width: 768px) {
-  /* line 118, ../compass/sass/_styles4.scss */
+  /* line 137, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 2px;
   }
 
-  /* line 130, ../compass/sass/_styles4.scss */
+  /* line 149, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
 
-  /* line 136, ../compass/sass/_styles4.scss */
+  /* line 155, ../compass/sass/_styles4.scss */
   .product-edit {
     text-align: center;
   }
 }
 @media (min-width: 768px) {
-  /* line 141, ../compass/sass/_styles4.scss */
+  /* line 160, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: 2px;
   }
 
-  /* line 144, ../compass/sass/_styles4.scss */
+  /* line 163, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     word-wrap: break-word;
@@ -273,12 +295,12 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
-  /* line 154, ../compass/sass/_styles4.scss */
+  /* line 173, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: -1px;
   }
 
-  /* line 157, ../compass/sass/_styles4.scss */
+  /* line 176, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;
@@ -287,12 +309,12 @@ a:hover {
   }
 }
 @media (min-width: 1200px) {
-  /* line 166, ../compass/sass/_styles4.scss */
+  /* line 185, ../compass/sass/_styles4.scss */
   .final-translation-transcript {
     margin-top: -1px;
   }
 
-  /* line 177, ../compass/sass/_styles4.scss */
+  /* line 196, ../compass/sass/_styles4.scss */
   .container .row {
     margin-left: -0.75rem;
     margin-right: -0.75rem;

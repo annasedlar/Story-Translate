@@ -1,3 +1,4 @@
+
 // product page
 
 .relatedVids{
@@ -53,9 +54,27 @@
 	width: 30%;
 	left: 30%;
 	bottom: 87px;
-	display: block;
+	display: none;
 }
 
+.displayCP{
+	position: relative;
+	color:white;
+	text-align: center;
+	width: 30%;
+	left: 30%;
+	bottom: 87px;
+	display: block;
+}
+.hideCP{
+	position: relative;
+	color:white;
+	text-align: center;
+	width: 30%;
+	left: 30%;
+	bottom: 87px;
+	display: none;
+}
 .each-related-video{
 	filter:brightness(70%)
 }

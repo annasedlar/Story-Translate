@@ -1,10 +1,11 @@
 app.controller('videoProductController',  function($scope, $location, $http, $sce, $interval){
- $scope.currentlyPlaying = false;
-  $scope.thisOne = true;
-  $scope.currentlyPlaying = function(video){
-    $scope.thisOne = false;
-    console.log()
-  } 
+ // $scope.currentlyPlaying = false;
+ //  $scope.thisOne = true;
+ //  $scope.currentlyPlaying = function(video){
+ //    $scope.thisOne = false;
+ //    console.log("did it work?")
+ //  } 
+ $scope.transcriptHTML = []
   var paramsId = $location.$$path.slice(14)
 	var tempUrl = 'http://annasedlar.com:3000/videosFinished'
 	$http({
@@ -32,6 +33,13 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      		familyArray.map((video, index)=>{
 				      			var myUrl = 'http://annasedlar.com:3000/' + video.path.slice(7)
 				      			// console.log(video)
+                    var showCPorNot = ''
+                    if(video.token == $location.$$path.slice(14)){
+                      showCPorNot = 'displayCP'
+                      console.log(video.token)
+                    }else{
+                      showCPorNot = 'hideCP'
+                    }
 				      			var tempSceThing = $sce.trustAsResourceUrl(myUrl)	
 				      			var finishedClass = ''
 				      			// var editUrl = ''
@@ -40,17 +48,20 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      			var showOrNot = false
                     // var currentlyPlaying = "Currently Playing"
 				      			if(video.finished){
-				      				finishedClass = 'greenClass'
+				      				finishedClass = 'greenClass';
 				      				showOrNot = true;
+                      
 				      			}else{
-				      				finishedClass = 'redClass'
+				      				finishedClass = 'redClass';
+                    
 				      			}
 				      			familyVideoHTML.push({
 				      				sce: tempSceThing,
 				      				editUrl : editUrl,
 				      				finishedClass: finishedClass,
 				      				showOrNot: showOrNot,
-                      selectUrl: selectUrl
+                      selectUrl: selectUrl,
+                      showCPorNot: showCPorNot
 				      			})
 				      		})
 				      		$scope.familyVideoHTML = familyVideoHTML
