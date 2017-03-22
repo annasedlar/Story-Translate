@@ -152,6 +152,15 @@ router.post('/deleteVideo', function(req,res,next){
     })    
 })
 
+router.post('/deleteFamily', function(req,res,next){
+    var selectQuery = 'DELETE FROM videos WHERE familyName = ?'
+    var familyName = req.body.familyName;
+    connection.query(selectQuery, [familyName],(DBerror, results, fields)=>{
+        if(DBerror) throw DBerror; 
+        res.json(results)
+    })    
+})
+
 
 
 

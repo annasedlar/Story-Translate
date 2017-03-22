@@ -1,11 +1,11 @@
 app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
    $scope.videoToBeTranslatedArray = [];
    var colors = [];
-    var tempUrl = 'http://annasedlar.com:3000/videos'
+    var tempUrl = 'http://localhost:3000/videos'
     // $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
-	var tempUrl = 'http://annasedlar.com:3000/videos'
+	var tempUrl = 'http://localhost:3000/videos'
 	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
     $http({
         method: "GET",
@@ -23,7 +23,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
 
             var tempFamilyName = '';
             $scope.videoData.data.map((video, index)=>{
-                var myUrl = 'http://annasedlar.com:3000/videos/' + video.name
+                var myUrl = 'http://localhost:3000/videos/' + video.name
                 video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
@@ -79,7 +79,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             // console.log(tempDataToSend.token)
             $http({
                 method:'POST',
-                url: 'http://annasedlar.com:3000/deleteVideo/',
+                url: 'http://localhost:3000/deleteVideo/',
                 data: tempDataToSend
             }).then(
                 function successFunction(data){
@@ -90,5 +90,79 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                 }
             )
         }
-    }    
+    }   
+    $scope.indexArray = [];
+    $scope.deleteFamily = function(familyName){
+        
+        var deletedFam = confirm("Are you sure you want to delete videos for " + familyName + "?")
+        if(deletedFam){
+            var dataToSend =  {
+                familyName: familyName
+            }
+            $http({
+                method: "GET",
+                url: 'http://localhost:3000/videos/'
+            }).then(
+                function successFunction(videoData){
+                    videoData.data.map((video, index)=>{
+                        if(video.familyName == familyName){
+                            $scope.videoData.data.map((vid,index2)=>{
+                                if(vid.id == video.id){
+                                    $scope.videoData.data.splice(index2,1)
+                                }
+                            })
+                        }
+                    })
+                },
+                function failedFunction(data){
+                // console.log("fail")
+                }   
+            )            
+            $http({
+                method:'POST',
+                url: 'http://localhost:3000/deleteFamily/',
+                data: dataToSend
+            }).then(
+                function successFunction(data){
+                    console.log('ssss')
+                  },
+                function failedFunction(data){
+                    // console.log("fail")
+                }
+            )
+        }
+    }
 }]);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

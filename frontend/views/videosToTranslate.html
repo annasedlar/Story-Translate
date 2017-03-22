@@ -11,7 +11,7 @@
 		<div ng-class='video.skipClass' class='col-xs-12 skip-placeholder '>
 			&nbsp;
 		</div>
-		<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>{{video.familyName}}</div>
+		<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>{{video.familyName}} <button ng-click='deleteFamily(video.familyName)'>Delete Family</button></div>
 		<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row' style="margin-bottom: 3%">
 			<div class='card-panel card-class'>
 				<button class='delete-button' ng-click='deleteVideo(video)'>x</button>

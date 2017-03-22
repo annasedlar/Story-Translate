@@ -1,58 +1,136 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<div class="grey-header">
-	<h1>Translate Video</h1>
-	<div class="nav-button-container">	
-		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
-		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
-	</div>
-</div>
+app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
+   $scope.videoToBeTranslatedArray = [];
+   var colors = [];
+    var tempUrl = 'http://localhost:3000/videos'
+    // $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
+    $scope.videoToBeTranslatedArray = [];
+    var colors = [];
+	var tempUrl = 'http://localhost:3000/videos'
+	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
+    $http({
+        method: "GET",
+        url: tempUrl
+    }).then(
+        function successFunction(videoData){
+            // console.log(videoData)
+            videoData.data.sort(function(a, b){
+                if(a.familyName < b.familyName) return -1;
+                if(a.familyName > b.familyName) return 1;
+                return 0;
+            })                
 
-<style>
-.nav-button-container{
-	position: absolute;
-	top: 15px;
-	left: 15px;
-	z-index: 7;
-}
+            $scope.videoData = videoData
 
-.nav-buttons {
-  display: inline-block;
-  z-index: 8;
-  border: 3px solid black;
-  padding: 5px;
-  height: 50px;
-  width: 50px;
-}
-.nav-buttons span {
-  padding-left: 1px;
-  font-size: 30px;
-  color: black;
-}
-.nav-buttons:hover {
-  background-color: black;
-}
-.nav-buttons:hover span {
-  color: grey;
-}
-.grey-header{
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 10%;
-	background-color: grey;
-	text-align: center;
-	font-size: 25px;
-	font-family: 'Montserrat';
-	color: white;
-	border-bottom: 20px solid black;
-}
+            var tempFamilyName = '';
+            $scope.videoData.data.map((video, index)=>{
+                var myUrl = 'http://localhost:3000/videos/' + video.name
+                video.name = $sce.trustAsResourceUrl(myUrl)
+                if(!index){
+                    tempFamilyName = video.familyName
+                    // video.skipClass = 'hide-class'
+                }else if(video.familyName.toUpperCase() == tempFamilyName.toUpperCase()){
+                    video.familyName = ''
+                    video.skipClass = 'hide-class'
+                
+                }else{
+                    tempFamilyName = video.familyName
+                    video.skipClass = 'nothing'
+                    
+                }
+                if(video.finished){
+                    video.finished = ''
+                    video.classStyle = 'video-complete'
+                    video.checkItOutClass = ''
+                    
+                }else{
+                    video.finished = 'Incomplete'
+                    video.classStyle = 'video-incomplete'
+                    video.checkItOutClass = 'displayNone'
+                   
+                }
 
-</style>
-</body>
-</html>
+            })
+            console.log($scope.videoData.data[0].classStyle)
+            // $scope.videoToBeTranslatedArray.push(videoData.data)
+            // $scope.tempArray = []
+
+            // videoData.data.map((eachVideo, index)=>{
+            //     console.log(eachVideo)
+            //     $scope.videoToBeTranslatedArray.push(eachVideo.name)
+            // })
+        },
+        function failedFunction(videoData){
+            // console.log(videoData)
+        }
+    )
+
+    $scope.deleteVideo = function(video){
+        var deleteVid = confirm("Delete Video?")
+        if(deleteVid){
+            var tempDataToSend = {
+                token: video.token
+            }
+            $scope.videoData.data.map((vid, index)=>{
+                if(vid.token == video.token){
+                    $scope.videoData.data.splice(index,1)
+                }
+            })
+            console.log($scope.videoData.data['video'])
+            // console.log(tempDataToSend.token)
+            $http({
+                method:'POST',
+                url: 'http://localhost:3000/deleteVideo/',
+                data: tempDataToSend
+            }).then(
+                function successFunction(data){
+                    // console.log(data)
+                  },
+                function failedFunction(data){
+                    // console.log("fail")
+                }
+            )
+        }
+    }   
+    $scope.indexArray = [];
+    $scope.deleteFamily = function(familyName){
+        
+        var deletedFam = confirm("Are you sure you want to delete videos for " + familyName + "?")
+        if(deletedFam){
+            var dataToSend =  {
+                familyName: familyName
+            }
+            $http({
+                method: "GET",
+                url: 'http://localhost:3000/videos/'
+            }).then(
+                function successFunction(videoData){
+                    videoData.data.map((video, index)=>{
+                        if(video.familyName == familyName){
+                            $scope.videoData.data.map((vid,index2)=>{
+                                if(vid.id == video.id){
+                                    $scope.videoData.data.splice(index2,1)
+                                }
+                            })
+                        }
+                    })
+                },
+                function failedFunction(data){
+                // console.log("fail")
+                }   
+            )            
+            $http({
+                method:'POST',
+                url: 'http://localhost:3000/deleteFamily/',
+                data: dataToSend
+            }).then(
+                function successFunction(data){
+                    console.log('ssss')
+                  },
+                function failedFunction(data){
+                    // console.log("fail")
+                }
+            )
+        }
+    }
+}]);
+
