@@ -1,6 +1,7 @@
 app.controller('translateVideoController',['$scope', '$location', '$http', '$sce', function($scope, $location, $http, $sce){
 	var paramsId = $location.$$path.slice(16)
 	var onLoadUrl = 'http://annasedlar.com:3000/transcript/' + paramsId
+	$scope.seeFinishedButton = 'finishedButtonHide'
 	$http({
     	method: "GET",
     	url: onLoadUrl
@@ -277,6 +278,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 
 	$scope.submitForm = function(){
 		console.log($scope.entireTranscript)
+		
 		var transcriptUrl = 'http://annasedlar.com:3000/transcript/' + $location.$$path.slice(16);
 		$http({
 			method:'POST',
@@ -285,7 +287,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     	}).then(
       		function successFunction(data){			
 				var finishedUrl = 'http://annasedlar.com:3000/finished/' + $location.$$path.slice(16);
-		// 		console.log(finishedUrl)
+		// 		
+		// console.log(finishedUrl)
 				var dataArray = [1]
 				$http({
 					method:'POST',
@@ -296,6 +299,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 			        	console.log(data)
 			        	console.log('worked')
 			        	$scope.submissionStatus = "Form submission success"
+			        	$scope.seeFinishedButton = 'seeFinishedButton'
 				    },
 		    	  	function failedFunction(data){
 			    	    console.log("fail")
@@ -363,6 +367,11 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 				}
 	  		)
     	}
+	}
+
+	$scope.bringToFinal = function(){
+		var vidToken = $location.$$path.slice(16)
+		$location.path('videoProduct/'+ vidToken)
 	}
 
 }]);
