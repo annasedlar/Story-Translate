@@ -1,8 +1,28 @@
+		<!-- upload video modal -->
+<div id="demoModal" class="modal" style='text-align: center' ng-controller="uploadRawVideoController">
+    <form ng-submit="submit()">
+        <div>
+            <label for='' class="modalTitle">Upload video to translate</label>
+            <div>
+                <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
+            </div>
+               <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
+        </div>
+            <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
+        <div class="failedUploadMessage">{{failedUpload}}</div>
+
+    </form>
+</div>
+
+
+
+
 <div class="grey-header">
 	<h1>Click a Video to Translate or View</h1>
 	<div class="nav-button-container">	
 		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
+		<a data-target='demoModal' modal><div class='nav-buttons' style="cursor:pointer"><span class='glyphicon glyphicon-upload'></span></div></a>
 	</div>
 </div>
 <!-- style="position:fixed; margin-top:20%; margin-left:4%; width:200px; z-index:6; background-color:lightgrey; height:70px; border-radius: 50%"> -->
@@ -11,7 +31,9 @@
 		<div ng-class='video.skipClass' class='col-xs-12 skip-placeholder '>
 			&nbsp;
 		</div>
-		<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>{{video.familyName}} <button ng-click='deleteFamily(video.familyName)'>Delete Family</button></div>
+		<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>
+			<button class="btn-floating btn-small waves-effect waves-light red" ng-click='deleteFamily(video.familyName)'><i class="large material-icons">not_interested</i></button> {{video.familyName}}
+		</div>
 		<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row' style="margin-bottom: 3%">
 			<div class='card-panel card-class'>
 				<button class='delete-button' ng-click='deleteVideo(video)'>x</button>

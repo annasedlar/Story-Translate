@@ -94,7 +94,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
     $scope.indexArray = [];
     $scope.deleteFamily = function(familyName){
         
-        var deletedFam = confirm("Are you sure you want to delete videos for " + familyName + "?")
+        var deletedFam = confirm("Are you sure you want to delete al videos for " + familyName + "?")
         if(deletedFam){
             var dataToSend =  {
                 familyName: familyName
@@ -124,7 +124,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                 data: dataToSend
             }).then(
                 function successFunction(data){
-                    console.log('ssss')
+                    console.log('successfully deleted family')
                   },
                 function failedFunction(data){
                     // console.log("fail")
