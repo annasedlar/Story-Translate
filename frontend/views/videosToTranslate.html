@@ -6,11 +6,10 @@
             <div>
                 <input ng-model='familyName' type='text' placeholder="Enter family or group name" style="width:300px; height:50px; font-size: 18px; color:black; margin-top:30px;"/>
             </div>
-               <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
+            <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
         </div>
             <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
         <div class="failedUploadMessage">{{failedUpload}}</div>
-
     </form>
 </div>
 
@@ -24,52 +23,46 @@
 	</div>
 </div>
 
-	<div ng-repeat="video in videoData.data" class='translate-background'> 
-		<div ng-class='video.skipClass' class='col-xs-12 skip-placeholder '>
-			&nbsp;
-			<div class='horiz-line'>
-				
+<div ng-repeat="video in videoData.data" class='translate-background'> 
+	<div ng-class='video.skipClass' class='col-xs-12 skip-placeholder '>&nbsp;
+		<div class='horiz-line'></div>
+	</div>
+	<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>
+		<div class='family-name-wrapper'>		
+			<div class='family-name-text'>
+				<div class='actual-text'>{{video.familyName}}	&nbsp;&nbsp;&nbsp;&nbsp;</div>
+				<div class='fam-icon'></div>
 			</div>
+			<button class="btn-floating btn-small waves-effect waves-light red delete-family-button" ng-click='deleteFamily(video.familyName)'><i class="large material-icons">not_interested</i></button> 
 		</div>
-		<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>
-			<div class='family-name-wrapper row'>
-				
-				<div class='family-name-text'>{{video.familyName}}	
-				&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-user fam-icon'></span>			</div>
-<button class="btn-floating btn-small waves-effect waves-light red delete-family-button" ng-click='deleteFamily(video.familyName)'><i class="large material-icons">not_interested</i></button> 
-			</div>
-		</div>
-		<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row' style="margin-bottom: 3%;
+	</div>
+	<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row' style="margin-bottom: 3%;
 ">
-			<div class='card-panel card-class'>
-				<button class='delete-button' ng-click='deleteVideo(video)'>x</button>
-				<div class='each-video-description video-data-2' '>
-					
-						<video ng-src="{{video.name}}"></video>
-						<div class='video-on-top-wrapper'>
-							<div class='translate-letter'>
-							<a ng-href='#/translateVideo/{{video.token}}'>
+		<div class='card-panel card-class'>
+			<button class='delete-button' ng-click='deleteVideo(video)'>x</button>
+			<div class='each-video-description video-data-2' '>		
+				<video ng-src="{{video.name}}"></video>
+				<div class='video-on-top-wrapper'>
+					<div class='translate-letter'>
+						<a ng-href='#/translateVideo/{{video.token}}'>
 							<button class='btn teal waves-effect accent-4'>TRANSLATE</button>
-							</a>
-							</div>
-						<div class='each-video-description video-data-3' ng-class='video.classStyle'>
-							<div class='abs-bottom'>{{video.finished}}</div>
-							<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.token}}'>
-								<button class='btn waves-effect teal accent-4 watch-button'>Complete</button>
-							</a>
-						</div>
-					</div>						
-				</div>
-				<!-- <div>{{deletedMessage}}</div> -->
-				
+						</a>
+					</div>
+					<div class='each-video-description video-data-3' ng-class='video.classStyle'>
+						<div class='abs-bottom'>{{video.finished}}</div>
+						<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.token}}'>
+							<button class='btn waves-effect teal accent-4 watch-button'>Complete</button>
+						</a>
+					</div>
+				</div>						
 			</div>
 		</div>
+	</div>
+</div>
 
 
-		<div class='github-wrapper'>
+<div class='github-wrapper'>
 	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
-		<!-- <h3>Watch Demo</h3> -->
-		<!-- <h5>Confused? See the code and a <br/>video walk-through on github</h5> -->
 		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
 	</a>
 </div>

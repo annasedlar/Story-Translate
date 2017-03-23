@@ -18,7 +18,7 @@
 
 
 <div class="grey-header">
-	<h1>Click a Video to Translate or View</h1>
+	Translate Video and Submit!
 	<div class="nav-button-container">	
 		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
@@ -26,7 +26,7 @@
 	</div>
 </div>
 
- <div class="container-fluid entireTranslateVideoWrapper" style="margin-top:100px">
+ <div class="container-fluid entireTranslateVideoWrapper" style="margin-top:70px">
 	<div class="col-xs-12 col-md-6 translate-left-side-wrapper">
 		<div class='family-wrapper'>
 	 	<div class='familyName'>{{familyName}}</div>
@@ -36,23 +36,23 @@
 	 	</form>
 		</div>
 
-		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%" style="border:1px solid black"/>
+		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%" style="border:1px solid rgb(180,180,180)"/>
 
 
-	    <div class="col-sm-12 buttonDiv">
-				<button ng-click="startTimeFunc()" class="#0d47a1 light-blue darken-4 waves-effect btn" style="float:left">Set Start</button>
+	    <div class="buttonDiv">
+				<button ng-click="startTimeFunc()" class="#0d47a1 light-blue darken-4 waves-effect btn" style="float:left; margin-right: 5px;">Set Start</button>
 			    <button class="#0d47a1 light-blue darken-4 waves-effect btn" ng-click="endTimeFunc()" style="float:left">Set End</button>
 
 			    <button ng-click="forward()" style="float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-forward'></span></button>
-			     <button ng-click="play()" style="float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-play'></span></button>
-			    <button ng-click="pause()" style="float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-pause'></span></button>
-			    <button ng-click="rewind()" class="#263238 blue-grey darken-3 waves-effect btn" style="float:right"><span class='glyphicon glyphicon-backward'></span></button>
+			     <button ng-click="play()" style="margin-right: 2px;float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-play'></span></button>
+			    <button ng-click="pause()" style="margin-right: 2px;float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-pause'></span></button>
+			    <button ng-click="rewind()" class="#263238 blue-grey darken-3 waves-effect btn" style="float:right; margin-right: 2px;"><span class='glyphicon glyphicon-backward'></span></button>
 			<div class="row">{{invalidRange}}</div>
 		</div>   
 		<!-- <div class='cool-video-bar'> -->
 			<!-- <div class='start-end-range'></div> -->
 		<!-- </div> -->
-		<div class="col-sm-12" style="margin-top:7%; margin-bottom:10%">
+		<div style="margin-top:7%; margin-bottom:10%">
 		    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 			    <div class="new-sections">
 				  <div class="startTime">Start Time: {{startTimes}}</div>
@@ -68,10 +68,9 @@
 
 	<div class="col-xs-12 col-md-6 each-translation-box">
 	    <div class='translation-header'>Translation Form</div>
-	    <hr>
-	    <div class="row hidden-sm-down" style="margin-bottom: 2%">
-	    	<div class="col-xs-5">Time Frame:</div>
-	    	<div class="col-xs-7">Translation: </div><hr/>
+	    <div class="row hidden-sm-down" style="margin-bottom: 5px; margin-top:15px">
+	    	<div class="col-xs-4">Time Frame</div>
+	    	<div class="col-xs-8">Translation</div>
 	    </div>
 	    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript' style=" min-height:140px; margin-bottom: 5%; border-top: 2px solid lightgrey">
 		 	<div class="col-xs-8">
@@ -121,3 +120,10 @@
 	</div>
 </div> 
 
+
+
+<div class='github-wrapper'>
+	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
+		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
+	</a>
+</div>

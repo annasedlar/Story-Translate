@@ -21,52 +21,13 @@ $my-blue: rgb(89, 175, 204);
     text-align: center;
 }
 .relatedVids{
-//     height: 350px;
-//     width: 600px;
-//     border: 1px solid black;
-//     float: left;
     margin-bottom: 30px;
 }
-
-
 .cool-video-bar{
     width:100%;
     height: 30px;
     background-color: grey;
 }
-
-
-
-.home-page{
-
-}
-
-// .my-nav-bar{
-//     width:100%;
-//     height:50px;
-//     line-height: 50px;
-//     text-align: center;
-//     background-color: #7AAF45 ;
-//     color: white;
-//     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-// }
-
-// .my-each-nav{
-//     display: inline-block;
-//     width: 20%;
-//     font-family: "Mouse Memoirs";
-//     font-size: 20px;
-//     letter-spacing: 1px;
-//     a{
-//         color: white;
-//     }
-// }
-
-a{
-    // color: white;
-}
-
-
 .video-incomplete{
     color:red;
 }
@@ -89,7 +50,6 @@ a{
     color:black;
     font-size: 17px !important;
 }
-
 .edit-family-button{
     position: absolute;
     right:0;
@@ -103,10 +63,6 @@ a{
 .float-right{
     position: absolute;
     right:20px;
-    // text-align: right;
-    // margin-right: 5px;
-    button{
-    }
 }
 
 .family-wrapper{
@@ -166,16 +122,19 @@ a{
 .translation-header{
     // color: white;
     font-size: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid rgb(200,200,200)
 }
 .entireTranslateVideoWrapper{
     // background-color: $dark-background;
+
 }
 textarea{
     height:auto;
 }
 
 .translate-left-side-wrapper{
-    margin-top: 20px;
+    padding-top: 40px;
     // padding-left: 30px;
     .familyName, .startTime, .endTime{
         color: black;
@@ -183,11 +142,12 @@ textarea{
 }
 .each-translation-box{
     // height: 100vh;
+    background-image: url('../../images/pattern37.png');
     margin-top: 20px;
-    min-height:150px;
+    min-height:90vh;
     .each-transcription{
-        background-color: rgba(200,200,200,1);
-        box-shadow: 4px 4px 1px rgb(150,150,150);
+        background-color: rgba(220,220,220,1);
+        box-shadow: 3px 3px 1px rgb(151,151,151);
         margin-bottom:20px;
         padding-bottom: 20px;
         // background-color: #9e9e9e;
@@ -523,13 +483,13 @@ span .header{
 }
 
 .entireProductVideoWrapper{
-    margin-top: 120px;
+    margin-top: 90px;
     // background-color: $dark-background;
 
 }
 
 .final-product-header, .related-videos-header, .final-translation-transcript, .family-name-in-product-video{
-    font-size: 25px;
+    font-size: 20px;
 }
 .final-product-header{
     position: absolute;
@@ -549,7 +509,7 @@ span .header{
     // border-top: 20px solid lightgrey;
 }
 .videoProductHr{
-    border-top: 2px solid black;
+    border-top: 1px solid rgb(90,90,90);
 }
 .nav-button-container{
   position: absolute;
@@ -622,17 +582,10 @@ body{
 .universe{
     margin-top:20px;
     width: 90%;
-    // margin-bottom: 50px;
-    // min-height: 100vh;
     padding:0px 4% 50px 4% !important;
-    
-    // background-image: url('http://scanachmedia.com/wp-content/uploads/2013/12/COLD-EDGE-BACKGROUND.jpg');
-    // background: radial-gradient(black 0%, rgb(220,220,220),white  100%); /* Standard syntax */
-    // background:rgb(110,110,110);
     background-color: white;
-    border-radius: 1%;
-    border-left: 1px solid rgb(200,200,200);
-    border-right: 1px solid rgb(200,200,200);
+    border-left: 1px solid rgb(220,220,220);
+    border-right: 1px solid rgb(220,220,220);
 }
 
 .delete-family-button:hover{
@@ -640,7 +593,6 @@ body{
 }
 .delete-family-button{
     z-index: 6;
-    // filter:grayscale(100%);
 }
 .family-name-wrapper{
     // height:50px;
@@ -654,15 +606,42 @@ body{
     background-color: rgb(90,90,90);
     border:1px solid rgb(111,111,111);
     height:40.4px;
-    line-height: 38px;
+    line-height: 0;
     padding-left:40px;
-    padding-right:20px;
+    padding-right:10px;
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
     z-index: 5;
     color: white;
     font-size: 15px;
+
 }
 .fam-icon{
-    font-size: 12px;
+    display: inline-block;
+    width:38px;
+    height:38px;
+    // letter-spacing: -2px;
+    background-image: url('../../images/family-icon.png');
+    background-size: 100%;
+    z-index:8;
+    // border:2px solid black;
+
 }
+.actual-text{
+    display: inline-block;
+    height:40px;
+    line-height: 40px;
+    vertical-align: top;
+}
+.buttonDiv{
+    button{
+        font-size: 10px;
+        // padding: 10px;
+        // height:20px;
+        // line-height: 20px;
+        span{
+            font-size: 10px;
+        }
+    }
+}
+

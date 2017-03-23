@@ -8,6 +8,7 @@
 	// border: 1px solid black;
 	// float: left;
 	// margin: 10px;
+	padding-top:20px;
 }
 
 .translations{
@@ -19,11 +20,15 @@
     // right: 0px;
     // top: 70px;
     // position: absolute;
+    background-image: url('../../images/pattern37.png');
+    min-height: 80vh;
+    padding-top: 20px;
+    font-size: 20px;
 }
 
 .transcript-wrapper{
 	background-color: rgb(230,230,230);
-	box-shadow: 7px 7px 5px 2px grey;
+	box-shadow: 3px 3px 1px rgb(151,151,151);
 	padding:10px;
 	overflow: hidden;
 
@@ -31,6 +36,7 @@
 .video-wrapper{
 	position: relative;
 	width:100%;
+	margin-top:30px;
 }
 .current-transcript{
 	position: absolute;
@@ -125,6 +131,10 @@
 	position: relative;
 }
 
+.final-translation-transcript{
+	border-bottom: 1px solid rgb(200,200,200);
+	margin-bottom:20px;
+}
 // Only on sm and xs views, final-translation-transcript will have top margin of 55px;
 @media (max-width: 550px){
 	.product-incomplete{

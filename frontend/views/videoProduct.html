@@ -1,4 +1,4 @@
-		<!-- upload video modal -->
+<!-- upload video modal -->
 <div id="demoModal" class="modal" style='text-align: center' ng-controller="uploadRawVideoController">
     <form ng-submit="submit()">
         <div>
@@ -8,9 +8,8 @@
             </div>
                <input type='file' id='file' class="chooseFileButton" style='max-height:18px;line-height:18px; margin-top:30px;'/>
         </div>
-            <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
+        <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
         <div class="failedUploadMessage">{{failedUpload}}</div>
-
     </form>
 </div>
 
@@ -18,7 +17,7 @@
 
 <!-- header-->
 <div class="grey-header">
-	<h1>Click a Video to Translate or View</h1>
+	Watch Video With Translation!
 	<div class="nav-button-container">	
 		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
@@ -28,38 +27,31 @@
 
 
 <div class="container-fluid entireProductVideoWrapper">
-	<div class="col-xs-12 col-md-6 relatedVids">
+	<div class="col-md-6 relatedVids">
 		<div class="family-name-in-product-video">{{familyName}}</div>
 		<div class='video-wrapper'>
 			<video id='productVideoPlaying' ng-src="{{productVideo}}" type="video/mp4" controls width="100%"/>
 			<div class='current-transcript'>{{currentTranscript}}</div>
 		</div>
 		<br />
-		<div class='col-xs-12 related-videos-wrapper'>
+		<div class='related-videos-wrapper'>
 			<div class='related-videos-header'>{{familyName}} Videos</div>
 			<div ng-repeat='video in familyVideoHTML' class='product-inline' ng-click="currentlyPlaying(video)">
-				<!-- <div class='currentlyPlaying'>Currently <br/>Playing</div> -->
 				<div>{{video.finished}}</div>
 				<div ng-class='video.finishedClass'>
 					<video ng-src="{{video.sce}}" class='each-related-video' width="100%" />
 					<div class='editAndWatch'>
 						<a class='product-edit' ng-href='{{video.editUrl}}'>Edit</a>
 						<a class='product-watch' ng-href='{{video.selectUrl}}'>Watch</a>
-					 <!-- ng-click="currentlyPlaying={'display':'block'}"	 -->
 						<span class='product-incomplete'>Incomplete</span>
 					</div>
-				<!-- <div class='currentlyPlaying'>Currently <br/>Playing</div> -->
-		 		<!-- ng-style="{'display':'block'}" -->
 				</div>
 				<div ng-class="video.showCPorNot">Currently Playing</div>
 			</div>
-		</div>
-		
+		</div>	
 	</div>
-
-
 	<div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 translations">
-		<div class="final-translation-transcript">Completed Transcript</div><hr class="videoProductHr">
+		<div class="final-translation-transcript">Completed Transcript</div>
 		<div class='transcript-wrapper'>
 			<div ng-repeat='transcript in transcriptHTML' class='row'>
 				<div class='col-sm-2 col-md-4 col-lg-3'>
@@ -70,10 +62,12 @@
 					{{transcript.transcript}}
 				</div>
 			</div>
-			<!-- Want to get the last modified time-->
-			<!-- <div class="final-product-timestamp">Last edited: {{datesArray.postedTime}}</div> -->
 		</div>
-
 	</div>	
 </div>
 
+<div class='github-wrapper'>
+	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
+		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
+	</a>
+</div>

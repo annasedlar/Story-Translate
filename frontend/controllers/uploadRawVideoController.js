@@ -22,7 +22,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 		}).then(
 			function successFunction(data){
 				console.log(data)
-				
+				window.location.reload()
 				$location.path('/videosToTranslate')
 				
 				
