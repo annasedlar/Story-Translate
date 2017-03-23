@@ -16,36 +16,60 @@
 
 <!-- header -->
 <div class="grey-header">
-	<h1>Click a Video to Translate or View</h1>
+	Click a Video to Translate or View
 	<div class="nav-button-container">	
 		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
-		<a data-target='demoModal' modal><div class='nav-buttons' style="cursor:pointer"><span class='glyphicon glyphicon-upload'></span></div></a>
+		<a data-target='demoModal' modal><div class='nav-buttons' style="cursor:pointer"><span class='glyphicon glyphicon-cloud-upload'></span></div></a>
 	</div>
 </div>
 
 	<div ng-repeat="video in videoData.data" class='translate-background'> 
 		<div ng-class='video.skipClass' class='col-xs-12 skip-placeholder '>
 			&nbsp;
+			<div class='horiz-line'>
+				
+			</div>
 		</div>
 		<div ng-class='video.skipClass' class='col-xs-12 video-data-1'>
-			<button class="btn-floating btn-small waves-effect waves-light red" ng-click='deleteFamily(video.familyName)'><i class="large material-icons">not_interested</i></button> {{video.familyName}}
+			<div class='family-name-wrapper row'>
+				
+				<div class='family-name-text'>{{video.familyName}}	
+				&nbsp;&nbsp;&nbsp;&nbsp;<span class='glyphicon glyphicon-user fam-icon'></span>			</div>
+<button class="btn-floating btn-small waves-effect waves-light red delete-family-button" ng-click='deleteFamily(video.familyName)'><i class="large material-icons">not_interested</i></button> 
+			</div>
 		</div>
-		<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row' style="margin-bottom: 3%">
+		<div class='col-lg-4 col-sm-6 col-xs-12 each-video-row' style="margin-bottom: 3%;
+">
 			<div class='card-panel card-class'>
 				<button class='delete-button' ng-click='deleteVideo(video)'>x</button>
 				<div class='each-video-description video-data-2' '>
-					<a ng-href='#/translateVideo/{{video.token}}'>
+					
 						<video ng-src="{{video.name}}"></video>
-						<div class='translate-letter'>TRANSLATE</div>
-					</a>
+						<div class='video-on-top-wrapper'>
+							<div class='translate-letter'>
+							<a ng-href='#/translateVideo/{{video.token}}'>
+							<button class='btn teal waves-effect accent-4'>TRANSLATE</button>
+							</a>
+							</div>
+						<div class='each-video-description video-data-3' ng-class='video.classStyle'>
+							<div class='abs-bottom'>{{video.finished}}</div>
+							<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.token}}'>
+								<button class='btn waves-effect teal accent-4 watch-button'>Complete</button>
+							</a>
+						</div>
+					</div>						
 				</div>
 				<!-- <div>{{deletedMessage}}</div> -->
-				<div class='each-video-description video-data-3' ng-class='video.classStyle'>
-					{{video.finished}}
-					<a ng-class='video.checkItOutClass' ng-href='#/videoProduct/{{video.token}}'>
-						<button class='btn teal accent-4 watch-button'>Complete</button>
-					</a>
-				</div>
+				
 			</div>
 		</div>
+
+
+		<div class='github-wrapper'>
+	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
+		<!-- <h3>Watch Demo</h3> -->
+		<!-- <h5>Confused? See the code and a <br/>video walk-through on github</h5> -->
+		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
+	</a>
+</div>
