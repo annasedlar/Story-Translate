@@ -77,7 +77,7 @@ span .header {
 
 /* line 68, ../compass/sass/styles.scss */
 .translations {
-  background-image: url("../../images/pattern37.png");
+  background-image: url("http://www.annasedlar.com/Story-Translate/frontend/images/pattern37.png");
   min-height: 80vh;
   padding-top: 20px;
   font-size: 20px;
@@ -491,7 +491,7 @@ textarea {
 
 /* line 389, ../compass/sass/styles.scss */
 .each-translation-box {
-  background-image: url("../../images/pattern37.png");
+  background-image: url("http://www.annasedlar.com/Story-Translate/frontend/images/pattern37.png");
   margin-top: 20px;
   min-height: 90vh;
 }
@@ -658,7 +658,7 @@ span .header {
 
 /* line 531, ../compass/sass/styles.scss */
 .card-class {
-  background-image: url("../../images/pattern37.png");
+  background-image: url("http://www.annasedlar.com/Story-Translate/frontend/images/pattern37.png");
   box-shadow: 2px 2px 1px #bebebe;
   padding: 15px;
   padding-left: 20px;
@@ -944,7 +944,7 @@ span .header {
   display: inline-block;
   width: 38px;
   height: 38px;
-  background-image: url("../../images/family-icon.png");
+  background-image: url("http://www.annasedlar.com/Story-Translate/frontend/images/family-icon.png");
   background-size: 100%;
   z-index: 8;
 }
