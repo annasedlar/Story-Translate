@@ -16,7 +16,7 @@
 <div class="grey-header">
 	Translate Video and Submit!
 	<div class="nav-button-container">	
-		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
+		<a href='http://www.localhost:3000/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
 		<a data-target='demoModal' modal><div class='nav-buttons' style="cursor:pointer"><span class='glyphicon glyphicon-cloud-upload'></span></div></a>
 	</div>
@@ -28,7 +28,7 @@
 	 	<div class='familyName'>{{familyName}}</div>
 	 	<form ng-submit='changeFamilyName()' class='inline-block'>
 	 		<input ng-model='tempFamilyName' type='text' class='familyInput' placeholder="Edit Family Name" />
-	 		<button class="btn-floating edit-family-button btn-small waves-effect waves-light yellow darken-1"><i class="material-icons">mode_edit</i></button>
+	 		<button class="btn-floating edit-family-button btn-small waves-effect waves-light yellow lighten-3"><i class="material-icons" style="color:black">mode_edit</i></button>
 	 	</form>
 		</div>
 
@@ -89,12 +89,11 @@
 		    	<button style="margin-right: 0; border: 1px solid darkgreen; color: darkgreen" class="##81c784 green lighten-2 waves-effect btn" ng-click="saveForm()">Save Progress</button>
 		    </form>
 		    <form ng-submit='submitForm()' style='display:inline-block; clear:both'>	
-		    	<button style="margin-right:0;" class="#1b5e20 green darken-4 waves-effect btn" ng-click="submitForm()">Submit Final Transcript<i class="material-icons right">send</i></button>
+		    	<button style="margin-right:0;" class="#1b5e20 green darken-4 waves-effect btn" ng-click="submitForm()">Submit Final Transcript&nbsp;<span class="glyphicon glyphicon-upload"></span></button>
 	    	</form>
 	    	<div ng-hide style="color:darkgreen; text-align: right">{{submissionStatus}}</div>
-	    	<div style="text-align:center; margin-top:8%" ng-class="seeFinishedButton">
-	    		<button style="margin-right: 0; border: 1px solid #81c784; height:210px; width: 210px; border-radius: 50%; color: darkgreen" class="##81c784 green lighten-5 waves-effect btn" ng-click="bringToFinal()">
-	    			See Finished Transcript
+	    	<div style="margin-right:0; text-align:right; margin-top:8%; cursor:pointer; font-family:'Montserrat'" ng-class="seeFinishedButton" ng-click="bringToFinal()">
+	    		See Finished Transcript <button style="text-align: center; color:black; border-radius: 50%; box-shadow: 3px 3px 1px #979797" class="large #b3e5fc light-blue lighten-4  waves-effect btn"><i class="material-icons right large" style="margin-left:0;text-align:center">send</i>
 	    		</button>
 	    	</div>
 		</div> 
@@ -111,6 +110,6 @@
 
 <div class='github-wrapper'>
 	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
-		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
+		<img src='/images/github-logo.png'/>
 	</a>
 </div>
