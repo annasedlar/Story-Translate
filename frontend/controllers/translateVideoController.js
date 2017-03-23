@@ -8,7 +8,6 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
   	}).then(
     	function successFunction(onLoadData){
       		var transcriptString = onLoadData.data[0].transcript
-      		// console.log(JSON.parse(transcriptString)[0])
       		var entireTranscript = JSON.parse(transcriptString)
       		entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
       		console.log(entireTranscript)
@@ -18,7 +17,6 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 				timeRangeArray.push({
 					startTime: Math.floor(eachTranscript.startTime*100),
 					endTime: Math.floor(eachTranscript.endTime*100),
-					// timeFrame: timeFrame.toString()
 				})				
 			})
 			$scope.timeRange = timeRangeArray
@@ -33,13 +31,10 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     	url: tempUrl
   	}).then(
     	function successFunction(videoData){
-      		// console.log(videoData)
       		videoData.data.map((eachVideo, index)=>{
-       		// console.log(eachVideo)
        			if(eachVideo.token == paramsId){
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
-			        // console.log(eachVideo.path.slice(7))
 			        console.log(tempVideoPath)
         			var myUrl = 'http://localhost:3000/' + tempVideoPath
         			$scope.pleasWork = $sce.trustAsResourceUrl(myUrl)
@@ -177,11 +172,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 			$scope.transcript = ''
 			$scope.startTimes = '00:00'
 			$scope.endTimes = '00:00'
-			// document.getElementById('translation-form').reset();
 		}
-		// else{
-	    	// $scope.invalidRange = "Your time range is invalid, please reset"
-		// }
 	}	
   	
   	$scope.startTimeFunc = function(){
@@ -287,8 +278,6 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
     	}).then(
       		function successFunction(data){			
 				var finishedUrl = 'http://localhost:3000/finished/' + $location.$$path.slice(16);
-		// 		
-		// console.log(finishedUrl)
 				var dataArray = [1]
 				$http({
 					method:'POST',
@@ -374,33 +363,4 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		$location.path('videoProduct/'+ vidToken)
 	}
 
-	
-    // $(function(){
-    //     $( "#draggable" )
-    //         .draggable({ axis: "x", containment: "#containment-wrapper", scroll: false }).resizable({minHeight:90, containment: "#containment-wrapper" });
-    // });
-    
-    // $scope.draggableVidz = function (){
-    //     var draggable = $('#draggable')
-    //     $scope.theVid = document.getElementById("theVid")
-
-    //     var duration = theVid.duration
-    //     var offset = draggable[0].offsetLeft;
-    //     var width = draggable[0].offsetWidth;
-    //     var parent = $('#containment-wrapper')[0].offsetWidth;
-    //     // $scope.startTimes = $('#draggable')[0].offsetLeft
-    //     // abcde = $('#draggable')[0].offsetLeft
-        
-    //     theVid.currentTime = (offset * ( duration / parent ))
-    //     $scope.timez = theVid.currentTime
-    //     // console.log(parent)
-    //     // theVid.currentTime = 0
-    //     // console.log(offset*(duration/parent))
-
-    //     // offleft(duration/parent) = setStart
-    // }
-    
-    // // $scope.startTimes = abcde
-    
-    // setInterval(draggableVidz,50)
 }]);

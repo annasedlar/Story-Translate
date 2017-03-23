@@ -1,26 +1,43 @@
-/* line 9, ../compass/sass/_styles2.scss */
+/* line 8, ../compass/sass/styles.scss */
+body {
+  overflow-x: hidden;
+  background-color: #E5E5E5;
+  color: #333333;
+}
+
+/* line 13, ../compass/sass/styles.scss */
+.universe {
+  margin-top: 20px;
+  width: 90%;
+  padding: 0px 4% 50px 4% !important;
+  background-color: white;
+  border-left: 1px solid gainsboro;
+  border-right: 1px solid gainsboro;
+}
+
+/* line 22, ../compass/sass/styles.scss */
 span .header {
   margin-left: 50px;
 }
 
-/* line 13, ../compass/sass/_styles2.scss */
+/* line 26, ../compass/sass/styles.scss */
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
 }
 
-/* line 17, ../compass/sass/_styles2.scss */
+/* line 30, ../compass/sass/styles.scss */
 .videosToTranslate {
   text-align: center;
 }
 
-/* line 31, ../compass/sass/_styles2.scss */
+/* line 33, ../compass/sass/styles.scss */
 .cool-video-bar {
   width: 100%;
   height: 30px;
   background-color: grey;
 }
 
-/* line 39, ../compass/sass/_styles2.scss */
+/* line 38, ../compass/sass/styles.scss */
 .my-nav-bar {
   width: 100%;
   height: 50px;
@@ -31,46 +48,226 @@ span .header {
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
-/* line 50, ../compass/sass/_styles2.scss */
+/* line 47, ../compass/sass/styles.scss */
 .my-each-nav {
   display: inline-block;
   width: 20%;
   font-size: 20px;
   letter-spacing: 1px;
 }
-/* line 56, ../compass/sass/_styles2.scss */
+/* line 52, ../compass/sass/styles.scss */
 .my-each-nav a {
   color: white;
 }
 
-/* line 63, ../compass/sass/_styles2.scss */
-a {
-  color: grey;
-}
-
-/* line 67, ../compass/sass/_styles2.scss */
-a:hover {
-  color: grey;
-}
-
-/* line 71, ../compass/sass/_styles2.scss */
+/* line 56, ../compass/sass/styles.scss */
 .video-incomplete {
   color: red;
 }
 
-/* line 75, ../compass/sass/_styles2.scss */
+/* line 59, ../compass/sass/styles.scss */
 .each-video-row {
   height: 50px;
 }
 
-/* line 1, ../compass/sass/_styles3.scss */
+/* line 65, ../compass/sass/styles.scss */
+.relatedVids {
+  padding-top: 20px;
+}
+
+/* line 68, ../compass/sass/styles.scss */
+.translations {
+  background-image: url("../../images/pattern37.png");
+  min-height: 80vh;
+  padding-top: 20px;
+  font-size: 20px;
+}
+
+/* line 74, ../compass/sass/styles.scss */
+.transcript-wrapper {
+  background-color: #fafafa;
+  box-shadow: 3px 3px 1px #979797;
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* line 81, ../compass/sass/styles.scss */
+.video-wrapper {
+  position: relative;
+  width: 100%;
+  margin-top: 30px;
+}
+
+/* line 86, ../compass/sass/styles.scss */
+.current-transcript {
+  position: absolute;
+  bottom: 38px;
+  width: 100%;
+  font-weight: 800;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  word-wrap: break-word;
+  text-shadow: 0px 0px 20px black;
+}
+
+/* line 97, ../compass/sass/styles.scss */
+.related-videos-wrapper {
+  position: relative;
+}
+
+/* line 100, ../compass/sass/styles.scss */
+.displayCP {
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 30%;
+  left: 30%;
+  bottom: 87px;
+  display: block;
+}
+
+/* line 109, ../compass/sass/styles.scss */
+.hideCP {
+  position: relative;
+  color: transparent;
+  text-align: center;
+  width: 30%;
+  left: 30%;
+  bottom: 87px;
+}
+
+/* line 117, ../compass/sass/styles.scss */
+.each-related-video {
+  filter: brightness(70%);
+  height: 6vw;
+}
+
+/* line 121, ../compass/sass/styles.scss */
+.editAndWatch {
+  position: relative;
+  padding: 0 15px;
+}
+
+/* line 125, ../compass/sass/styles.scss */
+.product-edit {
+  float: left;
+  left: 10px;
+}
+
+/* line 129, ../compass/sass/styles.scss */
+.product-watch {
+  float: right;
+  right: 10px;
+  cursor: pointer;
+}
+
+/* line 135, ../compass/sass/styles.scss */
+.product-inline {
+  display: inline-block;
+  width: 30%;
+  margin-right: 3%;
+}
+
+/* line 141, ../compass/sass/styles.scss */
+.redClass .product-watch {
+  display: none;
+}
+
+/* line 147, ../compass/sass/styles.scss */
+.greenClass .product-incomplete {
+  display: none;
+}
+
+/* line 151, ../compass/sass/styles.scss */
+.product-incomplete {
+  color: red;
+  right: 10px;
+  float: right;
+  position: relative;
+}
+
+/* line 158, ../compass/sass/styles.scss */
+.final-translation-transcript {
+  border-bottom: 1px solid #c8c8c8;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 550px) {
+  /* line 164, ../compass/sass/styles.scss */
+  .product-incomplete {
+    color: red;
+    float: right;
+    position: relative;
+  }
+}
+@media (max-width: 768px) {
+  /* line 171, ../compass/sass/styles.scss */
+  .final-translation-transcript {
+    margin-top: 2px;
+  }
+
+  /* line 174, ../compass/sass/styles.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* line 179, ../compass/sass/styles.scss */
+  .product-edit {
+    text-align: center;
+  }
+}
+@media (min-width: 768px) {
+  /* line 184, ../compass/sass/styles.scss */
+  .final-translation-transcript {
+    margin-top: 2px;
+  }
+
+  /* line 187, ../compass/sass/styles.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media (min-width: 992px) {
+  /* line 195, ../compass/sass/styles.scss */
+  .final-translation-transcript {
+    margin-top: -1px;
+  }
+
+  /* line 198, ../compass/sass/styles.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 207, ../compass/sass/styles.scss */
+  .final-translation-transcript {
+    margin-top: -1px;
+  }
+
+  /* line 210, ../compass/sass/styles.scss */
+  .container .row {
+    margin-left: -0.75rem;
+    margin-right: -0.75rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+}
+/* line 217, ../compass/sass/styles.scss */
 .modalTitle {
   color: #1794ab;
   font-size: 35px;
   font-family: Avenir;
 }
 
-/* line 7, ../compass/sass/_styles3.scss */
+/* line 222, ../compass/sass/styles.scss */
 .chooseFileButton {
   color: #1794ab;
   font-family: Avenir;
@@ -78,12 +275,12 @@ a:hover {
   margin: auto;
 }
 
-/* line 15, ../compass/sass/_styles3.scss */
+/* line 228, ../compass/sass/styles.scss */
 #demoModal {
   padding-top: 70px;
 }
 
-/* line 19, ../compass/sass/_styles3.scss */
+/* line 231, ../compass/sass/styles.scss */
 .delete-button {
   position: absolute;
   top: 12px;
@@ -100,14 +297,14 @@ a:hover {
   border: none;
 }
 
-/* line 43, ../compass/sass/_styles3.scss */
+/* line 246, ../compass/sass/styles.scss */
 .delete-button:hover {
   background-color: #fa6464;
   border-radius: 25px;
   text-decoration: none;
 }
 
-/* line 52, ../compass/sass/_styles3.scss */
+/* line 251, ../compass/sass/styles.scss */
 .go-home {
   position: fixed;
   top: 5px;
@@ -118,252 +315,62 @@ a:hover {
   height: 50px;
   width: 50px;
 }
-/* line 62, ../compass/sass/_styles3.scss */
+/* line 260, ../compass/sass/styles.scss */
 .go-home span {
   padding-left: 1px;
   font-size: 30px;
   color: black;
 }
-/* line 67, ../compass/sass/_styles3.scss */
+/* line 265, ../compass/sass/styles.scss */
 .go-home:hover {
   background-color: black;
 }
-/* line 69, ../compass/sass/_styles3.scss */
+/* line 267, ../compass/sass/styles.scss */
 .go-home:hover span {
   color: grey;
 }
 
-/* line 4, ../compass/sass/_styles4.scss */
-.relatedVids {
-  padding-top: 20px;
-}
-
-/* line 14, ../compass/sass/_styles4.scss */
-.translations {
-  background-image: url("../../images/pattern37.png");
-  min-height: 80vh;
-  padding-top: 20px;
-  font-size: 20px;
-}
-
-/* line 29, ../compass/sass/_styles4.scss */
-.transcript-wrapper {
-  background-color: #e6e6e6;
-  box-shadow: 3px 3px 1px #979797;
-  padding: 10px;
-  overflow: hidden;
-}
-
-/* line 36, ../compass/sass/_styles4.scss */
-.video-wrapper {
-  position: relative;
-  width: 100%;
-  margin-top: 30px;
-}
-
-/* line 41, ../compass/sass/_styles4.scss */
-.current-transcript {
-  position: absolute;
-  bottom: 38px;
-  width: 100%;
-  font-weight: 800;
-  text-align: center;
-  color: white;
-  font-size: 20px;
-  word-wrap: break-word;
-  text-shadow: 0px 0px 20px black;
-}
-
-/* line 52, ../compass/sass/_styles4.scss */
-.related-videos-wrapper {
-  position: relative;
-}
-
-/* line 66, ../compass/sass/_styles4.scss */
-.displayCP {
-  position: relative;
-  color: white;
-  text-align: center;
-  width: 30%;
-  left: 30%;
-  bottom: 87px;
-  display: block;
-}
-
-/* line 75, ../compass/sass/_styles4.scss */
-.hideCP {
-  position: relative;
-  color: transparent;
-  text-align: center;
-  width: 30%;
-  left: 30%;
-  bottom: 87px;
-}
-
-/* line 84, ../compass/sass/_styles4.scss */
-.each-related-video {
-  filter: brightness(70%);
-  height: 6vw;
-}
-
-/* line 89, ../compass/sass/_styles4.scss */
-.editAndWatch {
-  position: relative;
-  padding: 0 15px;
-}
-
-/* line 93, ../compass/sass/_styles4.scss */
-.product-edit {
-  float: left;
-  left: 10px;
-}
-
-/* line 99, ../compass/sass/_styles4.scss */
-.product-watch {
-  float: right;
-  right: 10px;
-  cursor: pointer;
-}
-
-/* line 107, ../compass/sass/_styles4.scss */
-.product-inline {
-  display: inline-block;
-  width: 30%;
-  margin-right: 3%;
-}
-
-/* line 115, ../compass/sass/_styles4.scss */
-.redClass .product-watch {
-  display: none;
-}
-
-/* line 122, ../compass/sass/_styles4.scss */
-.greenClass .product-incomplete {
-  display: none;
-}
-
-/* line 126, ../compass/sass/_styles4.scss */
-.product-incomplete {
-  color: red;
-  right: 10px;
-  float: right;
-  position: relative;
-}
-
-/* line 134, ../compass/sass/_styles4.scss */
-.final-translation-transcript {
-  border-bottom: 1px solid #c8c8c8;
-  margin-bottom: 20px;
-}
-
-@media (max-width: 550px) {
-  /* line 140, ../compass/sass/_styles4.scss */
-  .product-incomplete {
-    color: red;
-    float: right;
-    position: relative;
-  }
-}
-@media (max-width: 768px) {
-  /* line 149, ../compass/sass/_styles4.scss */
-  .final-translation-transcript {
-    margin-top: 2px;
-  }
-
-  /* line 161, ../compass/sass/_styles4.scss */
-  .container .row {
-    margin-left: -0.75rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-
-  /* line 167, ../compass/sass/_styles4.scss */
-  .product-edit {
-    text-align: center;
-  }
-}
-@media (min-width: 768px) {
-  /* line 172, ../compass/sass/_styles4.scss */
-  .final-translation-transcript {
-    margin-top: 2px;
-  }
-
-  /* line 175, ../compass/sass/_styles4.scss */
-  .container .row {
-    margin-left: -0.75rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-}
-@media (min-width: 992px) {
-  /* line 185, ../compass/sass/_styles4.scss */
-  .final-translation-transcript {
-    margin-top: -1px;
-  }
-
-  /* line 188, ../compass/sass/_styles4.scss */
-  .container .row {
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-}
-@media (min-width: 1200px) {
-  /* line 197, ../compass/sass/_styles4.scss */
-  .final-translation-transcript {
-    margin-top: -1px;
-  }
-
-  /* line 208, ../compass/sass/_styles4.scss */
-  .container .row {
-    margin-left: -0.75rem;
-    margin-right: -0.75rem;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-  }
-}
-/* line 16, ../compass/sass/styles.scss */
+/* line 272, ../compass/sass/styles.scss */
 .box__dragndrop, .box__uploading, .box__success, .box__error {
   display: none;
 }
 
-/* line 20, ../compass/sass/styles.scss */
+/* line 276, ../compass/sass/styles.scss */
 .videosToTranslate {
   text-align: center;
 }
 
-/* line 23, ../compass/sass/styles.scss */
+/* line 279, ../compass/sass/styles.scss */
 .relatedVids {
   margin-bottom: 30px;
 }
 
-/* line 26, ../compass/sass/styles.scss */
+/* line 282, ../compass/sass/styles.scss */
 .cool-video-bar {
   width: 100%;
   height: 30px;
   background-color: grey;
 }
 
-/* line 31, ../compass/sass/styles.scss */
+/* line 287, ../compass/sass/styles.scss */
 .video-incomplete {
   color: red;
 }
 
-/* line 34, ../compass/sass/styles.scss */
+/* line 290, ../compass/sass/styles.scss */
 .family-wrapper {
   position: relative;
   height: 50px;
 }
 
-/* line 38, ../compass/sass/styles.scss */
+/* line 294, ../compass/sass/styles.scss */
 .familyName {
   width: 40%;
   display: inline-block;
   font-size: 20px;
 }
 
-/* line 43, ../compass/sass/styles.scss */
+/* line 299, ../compass/sass/styles.scss */
 .familyInput {
   display: inline-block;
   width: 50% !important;
@@ -375,39 +382,39 @@ a:hover {
   font-size: 17px !important;
 }
 
-/* line 53, ../compass/sass/styles.scss */
+/* line 309, ../compass/sass/styles.scss */
 .edit-family-button {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 58, ../compass/sass/styles.scss */
+/* line 314, ../compass/sass/styles.scss */
 .inline-block {
   display: inline-block;
   text-align: right;
 }
 
-/* line 63, ../compass/sass/styles.scss */
+/* line 319, ../compass/sass/styles.scss */
 .float-right {
   position: absolute;
   right: 20px;
 }
 
-/* line 68, ../compass/sass/styles.scss */
+/* line 323, ../compass/sass/styles.scss */
 .family-wrapper {
   position: relative;
   height: 50px;
 }
 
-/* line 72, ../compass/sass/styles.scss */
+/* line 327, ../compass/sass/styles.scss */
 .familyName {
   width: 40%;
   display: inline-block;
   font-size: 20px;
 }
 
-/* line 77, ../compass/sass/styles.scss */
+/* line 332, ../compass/sass/styles.scss */
 .familyInput {
   display: inline-block;
   width: 50% !important;
@@ -417,78 +424,78 @@ a:hover {
   top: 0;
 }
 
-/* line 86, ../compass/sass/styles.scss */
+/* line 340, ../compass/sass/styles.scss */
 .edit-family-button {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-/* line 91, ../compass/sass/styles.scss */
+/* line 345, ../compass/sass/styles.scss */
 .inline-block {
   display: inline-block;
   text-align: right;
 }
 
-/* line 97, ../compass/sass/styles.scss */
+/* line 349, ../compass/sass/styles.scss */
 .buttonTextBlack {
   width: 45px;
   margin-top: 10px;
   font-size: 11px;
   color: black;
 }
-/* line 103, ../compass/sass/styles.scss */
+/* line 354, ../compass/sass/styles.scss */
 .buttonTextBlack:hover {
   filter: invert(20%);
 }
 
-/* line 107, ../compass/sass/styles.scss */
+/* line 358, ../compass/sass/styles.scss */
 .buttonTextBlack1 {
   width: 45px;
   margin-top: 10px;
   color: black;
   font-size: 11px;
 }
-/* line 112, ../compass/sass/styles.scss */
+/* line 363, ../compass/sass/styles.scss */
 .buttonTextBlack1:hover {
   filter: invert(20%);
 }
 
-/* line 116, ../compass/sass/styles.scss */
+/* line 367, ../compass/sass/styles.scss */
 .textAreaInput {
   color: black;
   border: 2px solid #1dbbd8;
   border-radius: 5px;
 }
 
-/* line 122, ../compass/sass/styles.scss */
+/* line 372, ../compass/sass/styles.scss */
 .translation-header {
   font-size: 20px;
   padding-top: 20px;
   border-bottom: 1px solid #c8c8c8;
 }
 
-/* line 132, ../compass/sass/styles.scss */
+/* line 379, ../compass/sass/styles.scss */
 textarea {
   height: auto;
 }
 
-/* line 136, ../compass/sass/styles.scss */
+/* line 383, ../compass/sass/styles.scss */
 .translate-left-side-wrapper {
   padding-top: 40px;
 }
-/* line 139, ../compass/sass/styles.scss */
+/* line 385, ../compass/sass/styles.scss */
 .translate-left-side-wrapper .familyName, .translate-left-side-wrapper .startTime, .translate-left-side-wrapper .endTime {
   color: black;
 }
 
-/* line 143, ../compass/sass/styles.scss */
+/* line 389, ../compass/sass/styles.scss */
 .each-translation-box {
   background-image: url("../../images/pattern37.png");
   margin-top: 20px;
   min-height: 90vh;
 }
-/* line 148, ../compass/sass/styles.scss */
+/* line 393, ../compass/sass/styles.scss */
 .each-translation-box .each-transcription {
   background-color: gainsboro;
   box-shadow: 3px 3px 1px #979797;
@@ -496,37 +503,37 @@ textarea {
   padding-bottom: 20px;
   color: black;
 }
-/* line 156, ../compass/sass/styles.scss */
+/* line 400, ../compass/sass/styles.scss */
 .each-translation-box .transcript-buttons {
   position: absolute;
 }
-/* line 159, ../compass/sass/styles.scss */
+/* line 403, ../compass/sass/styles.scss */
 .each-translation-box .timeRange {
   font-weight: bold;
 }
 
-/* line 163, ../compass/sass/styles.scss */
+/* line 407, ../compass/sass/styles.scss */
 .float-right {
   position: absolute;
   right: 20px;
 }
 
-/* line 172, ../compass/sass/styles.scss */
+/* line 411, ../compass/sass/styles.scss */
 span .header {
   margin-left: 50px;
 }
 
-/* line 176, ../compass/sass/styles.scss */
+/* line 414, ../compass/sass/styles.scss */
 .each-actual-transcript {
   clear: both;
 }
 
-/* line 181, ../compass/sass/styles.scss */
+/* line 418, ../compass/sass/styles.scss */
 .displayNone {
   display: none;
 }
 
-/* line 188, ../compass/sass/styles.scss */
+/* line 425, ../compass/sass/styles.scss */
 .home-wrapper {
   background-color: #b4b4b4;
   height: 100vh;
@@ -535,12 +542,12 @@ span .header {
   left: 0;
   top: 0;
 }
-/* line 198, ../compass/sass/styles.scss */
+/* line 432, ../compass/sass/styles.scss */
 .home-wrapper .left-top-header {
   margin-left: 50px;
 }
 
-/* line 203, ../compass/sass/styles.scss */
+/* line 436, ../compass/sass/styles.scss */
 .home-corner-wrapper {
   background-color: white;
   height: 500px;
@@ -552,64 +559,64 @@ span .header {
   border: 50px solid lightgrey;
 }
 
-/* line 213, ../compass/sass/styles.scss */
+/* line 446, ../compass/sass/styles.scss */
 .home-corner-wrapper:hover {
   opacity: 0.6;
   cursor: pointer;
 }
 
-/* line 217, ../compass/sass/styles.scss */
+/* line 450, ../compass/sass/styles.scss */
 #ns {
   position: absolute;
   top: 60px;
   left: 40px;
 }
 
-/* line 223, ../compass/sass/styles.scss */
+/* line 456, ../compass/sass/styles.scss */
 .github-wrapper {
   position: fixed;
   right: 5px;
   bottom: 5px;
   filter: invert(100%);
 }
-/* line 229, ../compass/sass/styles.scss */
+/* line 462, ../compass/sass/styles.scss */
 .github-wrapper a img {
   width: 70px;
 }
 
-/* line 234, ../compass/sass/styles.scss */
+/* line 467, ../compass/sass/styles.scss */
 .github-wrapper:hover {
   opacity: 0.3;
   transition: opacity 0.3s;
 }
 
-/* line 239, ../compass/sass/styles.scss */
+/* line 472, ../compass/sass/styles.scss */
 .videos-list-button {
   position: absolute;
   left: 51vw;
   top: 55vh;
 }
 
-/* line 245, ../compass/sass/styles.scss */
+/* line 478, ../compass/sass/styles.scss */
 .videos-list-button:hover a {
   text-decoration: none;
   cursor: pointer;
 }
 
-/* line 251, ../compass/sass/styles.scss */
+/* line 484, ../compass/sass/styles.scss */
 .upload-video-button a {
   text-decoration: none;
   cursor: pointer;
 }
 
-/* line 256, ../compass/sass/styles.scss */
+/* line 489, ../compass/sass/styles.scss */
 .upload-video-button {
   position: absolute;
   right: 51vw;
   top: 55vh;
 }
 
-/* line 262, ../compass/sass/styles.scss */
+/* line 495, ../compass/sass/styles.scss */
 .home-page-video-translation {
   position: absolute;
   left: 0;
@@ -624,7 +631,7 @@ span .header {
   font-family: "Montserrat";
 }
 
-/* line 276, ../compass/sass/styles.scss */
+/* line 508, ../compass/sass/styles.scss */
 .home-page-buttons {
   border: 2px solid black;
   width: 170px;
@@ -638,18 +645,18 @@ span .header {
   border-radius: 10px;
 }
 
-/* line 290, ../compass/sass/styles.scss */
+/* line 521, ../compass/sass/styles.scss */
 .home-page-buttons:hover {
   filter: brightness(72%);
 }
 
-/* line 305, ../compass/sass/styles.scss */
+/* line 527, ../compass/sass/styles.scss */
 .each-video-row {
   min-height: 240px;
   padding: 10px;
 }
 
-/* line 309, ../compass/sass/styles.scss */
+/* line 531, ../compass/sass/styles.scss */
 .card-class {
   background-image: url("../../images/pattern37.png");
   box-shadow: 2px 2px 1px #bebebe;
@@ -660,12 +667,12 @@ span .header {
 }
 
 @media (max-width: 768px) {
-  /* line 325, ../compass/sass/styles.scss */
+  /* line 540, ../compass/sass/styles.scss */
   .card-class {
     margin-top: 2px;
   }
 }
-/* line 334, ../compass/sass/styles.scss */
+/* line 547, ../compass/sass/styles.scss */
 .video-data-1 {
   height: 20px;
   font-family: sans-serif;
@@ -682,82 +689,82 @@ span .header {
     top: 75px;
   }
 }
-/* line 358, ../compass/sass/styles.scss */
+/* line 564, ../compass/sass/styles.scss */
 .video-data-2 {
   width: 100%;
   position: relative;
 }
-/* line 361, ../compass/sass/styles.scss */
+/* line 567, ../compass/sass/styles.scss */
 .video-data-2 .video-on-top-wrapper {
   width: 100%;
   text-align: center;
   position: absolute;
   top: 80px;
 }
-/* line 367, ../compass/sass/styles.scss */
+/* line 573, ../compass/sass/styles.scss */
 .video-data-2 video {
   padding-top: 10px;
   width: 100%;
   height: 180px;
   filter: brightness(120%);
 }
-/* line 373, ../compass/sass/styles.scss */
+/* line 579, ../compass/sass/styles.scss */
 .video-data-2 .translate-letter {
   display: none;
   margin-right: 20px;
 }
-/* line 384, ../compass/sass/styles.scss */
+/* line 582, ../compass/sass/styles.scss */
 .video-data-2 .translate-letter button {
   color: white;
 }
-/* line 388, ../compass/sass/styles.scss */
+/* line 585, ../compass/sass/styles.scss */
 .video-data-2 .translate-letter:hover {
   filter: brightness(40%);
 }
-/* line 392, ../compass/sass/styles.scss */
+/* line 589, ../compass/sass/styles.scss */
 .video-data-2 .video-data-3 {
   font-size: 13px;
   display: inline-block;
 }
-/* line 400, ../compass/sass/styles.scss */
+/* line 592, ../compass/sass/styles.scss */
 .video-data-2 .video-data-3 .watch-button {
   font-size: 13px;
   display: none !important;
 }
-/* line 406, ../compass/sass/styles.scss */
+/* line 596, ../compass/sass/styles.scss */
 .video-data-2 .video-data-3 .watch-button:hover {
   filter: brightness(50%);
 }
 
-/* line 412, ../compass/sass/styles.scss */
+/* line 602, ../compass/sass/styles.scss */
 .video-data-2:hover .video-on-top-wrapper {
   animation: moveUp .1s linear;
   top: 75px;
 }
-/* line 416, ../compass/sass/styles.scss */
+/* line 606, ../compass/sass/styles.scss */
 .video-data-2:hover video {
   filter: brightness(60%);
   transition: filter 0.2s;
 }
-/* line 420, ../compass/sass/styles.scss */
+/* line 610, ../compass/sass/styles.scss */
 .video-data-2:hover .translate-letter {
   display: inline-block;
 }
-/* line 426, ../compass/sass/styles.scss */
+/* line 613, ../compass/sass/styles.scss */
 .video-data-2:hover .video-data-3 {
   display: inline-block;
 }
-/* line 428, ../compass/sass/styles.scss */
+/* line 615, ../compass/sass/styles.scss */
 .video-data-2:hover .video-data-3 .watch-button {
   margin-top: -2px;
   display: inline-block !important;
 }
-/* line 432, ../compass/sass/styles.scss */
+/* line 619, ../compass/sass/styles.scss */
 .video-data-2:hover .video-data-3 .abs-bottom {
   text-shadow: none;
 }
 
-/* line 439, ../compass/sass/styles.scss */
+/* line 625, ../compass/sass/styles.scss */
 .abs-bottom {
   font-size: 16px;
   text-shadow: 1px 1px 1px black;
@@ -765,30 +772,30 @@ span .header {
   color: white;
 }
 
-/* line 447, ../compass/sass/styles.scss */
+/* line 631, ../compass/sass/styles.scss */
 .hide-class {
   display: none;
 }
 
-/* line 451, ../compass/sass/styles.scss */
+/* line 634, ../compass/sass/styles.scss */
 .skip-placeholder {
   height: 80px;
   width: 100%;
   clear: both;
 }
-/* line 455, ../compass/sass/styles.scss */
+/* line 638, ../compass/sass/styles.scss */
 .skip-placeholder .horiz-line {
   height: 10px;
   border-bottom: 1px dashed gainsboro;
   margin-bottom: 30px;
 }
 
-/* line 462, ../compass/sass/styles.scss */
+/* line 644, ../compass/sass/styles.scss */
 .each-family-class {
   border: 1px solid black;
 }
 
-/* line 472, ../compass/sass/styles.scss */
+/* line 647, ../compass/sass/styles.scss */
 .translate-bg {
   width: 100vw;
   height: 100vh;
@@ -796,24 +803,24 @@ span .header {
   bottom: 0;
   left: 0;
 }
-/* line 478, ../compass/sass/styles.scss */
+/* line 653, ../compass/sass/styles.scss */
 .translate-bg img {
   width: 100%;
   filter: brightness(20%);
   min-height: 100vh;
 }
 
-/* line 485, ../compass/sass/styles.scss */
+/* line 659, ../compass/sass/styles.scss */
 .entireProductVideoWrapper {
   margin-top: 90px;
 }
 
-/* line 491, ../compass/sass/styles.scss */
+/* line 662, ../compass/sass/styles.scss */
 .final-product-header, .related-videos-header, .final-translation-transcript, .family-name-in-product-video {
   font-size: 20px;
 }
 
-/* line 494, ../compass/sass/styles.scss */
+/* line 665, ../compass/sass/styles.scss */
 .final-product-header {
   position: absolute;
   top: 0;
@@ -829,12 +836,12 @@ span .header {
   border-bottom: 20px solid black;
 }
 
-/* line 511, ../compass/sass/styles.scss */
+/* line 679, ../compass/sass/styles.scss */
 .videoProductHr {
   border-top: 1px solid #5a5a5a;
 }
 
-/* line 514, ../compass/sass/styles.scss */
+/* line 682, ../compass/sass/styles.scss */
 .nav-button-container {
   position: absolute;
   top: 5px;
@@ -842,7 +849,7 @@ span .header {
   z-index: 7;
 }
 
-/* line 521, ../compass/sass/styles.scss */
+/* line 688, ../compass/sass/styles.scss */
 .nav-buttons {
   display: inline-block;
   z-index: 8;
@@ -855,24 +862,24 @@ span .header {
   line-height: 44px;
 }
 
-/* line 532, ../compass/sass/styles.scss */
+/* line 699, ../compass/sass/styles.scss */
 .nav-buttons span {
   font-size: 24px;
   color: white;
 }
 
-/* line 537, ../compass/sass/styles.scss */
+/* line 703, ../compass/sass/styles.scss */
 .nav-buttons:hover {
   background-color: white;
   opacity: 0.7;
   transition: background .3s, opacity .3s;
 }
-/* line 541, ../compass/sass/styles.scss */
+/* line 707, ../compass/sass/styles.scss */
 .nav-buttons:hover span {
   color: black;
 }
 
-/* line 548, ../compass/sass/styles.scss */
+/* line 711, ../compass/sass/styles.scss */
 .grey-header {
   position: fixed;
   z-index: 10;
@@ -889,49 +896,32 @@ span .header {
   box-shadow: 0px 2px 4px black;
 }
 
-/* line 571, ../compass/sass/styles.scss */
+/* line 726, ../compass/sass/styles.scss */
 .finishedButtonHide {
   display: none;
 }
 
-/* line 574, ../compass/sass/styles.scss */
+/* line 729, ../compass/sass/styles.scss */
 .seeFinishedButton {
   display: block;
 }
 
-/* line 577, ../compass/sass/styles.scss */
-body {
-  overflow-x: hidden;
-  background-color: #E5E5E5;
-  color: #333333;
-}
-
-/* line 582, ../compass/sass/styles.scss */
-.universe {
-  margin-top: 20px;
-  width: 90%;
-  padding: 0px 4% 50px 4% !important;
-  background-color: white;
-  border-left: 1px solid gainsboro;
-  border-right: 1px solid gainsboro;
-}
-
-/* line 591, ../compass/sass/styles.scss */
+/* line 733, ../compass/sass/styles.scss */
 .delete-family-button:hover {
   filter: brightness(50%);
 }
 
-/* line 594, ../compass/sass/styles.scss */
+/* line 736, ../compass/sass/styles.scss */
 .delete-family-button {
   z-index: 6;
 }
 
-/* line 597, ../compass/sass/styles.scss */
+/* line 739, ../compass/sass/styles.scss */
 .family-name-wrapper {
   position: relative;
 }
 
-/* line 602, ../compass/sass/styles.scss */
+/* line 743, ../compass/sass/styles.scss */
 .family-name-text {
   position: absolute;
   top: 0px;
@@ -949,7 +939,7 @@ body {
   font-size: 15px;
 }
 
-/* line 619, ../compass/sass/styles.scss */
+/* line 760, ../compass/sass/styles.scss */
 .fam-icon {
   display: inline-block;
   width: 38px;
@@ -959,7 +949,7 @@ body {
   z-index: 8;
 }
 
-/* line 630, ../compass/sass/styles.scss */
+/* line 768, ../compass/sass/styles.scss */
 .actual-text {
   display: inline-block;
   height: 40px;
@@ -967,11 +957,22 @@ body {
   vertical-align: top;
 }
 
-/* line 637, ../compass/sass/styles.scss */
+/* line 775, ../compass/sass/styles.scss */
 .buttonDiv button {
   font-size: 10px;
 }
-/* line 642, ../compass/sass/styles.scss */
+/* line 777, ../compass/sass/styles.scss */
 .buttonDiv button span {
   font-size: 10px;
+}
+
+/* line 783, ../compass/sass/styles.scss */
+.hidden-sm-down {
+  border-bottom: 1px dashed #b4b4b4;
+  padding-bottom: 10px;
+}
+
+/* line 789, ../compass/sass/styles.scss */
+.each-product-transcript {
+  font-size: 14px;
 }

@@ -2,32 +2,26 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
    $scope.videoToBeTranslatedArray = [];
    var colors = [];
     var tempUrl = 'http://localhost:3000/videos'
-    // $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
 	var tempUrl = 'http://localhost:3000/videos'
-	// $scope.imagePath = 'http://image.tmdb.org/t/p/w300/';
     $http({
         method: "GET",
         url: tempUrl
     }).then(
         function successFunction(videoData){
-            // console.log(videoData)
             videoData.data.sort(function(a, b){
                 if(a.familyName < b.familyName) return -1;
                 if(a.familyName > b.familyName) return 1;
                 return 0;
             })                
-
             $scope.videoData = videoData
-
             var tempFamilyName = 'no name';
             $scope.videoData.data.map((video, index)=>{
                 var myUrl = 'http://localhost:3000/videos/' + video.name
                 video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
-                    // video.skipClass = 'hide-class'
                 }else if(video.familyName.toUpperCase() == tempFamilyName.toUpperCase()){
                     video.familyName = ''
                     video.skipClass = 'hide-class'
@@ -45,22 +39,11 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                 }else{
                     video.finished = 'Incomplete'
                     video.classStyle = 'video-incomplete'
-                    video.checkItOutClass = 'displayNone'
-                   
+                    video.checkItOutClass = 'displayNone'  
                 }
-
             })
-            console.log($scope.videoData.data[0].classStyle)
-            // $scope.videoToBeTranslatedArray.push(videoData.data)
-            // $scope.tempArray = []
-
-            // videoData.data.map((eachVideo, index)=>{
-            //     console.log(eachVideo)
-            //     $scope.videoToBeTranslatedArray.push(eachVideo.name)
-            // })
         },
         function failedFunction(videoData){
-            // console.log(videoData)
         }
     )
 
@@ -76,24 +59,20 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                 }
             })
             console.log($scope.videoData.data['video'])
-            // console.log(tempDataToSend.token)
             $http({
                 method:'POST',
                 url: 'http://localhost:3000/deleteVideo/',
                 data: tempDataToSend
             }).then(
                 function successFunction(data){
-                    // console.log(data)
                   },
                 function failedFunction(data){
-                    // console.log("fail")
                 }
             )
         }
     }   
     $scope.indexArray = [];
     $scope.deleteFamily = function(familyName){
-        
         var deletedFam = confirm("Are you sure you want to delete all videos for " + familyName + "?")
         if(deletedFam){
             var dataToSend =  {
@@ -115,7 +94,6 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                     })
                 },
                 function failedFunction(data){
-                // console.log("fail")
                 }   
             )            
             $http({
@@ -127,7 +105,6 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                     console.log('successfully deleted family')
                   },
                 function failedFunction(data){
-                    // console.log("fail")
                 }
             )
         }

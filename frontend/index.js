@@ -12,23 +12,16 @@ angular.module('BasicHttpAuthExample', [
 ])
 
 app.config(['$stateProvider', '$urlRouterProvider', '$sceDelegateProvider', function($stateProvider, $urlRouterProvider, $sceDelegateProvider){
-    // give name to state. in this case, it is 'firstMessage'
-    // as a part of the stateProvider, you need to provide a new state by doing $stateProvider.state
     $stateProvider.state('home',{
         url:'/',
         templateUrl: 'views/home.html', 
         controller: 'homeController'
-
     })
     $stateProvider.state('videosToTranslate',{
-        // provide options for state in between the {}
-        // url is specifying the route for the state
         url:'/videosToTranslate',
-        // template:'<strong>This is the first message</strong>'
         templateUrl:'views/videosToTranslate.html',
         controller: 'videosToTranslateController'
     })
-    // console.log('hello')
     $stateProvider.state('translateVideo/',{
         url:'/translateVideo/:id',
         templateUrl:'views/translateVideo.html',
@@ -68,10 +61,6 @@ app.filter('trustUrl',function($sce){
     function ($rootScope, $location, $cookieStore, $http) {
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
-        // if ($rootScope.globals.currentUser) {
-            // $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
-        // }
-  
         $rootScope.$on('$locationChangeStart', function (event, next, current) {
             // redirect to login page if not logged in
             if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {

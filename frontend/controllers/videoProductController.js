@@ -1,10 +1,4 @@
 app.controller('videoProductController',  function($scope, $location, $http, $sce, $interval){
- // $scope.currentlyPlaying = false;
- //  $scope.thisOne = true;
- //  $scope.currentlyPlaying = function(video){
- //    $scope.thisOne = false;
- //    console.log("did it work?")
- //  } 
  $scope.transcriptHTML = []
   var paramsId = $location.$$path.slice(14)
 	var tempUrl = 'http://localhost:3000/videosFinished'
@@ -32,7 +26,6 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      		var familyVideoHTML = []
 				      		familyArray.map((video, index)=>{
 				      			var myUrl = 'http://localhost:3000/' + video.path.slice(7)
-				      			// console.log(video)
                     var showCPorNot = ''
                     if(video.token == $location.$$path.slice(14)){
                       showCPorNot = 'displayCP'
@@ -42,18 +35,14 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
                     }
 				      			var tempSceThing = $sce.trustAsResourceUrl(myUrl)	
 				      			var finishedClass = ''
-				      			// var editUrl = ''
 				      			var editUrl = '#/translateVideo/' + video.token
 				      			var selectUrl = '#/videoProduct/' + video.token 
 				      			var showOrNot = false
-                    // var currentlyPlaying = "Currently Playing"
 				      			if(video.finished){
 				      				finishedClass = 'greenClass';
 				      				showOrNot = true;
-                      
 				      			}else{
 				      				finishedClass = 'redClass';
-                    
 				      			}
 				      			familyVideoHTML.push({
 				      				sce: tempSceThing,
@@ -81,40 +70,49 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
     	function successFunction(transcriptData){
           var datesArray = [];
       		var transcriptArray = JSON.parse(transcriptData.data[0].transcript)
+          transcriptArray.sort(function(a, b){return a.startTime-b.startTime});
+          transcriptArray.map((transcript, index)=>{
+            var date = new Date();
+            var day = (date.getUTCDate()).toString();
+            var month = (date.getMonth()+1).toString(); 
+            var year = (date.getUTCFullYear()).toString(); 
+            var startMinutes = Math.floor(transcript.startTime / 60);
+            if(startMinutes < 10){
+              startMinutes = '0'+ startMinutes;
+            }
+            var startSeconds = Math.floor(transcript.startTime - startMinutes * 60);
+            if(startSeconds < 10){
+              startSeconds = "0"+ startSeconds;
+            }
+            var endMinutes = Math.floor(transcript.endTime / 60);
+            if(endMinutes < 10){
+              endMinutes =  "0"+endMinutes;
+            }
+            var endSeconds = Math.floor(transcript.endTime - endMinutes * 60);
+            if(endSeconds < 10){
+              endSeconds = "0"+ endSeconds;
+            }
+            transcript.startTimes = startMinutes+":"+startSeconds,
+            transcript.endTimes = endMinutes+":"+endSeconds
+          })                 
       		$scope.transcriptHTML = transcriptArray
-          // $scope.lastModified = transcriptArray[0].postedTime
-          // var date = Date(headers()['lastModified']);
-          // $scope.lastModified['postedTime'] = date;
-          // console.log(transcriptArray[1].postedTime)
-          // $scope.transcriptArray.map((transcript, index)=>{
-          //     datesArray.push({
-          //       lastModified: transcriptArray.postedTime
 
-          //     })
-          //     $scope.lastModified = datesArray
-          // })
-          // console.log($scope.transcriptHTML[2].postedTime) //displays posted time for that particular transcript
-          // console.log("transcript data: " + transcriptData.data[0].transcript)
     	},
     	function failedFunction(videoData){}
   	)  	
   	var video = document.getElementById('productVideoPlaying')
-  	// console.dir(videoPlaying.currentTime)
-  	
   	$scope.currentTranscript = ""
-
+    var counter = 0
   	var displayInterval = $interval(function(){
   		var videoCurrentTime = Math.floor(video.currentTime*100)
   		$scope.transcriptHTML.map((video, index)=>{
-  			// var parsedTranscript = JSON.parse(video.transcript)
-  			// console.log(video)
-  			// console.log(video.startTime)
   			if((videoCurrentTime > video.startTime * 100)&&(videoCurrentTime < video.endTime * 100)){
+          counter = 0;
   				$scope.currentTranscript = video.transcript
-  				// console.log($scope.)
-  				console.log(video.transcript)
-  			}else{
-  				// $scope.currentTranscript = ''
+  			}else if(counter>100){
+          $scope.currentTranscript = ''
+        }else{
+          counter++
   			}
   		})	
   	},50);

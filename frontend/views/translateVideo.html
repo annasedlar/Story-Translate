@@ -10,12 +10,8 @@
         </div>
             <button class="btn #00acc1 cyan darken-3" name="action" style="margin-top:30px;padding-top: 2px">Submit</button>
         <div class="failedUploadMessage">{{failedUpload}}</div>
-
     </form>
 </div>
-
-
-
 
 <div class="grey-header">
 	Translate Video and Submit!
@@ -38,7 +34,6 @@
 
 		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%" style="border:1px solid rgb(180,180,180)"/>
 
-
 	    <div class="buttonDiv">
 				<button ng-click="startTimeFunc()" class="#0d47a1 light-blue darken-4 waves-effect btn" style="float:left; margin-right: 5px;">Set Start</button>
 			    <button class="#0d47a1 light-blue darken-4 waves-effect btn" ng-click="endTimeFunc()" style="float:left">Set End</button>
@@ -49,9 +44,7 @@
 			    <button ng-click="rewind()" class="#263238 blue-grey darken-3 waves-effect btn" style="float:right; margin-right: 2px;"><span class='glyphicon glyphicon-backward'></span></button>
 			<div class="row">{{invalidRange}}</div>
 		</div>   
-		<!-- <div class='cool-video-bar'> -->
-			<!-- <div class='start-end-range'></div> -->
-		<!-- </div> -->
+
 		<div style="margin-top:7%; margin-bottom:10%">
 		    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 			    <div class="new-sections">
@@ -65,10 +58,9 @@
 		</div>
 	</div>
 
-
 	<div class="col-xs-12 col-md-6 each-translation-box">
 	    <div class='translation-header'>Translation Form</div>
-	    <div class="row hidden-sm-down" style="margin-bottom: 5px; margin-top:15px">
+	    <div class="row hidden-sm-down" style="margin-bottom: 5px; margin-top:15px; height:20px">
 	    	<div class="col-xs-4">Time Frame</div>
 	    	<div class="col-xs-8">Translation</div>
 	    </div>
@@ -111,16 +103,11 @@
 	</div>  
 </div> 
 
-
-
-
-<div id="containment-wrapper" ng-mousedown='draggableVidz()'> 
+<!-- <div id="containment-wrapper" ng-mousedown='draggableVidz()'> 
 	<div id="draggable" class="draggable ui-widget-content">
 		{{timez}}
 	</div>
-</div> 
-
-
+</div> --> 
 
 <div class='github-wrapper'>
 	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
