@@ -1,5 +1,5 @@
-<img src="frontend/images/new-story-logo.png" width="300" height="130"/>
-<!-- <img src="http://....jpg" width="200" height="200" /> -->
+<img src="frontend/images/new-story-logo.png" width="275" height="53"/>
+
 
 # New Story Video Translation Tool 
 
