@@ -179,7 +179,7 @@ All team members are full stack web development students of the [DigitalCrafts](
 
 **Role:** MVP
 
-**Contributions:** Lead development. Resolved coding challenges team members faced throughout the project. Wrote custom algorithm to detect translation time range overlaps. Organized styling and functionality to bring project to desired levels of functionality.
+**Contributions:** Lead development. Resolved coding challenges team members faced throughout the project. Wrote custom algorithm to detect translation time range overlaps. Organized styling and functionality to bring project to optimal performance.
 
 
 * [Anna Sedlar](https://github.com/annasedlar) 
