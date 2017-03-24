@@ -1,4 +1,4 @@
-[]: (frontend/images/new-story-logo.png)
+[](frontend/images/new-story-logo.png)
 
 
 # New Story Video Translation Tool 
