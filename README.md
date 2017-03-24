@@ -197,4 +197,4 @@ All team members are full stack web development students of the [DigitalCrafts](
 #### Project Timeline
 * Project start: 3/6/2017
 
-* Project completion:** 3/24/2017
+* Project completion: 3/24/2017
