@@ -1,4 +1,4 @@
-![alt](frontend/images/new-story-logo.png)
+<img src="frontend/images/new-story-logo.png" alt="" style="width: 300px;"/>
 
 
 # New Story Video Translation Tool 
@@ -38,17 +38,19 @@ The following languages and frameworks were used:
 
 
 #### Challenges and Solutions
-1. **Challenge:** Learning and utilizing Angular to complete this project
+1. **Challenge:** Learning and utilizing Angular 1.5 to complete this project
 
-   **Solution:** logic to delete group and individual videos, logic to target start and end times in transcript (no overlapping times), linking transcript to the correct video and having it show up when the user returns to the session at a later time
+   **Solution:** Our group decided to learn Angular 1.5 for this project. Utilizing a framework that we're unfamiliar with was a fun learning experience. First off, since we were not very familiar with Angular, we were unaware of what tools it has to offer. Building with a new tool helped us learn a lot. Our self-teaching skills after our instructor's introduction to it were put to the test when we had to make our program save sessions for a user to return to later. Again, we needed to link the corresponding transcripts with the videos as well as marking which videos had translations in progress.
+
 
 2. **Challenge:** Using the video element in HTML5
 
-   **Solution:** SCE in Angular, grabbing screenshots, displaying subs in video at the right time, logic to get "currentlyPlaying" only displaying on the video that is playing. when you click watch, video clicked will bring up corresponding transcript. entire transcript displays on the right while the corresponding line displays in the video at that time frame. html5 doesn't recognize video as "safe". we did a lot of searching and most of the answers were that there is no fix to the issue.
+   **Solution:** One of the major issues we faced was adding a video to our app with Angular. Unknown to us at the time, completing this task would require a few more steps than what we are used to. Our issue is best stated in [Ruben Canton](http://www.rubencanton.com/blog/2014/07/adding-video-src-with-angular.html)'s words: "Angular allows you to set an image “src” or the href of a link without issues, but blocks you if you try to add the “src” of an HTML5 video element." Most of the sources we found on Google stated that there is currently no fix for this issue. We would like to credit Ruben Canton's detailed solution after an extensive search to work around this problem. In order to add the video source to our project, we had to tell Angular that this is a safe operation using Angular's Strict Contextual Service (SCE). As a result, ```javascript we included $scope.trustedUrl = $sce.trustAsResourceUrl(myUrl);``` in our code.
 
-3. **Challenge:** Size of videos, how to store them, how to upload them, how to pull that info back out
 
-   **Solution:** Multer: when you upload a video through Multer, the actual file gets saved to the backend, and the name, path, token of the video is saved in the database. we didn't want to save it to DB b/c the file name would be a long string of characters. needed a more efficient way ==> multer. Utilizing multer was complicated by the fact that we had just learned Angular the week before. (By not saving the entire video in the db, we were able to keep our db small.)
+3. **Challenge:** Size of videos, how to store them, how to upload them, how to pull that video's information back out
+
+   **Solution:** Since our app's main purpose is to faciliatate the translation process for New Story's users, we needed an efficient way to store and retrieve videos and transcripts. Enter Multer. When uploading a video through Multer, the actual video is saved to the backend while the name, path and token of the video are saved in the database. By splitting up the video with its identifying elements, we eliminated the need to store the video as a long string in our database and therefore, we are able to keep our database small. Bringing Multer into our app was complicated by the fact that we had just learned Angular the week before.
 
 
 #### GitHub Link
@@ -143,11 +145,11 @@ On the final page, you can see the entire transcript on the right. Subs on the v
 
 * Ability to upload content
 
-* Submit translations based on video time frames
+* Ability to submit translations based on video time frames
 
-* Form that saves to database
+* Form that saves translations to database
 
-* Display a list of videos sorted by family and categorized by completion status
+* Displaying a list of videos sorted by family and categorized by completion status
 
 
 
@@ -158,13 +160,13 @@ On the final page, you can see the entire transcript on the right. Subs on the v
 
 * Displaying completed translations from transcipt as video plays
 
-* Admin dashboard - user can see who translated which videos, when, how often, etc
+* An administrative dashboard where the user can see who translated which videos, when, how often, etc
 
-* Upload multiple videos at once
+* Ability to uploadmultiple videos at once
 
 
 #### Team Members and Contributions
-All team members are full stack web development students of the DigitalCrafts November 2016 cohort. This project utilizes both our frontend and backend skills that we have learned along with pair programming and SCRUM agile development methodology.
+All team members are full stack web development students of the [DigitalCrafts](http://www.digitalcrafts.com/) November 2016 cohort. This project utilizes both our frontend and backend skills that we have learned along with pair programming and SCRUM agile development methodology.
 
 
 * [Paul Kang](https://github.com/pdwkang) 
