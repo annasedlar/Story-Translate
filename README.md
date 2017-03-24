@@ -38,6 +38,8 @@ The following languages and frameworks were used:
 
   * Node.js
 
+  * Express
+
   * MySQL
 
 
@@ -64,7 +66,7 @@ Front page requiring user login
 ![alt](frontend/images/frontPage.png)
 
 After the user is logged in, he has an option of uploading a video or viewing a list of videos in the database. If he chooses to upload first, he will be redirected to the same list route after the page reloads.
-![alt](frontend/images/videosToTranslate.png)
+![alt](frontend/imvideosages/videosToTranslate.png)
 
  
 This is the code behind our "Videos to Translate" page. We have logic dictating how each video will be displayed. The videos are grouped by family name, a field that can be edited on the video translation and finished product routes. 
@@ -101,10 +103,10 @@ For a more pleasant user experience, the upload button is available on all route
 
 
 There is also an option to delete individual videos or an entire family of videos (for example when video translation and compilation is complete for that family). Using the same logic that we used to mark whether a video is "complete" or "incomplete", we marked the videos on the final product page with "Currently Playing" if the user has clicked "watch" on any of the related videos. This would help the user keep track of each video's translation status.
-![alt](frontend/images/editAndDelete.png)
+![alt](frontend/images/editAndDelete.jpg)
 
 
-Verifying the time ranges for each translation is crucial. The start and end times cannot overlap the time range of a transcript that has already been submitted. We needed to check the beginning time of the potential new translation against all the ending times of the translations that have already been submitted to see if there are conflicts with any of the previously submitted time ranges. The code below takes care of this task.
+Verifying the time ranges for each translation is crucial. The start and end times cannot overlap with the time range of a transcript that has already been submitted. We needed to check the beginning time of the potential new translation against all the ending times of the translations that have already been submitted to see if there are conflicts with any of the previously submitted time ranges. The code below takes care of this task.
 
 
 ```javascript
