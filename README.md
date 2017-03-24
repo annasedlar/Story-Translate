@@ -6,7 +6,7 @@
 #### Description/Overview
 Our translation tool allows users from [New Story](https://www.newstorycharity.org/) to view, upload and translate videos from their charity. They crowdfund homes and "transform slums into thriving communities." By changing lives through building safe and resilient communities and allowing donors to see where their contributions are being allocated, New Story provides a fresh approach to philanthropy.
 
-[Live URL](http://www.pauldkang.com/new_story/#/)
+[Live URL](http://www.annasedlar.com/Story-Translate/frontend/#/)
 
 [Live Demo](https://youtu.be/Wk9DzYs0PXg)
 

@@ -1,6 +1,6 @@
 app.controller('finishedVideosController',['$scope','$http', function($scope, $http){
     $scope.videoToBeTranslatedArray = [];
-	var tempUrl = 'http://pauldkang.com:3030/videosFinished'
+	var tempUrl = 'http://annasedlar.com:3000/videosFinished'
 	$http({
 		method: "GET",
 		url: tempUrl

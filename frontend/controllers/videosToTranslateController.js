@@ -1,10 +1,10 @@
 app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
    $scope.videoToBeTranslatedArray = [];
    var colors = [];
-    var tempUrl = 'http://pauldkang.com:3030/videos'
+    var tempUrl = 'http://annasedlar.com:3000/videos'
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
-	var tempUrl = 'http://pauldkang.com:3030/videos'
+	var tempUrl = 'http://annasedlar.com:3000/videos'
     $http({
         method: "GET",
         url: tempUrl
@@ -18,7 +18,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             $scope.videoData = videoData
             var tempFamilyName = 'no name';
             $scope.videoData.data.map((video, index)=>{
-                var myUrl = 'http://pauldkang.com:3030/videos/' + video.name
+                var myUrl = 'http://annasedlar.com:3000/videos/' + video.name
                 video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
@@ -62,7 +62,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             console.log($scope.videoData.data['video'])
             $http({
                 method:'POST',
-                url: 'http://pauldkang.com:3030/deleteVideo/',
+                url: 'http://annasedlar.com:3000/deleteVideo/',
                 data: tempDataToSend
             }).then(
                 function successFunction(data){
@@ -81,7 +81,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             }
             $http({
                 method: "GET",
-                url: 'http://pauldkang.com:3030/videos/'
+                url: 'http://annasedlar.com:3000/videos/'
             }).then(
                 function successFunction(videoData){
                     videoData.data.map((video, index)=>{
@@ -99,7 +99,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             )            
             $http({
                 method:'POST',
-                url: 'http://pauldkang.com:3030/deleteFamily/',
+                url: 'http://annasedlar.com:3000/deleteFamily/',
                 data: dataToSend
             }).then(
                 function successFunction(data){

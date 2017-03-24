@@ -1,6 +1,6 @@
 app.controller('translateVideoController',['$scope', '$location', '$http', '$sce', function($scope, $location, $http, $sce){
 	var paramsId = $location.$$path.slice(16)
-	var onLoadUrl = 'http://pauldkang.com:3030/transcript/' + paramsId
+	var onLoadUrl = 'http://annasedlar.com:3000/transcript/' + paramsId
 	$scope.seeFinishedButton = 'finishedButtonHide'
 	$scope.timeRangeConflict = ''
 	$http({
@@ -26,7 +26,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		} 
   	)
 	$scope.videoToTranslateUrl = ''
-	var tempUrl = 'http://pauldkang.com:3030/videos'
+	var tempUrl = 'http://annasedlar.com:3000/videos'
 	$http({
     	method: "GET",
     	url: tempUrl
@@ -37,7 +37,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
 			        // console.log(tempVideoPath)
-        			var myUrl = 'http://pauldkang.com:3030/' + tempVideoPath
+        			var myUrl = 'http://annasedlar.com:3000/' + tempVideoPath
         			$scope.pleasWork = $sce.trustAsResourceUrl(myUrl)
        			}
       		})
@@ -261,7 +261,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		}
   	    $http({
 			method:'POST',
-      		url: 'http://pauldkang.com:3030/changeFamilyName/',
+      		url: 'http://annasedlar.com:3000/changeFamilyName/',
       		data: tempDataToSend
     	}).then(
 	      	function successFunction(data){
@@ -275,7 +275,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 
   	// send transcript to the backend
 	$scope.saveForm = function(){
-		var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + $location.$$path.slice(16)
+		var transcriptUrl = 'http://annasedlar.com:3000/transcript/' + $location.$$path.slice(16)
 		$http({
 			method:'POST',
       		url: transcriptUrl,
@@ -295,14 +295,14 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	$scope.submitForm = function(){
 		console.log($scope.entireTranscript)
 		
-		var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + $location.$$path.slice(16);
+		var transcriptUrl = 'http://annasedlar.com:3000/transcript/' + $location.$$path.slice(16);
 		$http({
 			method:'POST',
       		url: transcriptUrl,
       		data: $scope.entireTranscript
     	}).then(
       		function successFunction(data){			
-				var finishedUrl = 'http://pauldkang.com:3030/finished/' + $location.$$path.slice(16);
+				var finishedUrl = 'http://annasedlar.com:3000/finished/' + $location.$$path.slice(16);
 				var dataArray = [1]
 				$http({
 					method:'POST',
@@ -371,7 +371,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		var deleteThis = confirm('Are you sure you want to delete this translation?');
 		if(deleteThis){
 			$scope.entireTranscript.splice(index, 1)
-			var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + $location.$$path.slice(16)
+			var transcriptUrl = 'http://annasedlar.com:3000/transcript/' + $location.$$path.slice(16)
 			$http({
 				method:'POST',
 	      		url: transcriptUrl,

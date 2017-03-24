@@ -12,7 +12,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 		formData.append('video', file);
 		formData.append('familyName', $scope.familyName)
 		console.log(typeof($scope.tempImage))
-		$http.post('http://pauldkang.com:3030/videos', formData, {
+		$http.post('http://annasedlar.com:3000/videos', formData, {
 			transformRequest: angular.identity,
 			headers:{
 				'Content-Type' : undefined
