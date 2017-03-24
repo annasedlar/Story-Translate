@@ -1,4 +1,4 @@
-		<!-- upload video modal -->
+T		<!-- upload video modal -->
 <div id="demoModal" class="modal" style='text-align: center' ng-controller="uploadRawVideoController">
     <form ng-submit="submit()">
         <div>
@@ -17,7 +17,7 @@
 <div class="grey-header">
 	Click a Video to Translate or View
 	<div class="nav-button-container">	
-		<a href='http://www.annasedlar.com/Story-Translate/frontend/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
+		<a href='http://www.pauldkang.com/new_story/#/'><div class='nav-buttons'><span class='glyphicon glyphicon-home'></span></div></a>
 		<a href='#/videosToTranslate'><div class='nav-buttons'><span class='glyphicon glyphicon-list-alt'></span></div></a>
 		<a data-target='demoModal' modal><div class='nav-buttons' style="cursor:pointer"><span class='glyphicon glyphicon-cloud-upload'></span></div></a>
 	</div>
@@ -41,7 +41,7 @@
 		<div class='card-panel card-class'>
 			<button class='delete-button' ng-click='deleteVideo(video)'>x</button>
 			<div class='each-video-description video-data-2' '>		
-				<video ng-src="{{video.name}}"></video>
+				<video ng-src="{{video.name}}" ></video>
 				<div class='video-on-top-wrapper'>
 					<div class='translate-letter'>
 						<a ng-href='#/translateVideo/{{video.token}}'>
@@ -63,6 +63,6 @@
 
 <div class='github-wrapper'>
 	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
-		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
+		<img src='http://www.pauldkang.com/new_story/images/github-logo.png'/>
 	</a>
 </div>

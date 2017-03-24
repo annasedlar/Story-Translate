@@ -13,7 +13,7 @@ body{
 .universe{
     margin-top:20px;
     width: 90%;
-    padding:0px 4% 50px 4% !important;
+    padding:0px 4% 5px 4% !important;
     background-color: white;
     border-left: 1px solid rgb(220,220,220);
     border-right: 1px solid rgb(220,220,220);
@@ -66,8 +66,9 @@ span .header{
     padding-top:20px;
 }
 .translations{
-    background-image: url('../../images/pattern37.png');
-    min-height: 80vh;
+    background-image: url('http://pauldkang.com/new_story/images/pattern37.png');
+    height: 85vh;
+    overflow-y:scroll;
     padding-top: 20px;
     font-size: 20px;
 }
@@ -387,9 +388,10 @@ textarea{
     }
 }
 .each-translation-box{
-    background-image: url('../../images/pattern37.png');
+    background-image: url('http://pauldkang.com/new_story/images/pattern37.png');
     margin-top: 20px;
-    min-height:90vh;
+    height:85vh;
+    overflow-y: scroll;
     .each-transcription{
         background-color: rgba(220,220,220,1);
         box-shadow: 3px 3px 1px rgb(151,151,151);
@@ -529,7 +531,7 @@ span .header{
     padding:10px;
 }
 .card-class{
-    background-image: url('../../images/pattern37.png');
+    background-image: url('http://pauldkang.com/new_story/images/pattern37.png');
     box-shadow: 2px 2px 1px rgb(190,190,190);
     padding:15px;
     padding-left:20px;
@@ -761,7 +763,7 @@ span .header{
     display: inline-block;
     width:38px;
     height:38px;
-    background-image: url('../../images/family-icon.png');
+    background-image: url('http://pauldkang.com/new_story/images/family-icon.png');
     background-size: 100%;
     z-index:8;
 }
@@ -788,4 +790,29 @@ span .header{
 
 .each-product-transcript{
     font-size: 14px;
+}
+
+#containment-wrapper{
+    height:100px;
+    width:50%;
+    background-color: blue;
+}
+#draggable{
+    background-color: grey;
+    width:50px;
+    height:50px;
+}
+.failedUploadMessage{
+    animation: 1s uploading linear infinite;
+}
+@keyframes uploading{
+    0%{
+        color:black;
+    }
+    50%{
+        color:grey;
+    }
+    100%{
+        color:black;
+    }
 }

@@ -1,7 +1,8 @@
 app.controller('translateVideoController',['$scope', '$location', '$http', '$sce', function($scope, $location, $http, $sce){
 	var paramsId = $location.$$path.slice(16)
-	var onLoadUrl = 'http://localhost:3000/transcript/' + paramsId
+	var onLoadUrl = 'http://pauldkang.com:3030/transcript/' + paramsId
 	$scope.seeFinishedButton = 'finishedButtonHide'
+	$scope.timeRangeConflict = ''
 	$http({
     	method: "GET",
     	url: onLoadUrl
@@ -10,7 +11,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
       		var transcriptString = onLoadData.data[0].transcript
       		var entireTranscript = JSON.parse(transcriptString)
       		entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
-      		console.log(entireTranscript)
+      		// console.log(entireTranscript)
       		$scope.entireTranscript = entireTranscript
       		var timeRangeArray = []
        		$scope.entireTranscript.map((eachTranscript, index)=>{
@@ -25,7 +26,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		} 
   	)
 	$scope.videoToTranslateUrl = ''
-	var tempUrl = 'http://localhost:3000/videos'
+	var tempUrl = 'http://pauldkang.com:3030/videos'
 	$http({
     	method: "GET",
     	url: tempUrl
@@ -35,8 +36,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
        			if(eachVideo.token == paramsId){
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
-			        console.log(tempVideoPath)
-        			var myUrl = 'http://localhost:3000/' + tempVideoPath
+			        // console.log(tempVideoPath)
+        			var myUrl = 'http://pauldkang.com:3030/' + tempVideoPath
         			$scope.pleasWork = $sce.trustAsResourceUrl(myUrl)
        			}
       		})
@@ -53,47 +54,12 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	// Adding transcripts to video (shows on the right)
 	$scope.submitEachSection = function(){
 		$scope.entireTranscript.sort(function(a, b){return a.startTime-b.startTime});
-		if($scope.clickedTranscriptIndex > -1){
-			var date = new Date();
-			var day = (date.getUTCDate()).toString();
-			var month = (date.getMonth()+1).toString(); 
-			var year = (date.getUTCFullYear()).toString(); 
-
-			var startMinutes = Math.floor($scope.startTime / 60);
-			if(startMinutes < 10){
-				startMinutes = '0'+ startMinutes;
-			}
-			var startSeconds = Math.floor($scope.startTime - startMinutes * 60);
-			if(startSeconds < 10){
-				startSeconds = "0"+ startSeconds;
-			}
-			var endMinutes = Math.floor($scope.endTime / 60);
-			if(endMinutes < 10){
-				endMinutes =  "0"+endMinutes;
-			}
-			var endSeconds = Math.floor($scope.endTime - endMinutes * 60);
-			if(endSeconds < 10){
-				endSeconds = "0"+ endSeconds;
-			}
-
-	        $scope.entireTranscript[$scope.clickedTranscriptIndex] = {
-	      		startTime: $scope.startTime,
-	        	endTime: $scope.endTime,
-	          	transcript: $scope.transcript,
-	          	postedTime: month+'/'+day+'/'+year,
-	          	startMinsSecs: startMinutes+":"+startSeconds,
-				endMinsSecs: endMinutes+":"+endSeconds
-	          	
-	        }
-	        $scope.editOrAddButton = 'Add to Transcript >>'
-	    	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
-	    	$scope.clickedTranscriptIndex = -1
-	    	$scope.transcript = ''
-			$scope.startTimes = '00:00'
-			$scope.endTimes = '00:00'
-		}		
+		
+		// $scope.tempEditTranscript = $scope.entireTranscript[$scope.clickedTranscriptIndex]
+		// $scope.entireTranscript.splice($scope.clickedTranscriptIndex, 1 )	    
 	  var tempRange = []
 	  var timeRangeArray = $scope.timeRange
+	  
 	  var startTime = Math.floor($scope.startTime*100)
 	  var endTime = Math.floor($scope.endTime*100)
 	  for(let i = 0; i < timeRangeArray.length; i++){
@@ -125,13 +91,18 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	    	afterEverything = false;
 	    }
 	  }  
-	  console.log(inBetween, beforeEverything, afterEverything)
-	  if(((inBetween)||(beforeEverything)||(afterEverything))&&(startTime < endTime)){
-	    timeRangeArray.push({
-	    	startTime: startTime,
-	    	endTime: endTime
-	    })
-	    $scope.timeRange = timeRangeArray;
+
+		console.log(inBetween, beforeEverything, afterEverything)
+		if((inBetween)||(beforeEverything)||(afterEverything)){
+			$scope.timeRange = timeRangeArray;
+		    
+		    // $scope.entireTranscript.splice($scope.clickedTranscriptIndex, 0, $scope.tempEditTranscript);
+		    $scope.timeRange.push({
+		    	startTime: startTime,
+		    	endTime: endTime
+		    })
+		    
+		    
 			$scope.editOrAddButton = 'Add to Transcript'
 	    	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
 			var index = $scope.clickedTranscriptIndex
@@ -166,35 +137,89 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 					startMinsSecs: startMinutes+":"+startSeconds,
 					endMinsSecs: endMinutes+":"+endSeconds
 				})    
+			}else{
+				// edit (on yellow button click)
+				if($scope.clickedTranscriptIndex > -1){
+					var date = new Date();
+					var day = (date.getUTCDate()).toString();
+					var month = (date.getMonth()+1).toString(); 
+					var year = (date.getUTCFullYear()).toString(); 
 
+					var startMinutes = Math.floor($scope.startTime / 60);
+					if(startMinutes < 10){
+						startMinutes = '0'+ startMinutes;
+					}
+					var startSeconds = Math.floor($scope.startTime - startMinutes * 60);
+					if(startSeconds < 10){
+						startSeconds = "0"+ startSeconds;
+					}
+					var endMinutes = Math.floor($scope.endTime / 60);
+					if(endMinutes < 10){
+						endMinutes =  "0"+endMinutes;
+					}
+					var endSeconds = Math.floor($scope.endTime - endMinutes * 60);
+					if(endSeconds < 10){
+						endSeconds = "0"+ endSeconds;
+					}
+
+			        $scope.entireTranscript[$scope.clickedTranscriptIndex] = {
+			      		startTime: $scope.startTime,
+			        	endTime: $scope.endTime,
+			          	transcript: $scope.transcript,
+			          	postedTime: month+'/'+day+'/'+year,
+			          	startMinsSecs: startMinutes+":"+startSeconds,
+						endMinsSecs: endMinutes+":"+endSeconds
+			          	
+			        }
+			        $scope.editOrAddButton = 'Add to Transcript >>'
+			    	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
+			    	$scope.clickedTranscriptIndex = -1
+			    	$scope.transcript = ''
+					$scope.startTimes = '00:00'
+					$scope.endTimes = '00:00'
+					// $scope.saveForm();
+					// window.location.reload()
+				}		
 			}
 			$scope.clickedTranscriptIndex = -1
 			$scope.transcript = ''
 			$scope.startTimes = '00:00'
 			$scope.endTimes = '00:00'
+			$scope.timeRangeConflict = ''
+		}else{
+			$scope.timeRangeConflict = 'Invalid time range, current range overlaps with a previously saved transcript'
 		}
 	}	
-  	
+  	$scope.clearForm = function(){
+		$scope.editOrAddButton = 'Add to Transcript >>'
+    	$scope.addButtonClass = 'btn #0d47a1 light-blue darken-4 waves-effect'
+    	$scope.clickedTranscriptIndex = -1
+    	$scope.transcript = ''
+		$scope.startTimes = '00:00'
+		$scope.endTimes = '00:00'  
+		$scope.timeRange.splice($scope.clickedTranscriptIndex, 0, $scope.tempTimeRange)  	
+  	}  	
   	$scope.startTimeFunc = function(){
     	var theVid = document.getElementById("theVid")
     	$scope.startTime = theVid.currentTime.toFixed(0)
-    		var startMinutes = Math.floor($scope.startTime / 60);
-			if(startMinutes < 10){
-				startMinutes = '0'+ startMinutes;
-			}
-			var startSeconds = Math.floor($scope.startTime - startMinutes * 60);
-			if(startSeconds < 10){
-				startSeconds = "0"+ startSeconds;
-			}
-			$scope.startMins = startMinutes
-			$scope.startSeconds = startSeconds
-			$scope.startTimes = startMinutes+":"+startSeconds
-    	theVid.play(); 
-  	}	 
+		var startMinutes = Math.floor($scope.startTime / 60);
+		if(startMinutes < 10){
+			startMinutes = '0'+ startMinutes;
+		}
+		var startSeconds = Math.floor($scope.startTime - startMinutes * 60);
+		if(startSeconds < 10){
+			startSeconds = "0"+ startSeconds;
+		}
+		$scope.startMins = startMinutes
+		$scope.startSeconds = startSeconds
+		$scope.startTimes = startMinutes+":"+startSeconds
+		theVid.play(); 
+  	}
+
   	$scope.endTimeFunc = function(){
 		var theVid = document.getElementById("theVid")
 		var endTempTime = theVid.currentTime.toFixed(0);
-		if(endTempTime > $scope.startTime){
+		
 			$scope.endTime = endTempTime
 			var endMinutes = Math.floor($scope.endTime / 60);
 			if(endMinutes < 10){
@@ -208,7 +233,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 			$scope.endSecs = endSeconds
 			$scope.endTimes = endMinutes+":"+endSeconds
 			theVid.pause(); 
-		}
+		
 		
   	}
   	$scope.rewind = function(){
@@ -236,7 +261,7 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		}
   	    $http({
 			method:'POST',
-      		url: 'http://localhost:3000/changeFamilyName/',
+      		url: 'http://pauldkang.com:3030/changeFamilyName/',
       		data: tempDataToSend
     	}).then(
 	      	function successFunction(data){
@@ -250,15 +275,15 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 
   	// send transcript to the backend
 	$scope.saveForm = function(){
-		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
+		var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + $location.$$path.slice(16)
 		$http({
 			method:'POST',
       		url: transcriptUrl,
       		data: $scope.entireTranscript
     	}).then(
       		function successFunction(data){
-        	console.log(data)
-        	console.log("form submitted!")
+        	// console.log(data)
+        	// console.log("form submitted!")
         	$scope.submissionStatus = "Form Saved Successfully"
 	      	},
     	  	function failedFunction(data){
@@ -270,14 +295,14 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	$scope.submitForm = function(){
 		console.log($scope.entireTranscript)
 		
-		var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16);
+		var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + $location.$$path.slice(16);
 		$http({
 			method:'POST',
       		url: transcriptUrl,
       		data: $scope.entireTranscript
     	}).then(
       		function successFunction(data){			
-				var finishedUrl = 'http://localhost:3000/finished/' + $location.$$path.slice(16);
+				var finishedUrl = 'http://pauldkang.com:3030/finished/' + $location.$$path.slice(16);
 				var dataArray = [1]
 				$http({
 					method:'POST',
@@ -285,8 +310,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		      		data: dataArray
 		    	}).then(
 		      		function successFunction(data){
-			        	console.log(data)
-			        	console.log('worked')
+			        	// console.log(data)
+			        	// console.log('worked')
 			        	$scope.submissionStatus = "Form submission success"
 			        	$scope.seeFinishedButton = 'seeFinishedButton'
 				    },
@@ -310,6 +335,8 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 	    $scope.startTime = $scope.entireTranscript[index].startTime;
 	    $scope.endTime = $scope.entireTranscript[index].endTime;
 	    $scope.clickedTranscriptIndex = index;
+		// $scope.tempEditTranscript = $scope.entireTranscript[$scope.clickedTranscriptIndex]
+		// $scope.entireTranscript.splice($scope.clickedTranscriptIndex, 1 )	    
 	    var endTempTime = $scope.endTime
 	    	if(endTempTime > $scope.startTime){
 			$scope.endTime = endTempTime
@@ -335,24 +362,26 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		}
 		$scope.startMins = startMinutes
 		$scope.startSeconds = startSeconds
-		$scope.startTimes = startMinutes+":"+startSeconds		
+		$scope.startTimes = startMinutes+":"+startSeconds				
+		$scope.tempTimeRange = $scope.timeRange[index]
+	  	$scope.timeRange.splice(index, 1)
 	}
 
 	$scope.deleteTranscript = function(index){
 		var deleteThis = confirm('Are you sure you want to delete this translation?');
 		if(deleteThis){
 			$scope.entireTranscript.splice(index, 1)
-			var transcriptUrl = 'http://localhost:3000/transcript/' + $location.$$path.slice(16)
+			var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + $location.$$path.slice(16)
 			$http({
 				method:'POST',
 	      		url: transcriptUrl,
 	      		data: $scope.entireTranscript
 	    	}).then(
 	      		function successFunction(data){
-	        	console.log(data)
+	        	// console.log(data)
 		      	},
 	    	  	function failedFunction(data){
-		    	    console.log("fail")
+		    	    // console.log("fail")
 				}
 	  		)
     	}
@@ -362,5 +391,35 @@ app.controller('translateVideoController',['$scope', '$location', '$http', '$sce
 		var vidToken = $location.$$path.slice(16)
 		$location.path('videoProduct/'+ vidToken)
 	}
+	
 
+
+	// $(function(){
+ //        $( "#draggable" ).draggable({ axis: "x", containment: "#containment-wrapper", scroll: false }).resizable({minHeight:90, containment: "#containment-wrapper" });
+ //    });
+    
+    // $scope.draggableVidz = function (){
+    //     var draggable = $('#draggable')
+    //     $scope.theVid = document.getElementById("theVid")
+    //     var duration = theVid.duration
+    //     var offset = draggable[0].offsetLeft;
+    //     var width = draggable[0].offsetWidth;
+    //     var parent = $('#containment-wrapper')[0].offsetWidth;
+    //     // $scope.startTimes = $('#draggable')[0].offsetLeft
+    //     // abcde = $('#draggable')[0].offsetLeft
+    //     $scope.theVid.currentTime = Math.floor((offset * ( duration / parent )))
+    //     $scope.timez = $scope.theVid.currentTime
+    //     // console.log(parent)
+    //     // theVid.currentTime = 0
+    //     // console.log(offset*(duration/parent))
+    //     // offleft(duration/parent) = setStart
+    // }
+    
+    // // $scope.startTimes = abcde
+    
+    // setTimeout(setInterval($scope.draggableVidz,50),1000);
+    // function aaa(){
+    // 	console.log($scope.timeRange)
+    // }
+    // setInterval(aaa, 3000)
 }]);

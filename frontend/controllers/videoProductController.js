@@ -1,7 +1,7 @@
 app.controller('videoProductController',  function($scope, $location, $http, $sce, $interval){
  $scope.transcriptHTML = []
   var paramsId = $location.$$path.slice(14)
-	var tempUrl = 'http://localhost:3000/videosFinished'
+	var tempUrl = 'http://pauldkang.com:3030/videosFinished'
 	$http({
     	method: "GET",
     	url: tempUrl
@@ -12,10 +12,10 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
        			if(eachVideo.token == paramsId){
         			var tempVideoPath = eachVideo.path.slice(7)
         			$scope.familyName = eachVideo.familyName
-        			var myUrl = 'http://localhost:3000/' + tempVideoPath
+        			var myUrl = 'http://pauldkang.com:3030/' + tempVideoPath
         			$scope.productVideo = $sce.trustAsResourceUrl(myUrl)
         			var familyNameURI = encodeURI($scope.familyName)
-					var transcriptUrl = 'http://localhost:3000/videosByFamilyName/' + familyNameURI
+					var transcriptUrl = 'http://pauldkang.com:3030/videosByFamilyName/' + familyNameURI
 					$http({
 				    	method: "GET",
 				    	url: transcriptUrl
@@ -25,7 +25,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
 				      		var familyArray = familyData.data
 				      		var familyVideoHTML = []
 				      		familyArray.map((video, index)=>{
-				      			var myUrl = 'http://localhost:3000/' + video.path.slice(7)
+				      			var myUrl = 'http://pauldkang.com:3030/' + video.path.slice(7)
                     var showCPorNot = ''
                     if(video.token == $location.$$path.slice(14)){
                       showCPorNot = 'displayCP'
@@ -62,7 +62,7 @@ app.controller('videoProductController',  function($scope, $location, $http, $sc
     	},
     	function failedFunction(videoData){}
   	)
-	var transcriptUrl = 'http://localhost:3000/transcript/' + paramsId
+	var transcriptUrl = 'http://pauldkang.com:3030/transcript/' + paramsId
 	$http({
     	method: "GET",
     	url: transcriptUrl

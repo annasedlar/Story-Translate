@@ -1,10 +1,10 @@
 app.controller('videosToTranslateController',['$scope','$http','$sce', function($scope, $http,$sce){
    $scope.videoToBeTranslatedArray = [];
    var colors = [];
-    var tempUrl = 'http://localhost:3000/videos'
+    var tempUrl = 'http://pauldkang.com:3030/videos'
     $scope.videoToBeTranslatedArray = [];
     var colors = [];
-	var tempUrl = 'http://localhost:3000/videos'
+	var tempUrl = 'http://pauldkang.com:3030/videos'
     $http({
         method: "GET",
         url: tempUrl
@@ -18,7 +18,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             $scope.videoData = videoData
             var tempFamilyName = 'no name';
             $scope.videoData.data.map((video, index)=>{
-                var myUrl = 'http://localhost:3000/videos/' + video.name
+                var myUrl = 'http://pauldkang.com:3030/videos/' + video.name
                 video.name = $sce.trustAsResourceUrl(myUrl)
                 if(!index){
                     tempFamilyName = video.familyName
@@ -42,6 +42,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
                     video.checkItOutClass = 'displayNone'  
                 }
             })
+            $
         },
         function failedFunction(videoData){
         }
@@ -61,7 +62,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             console.log($scope.videoData.data['video'])
             $http({
                 method:'POST',
-                url: 'http://localhost:3000/deleteVideo/',
+                url: 'http://pauldkang.com:3030/deleteVideo/',
                 data: tempDataToSend
             }).then(
                 function successFunction(data){
@@ -80,7 +81,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             }
             $http({
                 method: "GET",
-                url: 'http://localhost:3000/videos/'
+                url: 'http://pauldkang.com:3030/videos/'
             }).then(
                 function successFunction(videoData){
                     videoData.data.map((video, index)=>{
@@ -98,7 +99,7 @@ app.controller('videosToTranslateController',['$scope','$http','$sce', function(
             )            
             $http({
                 method:'POST',
-                url: 'http://localhost:3000/deleteFamily/',
+                url: 'http://pauldkang.com:3030/deleteFamily/',
                 data: dataToSend
             }).then(
                 function successFunction(data){

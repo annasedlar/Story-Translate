@@ -3,7 +3,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 	$scope.tempImage
 
 	$scope.submit = function(){
-		$('#demoModal').modal('close')
+		$('.failedUploadMessage').html('uploading...')
 		var formData = new FormData;
 		for(key in $scope.product){
 			formData.append(key, $scope.product[key])
@@ -12,7 +12,7 @@ app.controller('uploadRawVideoController',function($scope, $location, $http){
 		formData.append('video', file);
 		formData.append('familyName', $scope.familyName)
 		console.log(typeof($scope.tempImage))
-		$http.post('http://localhost:3000/videos', formData, {
+		$http.post('http://pauldkang.com:3030/videos', formData, {
 			transformRequest: angular.identity,
 			headers:{
 				'Content-Type' : undefined
