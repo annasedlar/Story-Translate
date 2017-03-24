@@ -8,9 +8,13 @@ Our translation tool allows users from [New Story](https://www.newstorycharity.o
 
 [Live URL](http://www.pauldkang.com/new_story/#/)
 
+
+#### GitHub Link
+[New Story Translation Tool](https://github.com/annasedlar/Story-Translate)
+
 #### Table of contents
 
-[Description/Overview](#description/overview) | [Technologies Used](#technologies) | [Challenges and Solutions](#challenges-and-solutions)| [GitHub Link](#github-link) | [Code Snippets and Screenshots](#code-snippets-and-screenshots) | [MVP](#mvp-minimal-viable-product) | [Stretch Goals](#stretch-goals) | [Team Members and Contributions](#team-members-and-contributions) | [Project Timeline](#project-timeline)
+[Description/Overview](#description/overview) | [GitHub Link](#github-link) | [Technologies Used](#technologies) | [Challenges and Solutions](#challenges-and-solutions) | [Code Snippets and Screenshots](#code-snippets-and-screenshots) | [MVP](#mvp-minimal-viable-product) | [Stretch Goals](#stretch-goals) | [Team Members and Contributions](#team-members-and-contributions) | [Project Timeline](#project-timeline)
 
 
 #### Technologies
@@ -40,21 +44,19 @@ The following languages and frameworks were used:
 #### Challenges and Solutions
 1. **Challenge:** Learning and utilizing Angular 1.5 to complete this project
 
-   **Solution:** Our group decided to learn Angular 1.5 for this project. Since we were not very familiar with this framework, we were unaware of what tools it had to offer. As a result, building with this Angular was an exciting challenge. Our self-teaching skills after our instructor's introduction to Angular were put to the test when we decided that we needed a function for the user to save sessions. We needed to link the videos to their corresponding transcripts as well as mark which videos had translations in progress. We were able to accomplish this task with instructor assistance, much Googling and trial and error. Other issues stemming from the novelty of this framework included issues with using a video element in HTML5 and how to store those videos and its identifying elements.
+   **Solution:** Our group decided to learn Angular 1.5 for this project. Since we were not very familiar with this framework, we were unaware of what tools it had to offer. As a result, building with this Angular was an exciting challenge. Our self-teaching skills after our instructor's introduction to Angular were put to the test when we decided that we needed a function for the user to save sessions. We needed to link the videos to their corresponding transcripts as well as mark which videos had translations in progress. We were able to accomplish this task with instructor assistance, much Googling and trial and error. Other issues stemming from the novelty of this framework included issues with using a video element in HTML5 and storing videos and its identifying elements.
     
 
 2. **Challenge:** Using the video element in HTML5
 
-   **Solution:** One of our major issues was adding a video to our app with Angular. Unknown to us at the time, completing this task would require a few more steps than what we were used to. Our problem was best stated in [Ruben Canton](http://www.rubencanton.com/blog/2014/07/adding-video-src-with-angular.html)'s words: "Angular allows you to set an image “src” or the href of a link without issues, but blocks you if you try to add the “src” of an HTML5 video element." Most of the sources we found on Google stated that there is no current fix for this issue. We would like to credit Ruben Canton's detailed solution after an extensive search to work around this problem. In order to add the video source to our project, we had to tell Angular that this is a safe operation using Angular's Strict Contextual Service (SCE). As a result, ```javascript we included $scope.trustedUrl = $sce.trustAsResourceUrl(myUrl);``` in our code.
+   **Solution:** One major issue was adding a video to our app with Angular. Unknown to us at the time, completing this task would require a few more steps than what we were used to. Our problem was best stated in [Ruben Canton](http://www.rubencanton.com/blog/2014/07/adding-video-src-with-angular.html)'s words: "Angular allows you to set an image “src” or the href of a link without issues, but blocks you if you try to add the “src” of an HTML5 video element." Most of the sources we found on Google stated that there is currently no fix for this issue. After an extensive search, we would like to credit Ruben Canton's detailed solution to work around this problem. In order to add the video source to our project, we had to tell Angular that this is a safe operation using Angular's Strict Contextual Service (SCE). As a result, we included ```javascript $scope.trustedUrl = $sce.trustAsResourceUrl(myUrl);``` in our code.
 
 
 3. **Challenge:** Size of videos, how to store them, how to upload them, how to retrieve that video's information
 
-   **Solution:** Since our app's main purpose is to faciliatate the translation process for New Story's users, we needed an efficient way to store and retrieve videos and transcripts. Enter Multer. When uploading a video through Multer, the actual video is saved to the backend while the name, path and token of the video are saved in the database. By splitting up the video with its identifying elements for storage purposes, we eliminated the need to store the video as a long string in our database. Therefore, we were able to keep our database small while keeping the transcripts linked to the correct videos. Bringing Multer into our app was complicated by the fact that we had just learned Angular the week before.
+   **Solution:** Since our app's main purpose is to faciliatate the translation process for New Story's users, we needed an efficient way to store and retrieve videos and transcripts. Enter Multer. When uploading a video through Multer, the actual video is saved to the backend while the name, path and token of the video are saved in the database. By splitting up the video with its identifying elements, we eliminated the need to store the video as a long string in our database. Therefore, we were able to keep our database small while keeping the transcripts linked to the correct videos. Bringing Multer into our app was complicated by the fact that we had just learned Angular the week before.
 
 
-#### GitHub Link
-[New Story Translation Tool](https://github.com/annasedlar/Story-Translate)
 
 #### Code Snippets and Screenshots
 
@@ -193,6 +195,6 @@ All team members are full stack web development students of the [DigitalCrafts](
 
 
 #### Project Timeline
-**Project start:** 3/6/2017
+* Project start: 3/6/2017
 
-**Project completion:** 3/24/2017
+* Project completion:** 3/24/2017
