@@ -49,7 +49,7 @@ The following languages and frameworks were used:
 
 2. **Challenge:** Using the video element in HTML5
 
-   **Solution:** One major issue was adding a video to our app with Angular. Unknown to us at the time, completing this task would require a few more steps than what we were used to. Our problem was best stated in [Ruben Canton](http://www.rubencanton.com/blog/2014/07/adding-video-src-with-angular.html)'s words: "Angular allows you to set an image “src” or the href of a link without issues, but blocks you if you try to add the “src” of an HTML5 video element." Most of the sources we found on Google stated that there is currently no fix for this issue. After an extensive search, we would like to credit Ruben Canton's detailed solution to work around this problem. In order to add the video source to our project, we had to tell Angular that this is a safe operation using Angular's Strict Contextual Service (SCE). As a result, we included ```$scope.trustedUrl = $sce.trustAsResourceUrl(myUrl);``` in our code.
+   **Solution:** One major issue was adding a video to our app with Angular. Unknown to us at the time, completing this task would require a few more steps than what we were used to. Our problem was best stated in [Ruben Canton](http://www.rubencanton.com/blog/2014/07/adding-video-src-with-angular.html)'s words: "Angular allows you to set an image “src” or the href of a link without issues, but blocks you if you try to add the “src” of an HTML5 video element." Most of the sources we found on Google stated that there is currently no fix for this issue. After an extensive search, we would like to credit Canton's detailed solution to work around this problem. In order to add the video source to our project, we had to tell Angular that this is a safe operation using Angular's Strict Contextual Service (SCE). As a result, we included ```$scope.trustedUrl = $sce.trustAsResourceUrl(myUrl);``` in our code.
 
 
 3. **Challenge:** Size of videos, how to store them, how to upload them, how to retrieve that video's information
@@ -100,11 +100,11 @@ For a more pleasant user experience, the upload button is available on all route
 ![alt](frontend/images/translateAndSubmit.png)
 
 
-There is also an option to delete individual videos or an entire family of videos (for example when video translation and compilation is complete for that family). Using the same logic that we used to mark whether a video is "complete" or "incomplete", we marked the videos on the final product page with "Currently Playing" if the user has clicked watch on any of the related videos. This would help the user keep track of which videos from that family have incomplete translations.
+There is also an option to delete individual videos or an entire family of videos (for example when video translation and compilation is complete for that family). Using the same logic that we used to mark whether a video is "complete" or "incomplete", we marked the videos on the final product page with "Currently Playing" if the user has clicked "watch" on any of the related videos. This would help the user keep track of each video's translation status.
 ![alt](frontend/images/editAndDelete.png)
 
 
-Verifying the time ranges for each translation is crucial. The start and end times cannot overlap the time range of a transcript that has already been submitted. We needed to check the beginning time of the potential new translation against all the beginning times of the translations that have already been submitted to see if there are conflicts with any of the previously submitted time ranges. This code below takes care of this task.
+Verifying the time ranges for each translation is crucial. The start and end times cannot overlap the time range of a transcript that has already been submitted. We needed to check the beginning time of the potential new translation against all the ending times of the translations that have already been submitted to see if there are conflicts with any of the previously submitted time ranges. The code below takes care of this task.
 
 
 ```javascript
