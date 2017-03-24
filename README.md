@@ -66,7 +66,7 @@ Front page requiring user login
 ![alt](frontend/images/frontPage.png)
 
 After the user is logged in, he has an option of uploading a video or viewing a list of videos in the database. If he chooses to upload first, he will be redirected to the same list route after the page reloads.
-![alt](frontend/imvideosages/videosToTranslate.png)
+![alt](frontend/images/videosToTranslate.png)
 
  
 This is the code behind our "Videos to Translate" page. We have logic dictating how each video will be displayed. The videos are grouped by family name, a field that can be edited on the video translation and finished product routes. 
