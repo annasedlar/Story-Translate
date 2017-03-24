@@ -1,5 +1,5 @@
-<img src="frontend/images/new-story-logo.png" alt="" style="width: 300px;"/>
-
+<img src="frontend/images/new-story-logo.png" width="300" height="130"/>
+<!-- <img src="http://....jpg" width="200" height="200" /> -->
 
 # New Story Video Translation Tool 
 
@@ -191,5 +191,5 @@ All team members are full stack web development students of the [DigitalCrafts](
 
 
 #### Project Timeline
-Project start: 3/6/2017
-Project completion: 3/24/2017
+**Project start:** 3/6/2017
+**Project completion:** 3/24/2017
