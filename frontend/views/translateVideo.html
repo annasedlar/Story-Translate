@@ -1,4 +1,4 @@
-		<!-- upload video modal -->
+<!-- upload video modal -->
 <div id="demoModal" class="modal" style='text-align: center' ng-controller="uploadRawVideoController">
     <form ng-submit="submit()">
         <div>
@@ -13,6 +13,10 @@
     </form>
 </div>
 
+
+
+
+<!-- Start Header -->
 <div class="grey-header">
 	Translate Video and Submit!
 	<div class="nav-button-container">	
@@ -22,48 +26,57 @@
 	</div>
 </div>
 
+<!-- Start Left Content Area (where editing takes place) -->
  <div class="container-fluid entireTranslateVideoWrapper" style="margin-top:70px">
 	<div class="col-xs-12 col-md-6 translate-left-side-wrapper">
 		<div class='family-wrapper'>
-	 	<div class='familyName'>{{familyName}}</div>
-	 	<form ng-submit='changeFamilyName()' class='inline-block'>
-	 		<input ng-model='tempFamilyName' type='text' class='familyInput' placeholder="Edit Family Name" />
-	 		<button class="btn-floating edit-family-button btn-small waves-effect waves-light yellow lighten-3"><i class="material-icons" style="color:black">mode_edit</i></button>
-	 	</form>
+			<div class='familyName'>
+				{{familyName}}
+			</div>
+			<form ng-submit='changeFamilyName()' class='inline-block'>
+				<input ng-model='tempFamilyName' type='text' class='familyInput' placeholder="Edit Family Name" />
+				<button class="btn-floating edit-family-button btn-small waves-effect waves-light yellow lighten-3"><i class="material-icons" style="color:black">mode_edit</i></button>
+			</form>
 		</div>
-
+		
+		<!-- Video to be translated -->
 		<video ng-src="{{pleasWork}}" type="video/mp4" controls id="theVid" width="100%" style="border:1px solid rgb(180,180,180)"/>
 
-	    <div class="buttonDiv">
-				<button ng-click="startTimeFunc()" class="#0d47a1 light-blue darken-4 waves-effect btn" style="float:left; margin-right: 5px;">Set Start</button>
+	    	<!-- Video Controls (start/stop/etc..) -->
+	    	<div class="buttonDiv">
+			<button ng-click="startTimeFunc()" class="#0d47a1 light-blue darken-4 waves-effect btn" style="float:left; margin-right: 5px;">Set Start</button>
 			    <button class="#0d47a1 light-blue darken-4 waves-effect btn" ng-click="endTimeFunc()" style="float:left">Set End</button>
 
 			    <button ng-click="forward()" style="float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-forward'></span></button>
-			     <button ng-click="play()" style="margin-right: 2px;float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-play'></span></button>
+			    <button ng-click="play()" style="margin-right: 2px;float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-play'></span></button>
 			    <button ng-click="pause()" style="margin-right: 2px;float:right" class="#263238 blue-grey darken-3 waves-effect btn"><span class='glyphicon glyphicon-pause'></span></button>
 			    <button ng-click="rewind()" class="#263238 blue-grey darken-3 waves-effect btn" style="float:right; margin-right: 2px;"><span class='glyphicon glyphicon-backward'></span></button>
 			<div class="row">{{invalidRange}}</div>
 		</div>   
-
+		
+		<!-- Controls to push current translation to right-side, translation log-->
 		<div style="margin-top:7%; margin-bottom:10%">
 		    <form name="translation-form" id="translation-form" ng-submit="submitEachSection()">
 			    <div class="new-sections">
 				  <div class="startTime">Start Time: {{startTimes}}</div>
 				  <div class="endTime" style="margin-bottom:-2%">End Time: {{endTimes}}</div>
-				  	<div>&nbsp;</div>
-			        <textarea name="transcript" rows='5' ng-model="transcript" style="background-color:#e9e9e9; border:1px solid #808080; color:black" />
-			        <button ng-class="addButtonClass" class="waves-effect btn">{{editOrAddButton}}</button>
+				  <div>&nbsp;</div>
+			          <textarea name="transcript" rows='5' ng-model="transcript" style="background-color:#e9e9e9; border:1px solid #808080; color:black" />
+			          <button ng-class="addButtonClass" class="waves-effect btn">{{editOrAddButton}}</button>
 			    </div>
 		   </form>
 		</div>
 	</div>
 
+	<!-- Log of all transcripts for entire video -->
 	<div class="col-xs-12 col-md-6 each-translation-box">
 	    <div class='translation-header'>Translation Form</div>
 	    <div class="row hidden-sm-down" style="margin-bottom: 5px; margin-top:15px; height:20px">
 	    	<div class="col-xs-4">Time Frame</div>
 	    	<div class="col-xs-8">Translation</div>
 	    </div>
+		
+	    <!-- Each translation content + start/end times-->
 	    <div class="each-transcription card-panel col-sm-12" ng-repeat='eachTranscript in entireTranscript' style=" min-height:140px; margin-bottom: 5%; border-top: 2px solid lightgrey">
 		 	<div class="col-xs-8">
 		 		<div class="col-xs-12 col-sm-4 timeRange" style="margin-left: -6%">
@@ -73,41 +86,50 @@
 		 		{{eachTranscript.transcript}}
 		 		</div>
 		 	</div>
+		    
+			<!-- Edit/Delete individual translations -->
 	 		<div class="col-xs-4">
-	    		<button class="buttonTextBlack btn #b71c1c red darken-4" ng-click="deleteTranscript($index)" style="display:inline-block; margin-left:3px; float:right">
-	    		<span style='font-size:15px;' class='glyphicon glyphicon-trash'></span></button>
-	    		<button class="buttonTextBlack1 btn yellow lighten-3 " ng-click="editTranscript($index)" style="display:inline-block; float:right">
-	    			<span style='font-size:15px;' class='glyphicon glyphicon-pencil'></span>
-	    		</button>
+				<button class="buttonTextBlack btn #b71c1c red darken-4" ng-click="deleteTranscript($index)" style="display:inline-block; margin-left:3px; float:right">
+					<span style='font-size:15px;' class='glyphicon glyphicon-trash'></span>
+				</button>
+				<button class="buttonTextBlack1 btn yellow lighten-3 " ng-click="editTranscript($index)" style="display:inline-block; float:right">
+					<span style='font-size:15px;' class='glyphicon glyphicon-pencil'></span>
+				</button>
 		 	</div>
+		    
+			<!-- Time when translation was added -->
 		 	<div style="bottom:3%; right:5%; position:absolute;">
 		    		<p style="font-size:9px">Added {{eachTranscript.postedTime}}</p>
 		   	</div>
 		</div>
+		
+		<!-- Controls to save and submit current translation to 'Completed' page (can return to edit if needed) -->
 		<div style="float:right; margin-bottom: 10%">
-			<form ng-submit='saveForm()' style='display:inline-block; clear:both'>
+		    <form ng-submit='saveForm()' style='display:inline-block; clear:both'>
 		    	<button style="margin-right: 0; border: 1px solid darkgreen; color: darkgreen" class="##81c784 green lighten-2 waves-effect btn" ng-click="saveForm()">Save Progress</button>
 		    </form>
 		    <form ng-submit='submitForm()' style='display:inline-block; clear:both'>	
 		    	<button style="margin-right:0;" class="#1b5e20 green darken-4 waves-effect btn" ng-click="submitForm()">Submit Final Transcript&nbsp;<span class="glyphicon glyphicon-upload"></span></button>
-	    	</form>
-	    	<div ng-hide style="color:darkgreen; text-align: right">{{submissionStatus}}</div>
-	    	<div style="margin-right:0; text-align:right; margin-top:8%; cursor:pointer; font-family:'Montserrat'" ng-class="seeFinishedButton" ng-click="bringToFinal()">
+	    	    </form>
+	    	    <div ng-hide style="color:darkgreen; text-align: right">{{submissionStatus}}
+		    </div>
+	    	    <div style="margin-right:0; text-align:right; margin-top:8%; cursor:pointer; font-family:'Montserrat'" ng-class="seeFinishedButton" ng-click="bringToFinal()">
 	    		See Finished Transcript <button style="text-align: center; color:black; border-radius: 50%; box-shadow: 3px 3px 1px #979797" class="large #b3e5fc light-blue lighten-4  waves-effect btn"><i class="material-icons right large" style="margin-left:0;text-align:center">send</i>
 	    		</button>
-	    	</div>
+	    	    </div>
 		</div> 
-	</div>
-	    
-	</div>  
+	  </div>
+     </div>  
 </div> 
 
+<!-- Future work: Functionality to 'drag' video translations from 'in-process editing' to 'complete'-->
 <!-- <div id="containment-wrapper" ng-mousedown='draggableVidz()'> 
 	<div id="draggable" class="draggable ui-widget-content">
 		{{timez}}
 	</div>
 </div> --> 
 
+<!-- Link to github repo -->
 <div class='github-wrapper'>
 	<a href="https://github.com/annasedlar/Story-Translate" style="color:black" target='_blank'>
 		<img src='http://www.annasedlar.com/Story-Translate/frontend/images/github-logo.png'/>
